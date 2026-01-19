@@ -117,14 +117,14 @@ const Navigation = () => {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
-                className="text-gray-700 hover:text-[#0b2a55] font-medium py-2 transition-colors duration-200"
+                className="text-gray-900 hover:text-[#0b2a55] font-semibold text-base py-2 transition-colors duration-200"
               >
                 {link.label}
               </a>
             ))}
             <Button
               onClick={(e) => scrollToSection(e, '#contact')}
-              className="bg-[#0b2a55] hover:bg-[#1a4280] text-white w-full"
+              className="bg-[#0b2a55] hover:bg-[#1a4280] text-white w-full font-semibold"
             >
               Contact
             </Button>
