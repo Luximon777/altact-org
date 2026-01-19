@@ -52,14 +52,13 @@ const Navigation = () => {
             <a
               href="#top"
               onClick={(e) => scrollToSection(e, '#top')}
-              className="flex items-center space-x-3 group"
+              className="flex items-center group"
             >
-              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#0b2a55] to-[#1a4280] flex items-center justify-center transform group-hover:scale-105 transition-transform duration-200">
-                <span className="text-white font-bold text-xl">A&A</span>
-              </div>
-              <span className="text-2xl font-bold text-[#0b2a55] hidden sm:block">
-                Alt&Act
-              </span>
+              <img 
+                src="https://customer-assets.emergentagent.com/job_institut-fusion/artifacts/n4nzcgj5_LOGOS%202.png"
+                alt="Alt&Act - L'insertion professionnelle sans barrières"
+                className="h-16 w-auto transform group-hover:scale-105 transition-transform duration-200"
+              />
             </a>
 
             {/* Desktop Navigation */}
