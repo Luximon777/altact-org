@@ -57,7 +57,7 @@ const Navigation = () => {
               <img 
                 src="https://customer-assets.emergentagent.com/job_institut-fusion/artifacts/n4nzcgj5_LOGOS%202.png"
                 alt="Alt&Act - L'insertion professionnelle sans barrières"
-                className="h-24 w-auto transform group-hover:scale-105 transition-transform duration-200"
+                className="h-32 w-auto transform group-hover:scale-105 transition-transform duration-200"
               />
             </a>
 
