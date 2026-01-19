@@ -68,7 +68,7 @@ const Navigation = () => {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => scrollToSection(e, link.href)}
-                  className="text-gray-700 hover:text-[#0b2a55] font-medium transition-colors duration-200 relative group"
+                  className="text-gray-900 hover:text-[#0b2a55] font-semibold text-base transition-colors duration-200 relative group"
                 >
                   {link.label}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#0b2a55] group-hover:w-full transition-all duration-300"></span>
@@ -76,7 +76,7 @@ const Navigation = () => {
               ))}
               <Button
                 onClick={(e) => scrollToSection(e, '#contact')}
-                className="bg-[#0b2a55] hover:bg-[#1a4280] text-white transition-all duration-200 transform hover:scale-105"
+                className="bg-[#0b2a55] hover:bg-[#1a4280] text-white transition-all duration-200 transform hover:scale-105 font-semibold"
               >
                 Contact
               </Button>
