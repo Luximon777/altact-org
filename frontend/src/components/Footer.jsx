@@ -29,7 +29,7 @@ const Footer = () => {
               <img 
                 src="https://customer-assets.emergentagent.com/job_institut-fusion/artifacts/n4nzcgj5_LOGOS%202.png"
                 alt="Alt&Act - L'insertion professionnelle sans barrières"
-                className="h-16 w-auto"
+                className="h-20 w-auto"
               />
             </div>
             <p className="text-blue-100 leading-relaxed mb-6">
