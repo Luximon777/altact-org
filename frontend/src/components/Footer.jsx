@@ -25,11 +25,12 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* About */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center">
-                <span className="text-white font-bold text-xl">A&A</span>
-              </div>
-              <span className="text-2xl font-bold">Alt&Act</span>
+            <div className="mb-4">
+              <img 
+                src="https://customer-assets.emergentagent.com/job_institut-fusion/artifacts/n4nzcgj5_LOGOS%202.png"
+                alt="Alt&Act - L'insertion professionnelle sans barrières"
+                className="h-16 w-auto"
+              />
             </div>
             <p className="text-blue-100 leading-relaxed mb-6">
               {footerData.description}
