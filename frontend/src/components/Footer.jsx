@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapPin, Mail, Phone, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { footerData, contactData } from '../mock/altactData';
 
 const Footer = () => {
@@ -74,27 +75,27 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Legal Links */}
+      {/* Legal Links */}
           <div>
             <h3 className="text-lg font-bold mb-4">Informations légales</h3>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="#/mentions-legales"
+                <Link
+                  to="/mentions-legales"
                   className="text-blue-100 hover:text-white transition-colors duration-200 text-sm flex items-center gap-1 group"
                 >
                   Mentions légales
                   <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#/confidentialite"
+                <Link
+                  to="/confidentialite"
                   className="text-blue-100 hover:text-white transition-colors duration-200 text-sm flex items-center gap-1 group"
                 >
                   Politique de confidentialité (RGPD)
                   <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
