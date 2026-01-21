@@ -1,6 +1,6 @@
 import React from 'react';
-import { MapPin, Mail, Phone, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { MapPin, Mail, Phone, ExternalLink } from 'lucide-react';
 import { footerData, contactData } from '../mock/altactData';
 
 const Footer = () => {
@@ -75,7 +75,7 @@ const Footer = () => {
             </ul>
           </div>
 
-      {/* Legal Links */}
+          {/* Legal Links */}
           <div>
             <h3 className="text-lg font-bold mb-4">Informations légales</h3>
             <ul className="space-y-2">
@@ -93,44 +93,10 @@ const Footer = () => {
                   to="/confidentialite"
                   className="text-blue-100 hover:text-white transition-colors duration-200 text-sm flex items-center gap-1 group"
                 >
-                  Politique de confidentialité (RGPD)
+                  Politique de confidentialité
                   <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
-            </ul>
-          </div>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="#/mentions-legales"
-                  className="text-blue-100 hover:text-white transition-colors duration-200 text-sm flex items-center gap-1 group"
-                >
-                  Mentions légales
-                  <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#/confidentialite"
-                  className="text-blue-100 hover:text-white transition-colors duration-200 text-sm flex items-center gap-1 group"
-                >
-                  Politique de confidentialité
-                  <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </a>
-              </li>
-            </ul>
-          </div>
-              {footerData.legalLinks.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-blue-100 hover:text-white transition-colors duration-200 text-sm flex items-center gap-1 group"
-                  >
-                    {link.label}
-                    <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </a>
-                </li>
-              ))}
             </ul>
           </div>
         </div>
