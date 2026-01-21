@@ -92,6 +92,27 @@ const Footer = () => {
                   href="#/confidentialite"
                   className="text-blue-100 hover:text-white transition-colors duration-200 text-sm flex items-center gap-1 group"
                 >
+                  Politique de confidentialité (RGPD)
+                  <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
+              </li>
+            </ul>
+          </div>
+            <ul className="space-y-2">
+              <li>
+                <a
+                  href="#/mentions-legales"
+                  className="text-blue-100 hover:text-white transition-colors duration-200 text-sm flex items-center gap-1 group"
+                >
+                  Mentions légales
+                  <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#/confidentialite"
+                  className="text-blue-100 hover:text-white transition-colors duration-200 text-sm flex items-center gap-1 group"
+                >
                   Politique de confidentialité
                   <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
