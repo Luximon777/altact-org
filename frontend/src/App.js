@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import HeroSection from "./components/HeroSection";
 import MissionSection from "./components/MissionSection";
@@ -10,23 +11,37 @@ import ImpactSection from "./components/ImpactSection";
 import MembershipSection from "./components/MembershipSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
+import MentionsLegales from "./components/MentionsLegales";
+import PolitiqueConfidentialite from "./components/PolitiqueConfidentialite";
 import { Toaster } from "./components/ui/sonner";
+
+const HomePage = () => (
+  <>
+    <Navigation />
+    <HeroSection />
+    <MissionSection />
+    <ActionsSection />
+    <GovernanceSection />
+    <MethodologySection />
+    <ImpactSection />
+    <MembershipSection />
+    <ContactSection />
+    <Footer />
+  </>
+);
 
 function App() {
   return (
-    <div className="App">
-      <Navigation />
-      <HeroSection />
-      <MissionSection />
-      <ActionsSection />
-      <GovernanceSection />
-      <MethodologySection />
-      <ImpactSection />
-      <MembershipSection />
-      <ContactSection />
-      <Footer />
-      <Toaster />
-    </div>
+    <HashRouter>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/mentions-legales" element={<MentionsLegales />} />
+          <Route path="/confidentialite" element={<PolitiqueConfidentialite />} />
+        </Routes>
+        <Toaster />
+      </div>
+    </HashRouter>
   );
 }
 
