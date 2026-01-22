@@ -13,6 +13,7 @@ import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 import MentionsLegales from "./components/MentionsLegales";
 import PolitiqueConfidentialite from "./components/PolitiqueConfidentialite";
+import ProfilMethodologique from "./components/ProfilMethodologique";
 import { Toaster } from "./components/ui/sonner";
 
 const HomePage = () => (
@@ -37,6 +38,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/mentions-legales" element={<MentionsLegales />} />
+  <Route path="/profil-methodologique" element={<ProfilMethodologique />} />
           <Route path="/confidentialite" element={<PolitiqueConfidentialite />} />
         </Routes>
         <Toaster />
