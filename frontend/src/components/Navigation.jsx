@@ -15,6 +15,7 @@ const Navigation = () => {
   }, []);
 
   const navLinks = [
+    { label: 'Présentation', href: '#presentation' },
     { label: 'Mission', href: '#mission' },
     { label: 'Actions', href: '#actions' },
     { label: 'Gouvernance', href: '#gouvernance' },
@@ -48,7 +49,6 @@ const Navigation = () => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-36">
-            {/* Logo */}
             <a
               href="#top"
               onClick={(e) => scrollToSection(e, '#top')}
@@ -61,14 +61,13 @@ const Navigation = () => {
               />
             </a>
 
-            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={(e) => scrollToSection(e, link.href)}
-                  className="text-orange-600 hover:text-[#0b2a55] font-semibold text-base transition-colors duration-200 relative group"
+                  className="text-orange-600 hover:text-orange-700 font-semibold text-base transition-colors duration-200 relative group"
                 >
                   {link.label}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-600 group-hover:w-full transition-all duration-300"></span>
@@ -82,7 +81,6 @@ const Navigation = () => {
               </Button>
             </div>
 
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
@@ -98,7 +96,6 @@ const Navigation = () => {
         </div>
       </nav>
 
-      {/* Mobile Menu */}
       <div
         className={`fixed inset-0 bg-black/50 z-40 md:hidden transition-opacity duration-300 ${
           isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
@@ -117,7 +114,7 @@ const Navigation = () => {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
-                className="text-orange-600 hover:text-[#0b2a55] font-semibold text-base py-2 transition-colors duration-200"
+                className="text-orange-600 hover:text-orange-700 font-semibold text-base py-2 transition-colors duration-200"
               >
                 {link.label}
               </a>
@@ -136,3 +133,4 @@ const Navigation = () => {
 };
 
 export default Navigation;
+Ajout lien Présentation dans navigation
