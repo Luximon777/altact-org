@@ -137,30 +137,7 @@ const HeroSection = () => {
             
             return <StatCard key={index} />;
           })}
-          {heroData.stats.map((stat, index) => {
-            const Icon = icons[index];
-            return (
-              <div
-                key={index}
-                className="bg-white/10 backdrop-blur-md rounded-2xl p-6 transform hover:scale-105 transition-all duration-300 animate-fade-in-up"
-                style={{ animationDelay: `${0.4 + index * 0.1}s` }}
-              >
-                <div className="flex justify-center mb-3">
-                  <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
-                    <Icon className="w-6 h-6 text-white" />
-                  </div>
-                </div>
-                <div className="text-4xl font-bold text-white mb-2">
-                  {counters[index]}{stat.suffix}
-                </div>
-                <div className="text-blue-200 text-sm font-medium">
-                  {stat.label}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
+         
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
