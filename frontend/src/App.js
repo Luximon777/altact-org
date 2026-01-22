@@ -17,21 +17,23 @@ import PolitiqueConfidentialite from "./components/PolitiqueConfidentialite";
 import ProfilMethodologique from "./components/ProfilMethodologique";
 import { Toaster } from "./components/ui/sonner";
 
-const HomePage = () => (
-  <>
-    <Navigation />
-    <HeroSection />
-    <PresentationSection />
-    <MissionSection />
-    <ActionsSection />
-    <GovernanceSection />
-    <MethodologySection />
-    <ImpactSection />
-    <MembershipSection />
-    <ContactSection />
-    <Footer />
-  </>
-);
+const HomePage = () => {
+  return (
+    <React.Fragment>
+      <Navigation />
+      <HeroSection />
+      <PresentationSection />
+      <MissionSection />
+      <ActionsSection />
+      <GovernanceSection />
+      <MethodologySection />
+      <ImpactSection />
+      <MembershipSection />
+      <ContactSection />
+      <Footer />
+    </React.Fragment>
+  );
+};
 
 function App() {
   return (
@@ -50,4 +52,3 @@ function App() {
 }
 
 export default App;
-Ajout PresentationSection dans App
