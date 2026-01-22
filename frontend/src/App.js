@@ -17,37 +17,33 @@ import PolitiqueConfidentialite from "./components/PolitiqueConfidentialite";
 import ProfilMethodologique from "./components/ProfilMethodologique";
 import { Toaster } from "./components/ui/sonner";
 
-const HomePage = () => {
-  return (
-    <React.Fragment>
-      <Navigation />
-      <HeroSection />
-      <PresentationSection />
-      <MissionSection />
-      <ActionsSection />
-      <GovernanceSection />
-      <MethodologySection />
-      <ImpactSection />
-      <MembershipSection />
-      <ContactSection />
-      <Footer />
-    </React.Fragment>
+function HomePage() {
+  return React.createElement(React.Fragment, null,
+    React.createElement(Navigation, null),
+    React.createElement(HeroSection, null),
+    React.createElement(PresentationSection, null),
+    React.createElement(MissionSection, null),
+    React.createElement(ActionsSection, null),
+    React.createElement(GovernanceSection, null),
+    React.createElement(MethodologySection, null),
+    React.createElement(ImpactSection, null),
+    React.createElement(MembershipSection, null),
+    React.createElement(ContactSection, null),
+    React.createElement(Footer, null)
   );
-};
+}
 
 function App() {
-  return (
-    <HashRouter>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/mentions-legales" element={<MentionsLegales />} />
-          <Route path="/confidentialite" element={<PolitiqueConfidentialite />} />
-          <Route path="/profil-methodologique" element={<ProfilMethodologique />} />
-        </Routes>
-        <Toaster />
-      </div>
-    </HashRouter>
+  return React.createElement(HashRouter, null,
+    React.createElement("div", { className: "App" },
+      React.createElement(Routes, null,
+        React.createElement(Route, { path: "/", element: React.createElement(HomePage, null) }),
+        React.createElement(Route, { path: "/mentions-legales", element: React.createElement(MentionsLegales, null) }),
+        React.createElement(Route, { path: "/confidentialite", element: React.createElement(PolitiqueConfidentialite, null) }),
+        React.createElement(Route, { path: "/profil-methodologique", element: React.createElement(ProfilMethodologique, null) })
+      ),
+      React.createElement(Toaster, null)
+    )
   );
 }
 
