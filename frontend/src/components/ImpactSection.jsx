@@ -29,7 +29,6 @@ const ImpactSection = () => {
     <section id="impact" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-[#0b2a55] mb-4">
             Impact sociétal
@@ -39,7 +38,6 @@ const ImpactSection = () => {
           </p>
         </div>
 
-        {/* Section 1: L'association Alt&Act */}
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
           <div>
             <div className="flex items-center gap-3 mb-4">
@@ -57,22 +55,13 @@ const ImpactSection = () => {
             </p>
           </div>
           <div className="rounded-2xl overflow-hidden shadow-lg">
-            <img 
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" 
-              alt="Collaboration professionnelle" 
-              className="w-full h-80 object-cover"
-            />
+            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" alt="Collaboration professionnelle" className="w-full h-80 object-cover" />
           </div>
         </div>
 
-        {/* Section 2: Collaboration avec RE'ACTIF PRO */}
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
           <div className="order-2 md:order-1 rounded-2xl overflow-hidden shadow-lg">
-            <img 
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80" 
-              alt="Travail d'équipe" 
-              className="w-full h-80 object-cover"
-            />
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80" alt="Travail équipe" className="w-full h-80 object-cover" />
           </div>
           <div className="order-1 md:order-2">
             <div className="flex items-center gap-3 mb-4">
@@ -82,9 +71,7 @@ const ImpactSection = () => {
             <p className="text-gray-700 leading-relaxed mb-4">
               Dans le cadre de ses actions, l&#39;association Alt&amp;Act s&#39;appuie sur une collaboration étroite avec la société RE&#39;ACTIF PRO, qui développe des outils et des dispositifs innovants destinés à activer concrètement les parcours d&#39;insertion et de transition professionnelle.
             </p>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              Cette collaboration permet de combiner :
-            </p>
+            <p className="text-gray-700 leading-relaxed mb-4">Cette collaboration permet de combiner :</p>
             <ul className="space-y-2 mb-4">
               <li className="flex items-start gap-2">
                 <CheckCircle className="w-5 h-5 text-[#0b2a55] mt-0.5 flex-shrink-0" />
@@ -101,7 +88,6 @@ const ImpactSection = () => {
           </div>
         </div>
 
-        {/* Section 3: Des avancées au service des citoyens */}
         <Card className="mb-20 border-l-4 border-l-[#0b2a55] shadow-lg">
           <CardContent className="p-8">
             <div className="flex items-center gap-3 mb-6">
@@ -125,7 +111,6 @@ const ImpactSection = () => {
           </CardContent>
         </Card>
 
-        {/* Section 4: Une conduite éthique */}
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
           <div>
             <div className="flex items-center gap-3 mb-4">
@@ -148,19 +133,12 @@ const ImpactSection = () => {
             </p>
           </div>
           <div className="rounded-2xl overflow-hidden shadow-lg">
-            <img 
-              src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=600&q=80" 
-              alt="Accompagnement éthique" 
-              className="w-full h-80 object-cover"
-            />
+            <img src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=600&q=80" alt="Accompagnement éthique" className="w-full h-80 object-cover" />
           </div>
         </div>
 
-        {/* Section 5: Un impact mesurable et durable */}
         <div className="bg-[#0b2a55] rounded-2xl p-8 md:p-12 text-white">
-          <h3 className="text-2xl md:text-3xl font-bold mb-6 text-center">
-            Un impact mesurable et durable
-          </h3>
+          <h3 className="text-2xl md:text-3xl font-bold mb-6 text-center">Un impact mesurable et durable</h3>
           <p className="text-blue-100 leading-relaxed mb-6 text-center max-w-3xl mx-auto">
             À travers cette articulation entre engagement associatif et innovation opérationnelle, Alt&amp;Act contribue à :
           </p>
@@ -183,4 +161,3 @@ const ImpactSection = () => {
 };
 
 export default ImpactSection;
-Mise à jour section Impact avec contenu complet
