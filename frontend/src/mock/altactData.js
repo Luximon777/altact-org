@@ -5,7 +5,7 @@ export const heroData = {
   subtitle: "L'insertion professionnelle sans barrières",
   description: "Association humaniste œuvrant pour l'intégration professionnelle et sociale, le soutien aux transitions et la promotion de pratiques éthiques et inclusives.",
   stats: [
-    { label: "Personnes accompagnées", value: 250, suffix: "+" },
+  { label: "Personnes accompagnées", value: 2000, suffix: "+", linkTo: "/profil-methodologique" },
     { label: "Partenaires", value: 45, suffix: "+" },
     { label: "Projets innovants", value: 12, suffix: "" },
     { label: "Taux de réussite", value: 85, suffix: "%" }
