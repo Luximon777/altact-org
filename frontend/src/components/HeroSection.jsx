@@ -5,6 +5,7 @@ import { Button } from './ui/button';
 import { heroData } from '../mock/altactData';
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   const [counters, setCounters] = useState(heroData.stats.map(() => 0));
 
   useEffect(() => {
