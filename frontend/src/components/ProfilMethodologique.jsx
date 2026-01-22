@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { ArrowLeft, Users, Target, Lightbulb, BookOpen, Award, Building2, Briefcase, Brain, Heart } from 'lucide-react';
+import { ArrowLeft, Target, Award, Building2, Briefcase, Brain, Heart } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 
