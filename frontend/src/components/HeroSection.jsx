@@ -105,13 +105,12 @@ const HeroSection = () => {
 
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            {heroData.stats.map((stat, index) => {
+          {heroData.stats.map((stat, index) => {
             const Icon = icons[index];
             const isClickable = stat.linkTo;
             
             const StatCard = () => (
               <div
-                key={index}
                 onClick={() => isClickable && navigate(stat.linkTo)}
                 className={`bg-white/10 backdrop-blur-md rounded-2xl p-6 transform hover:scale-105 transition-all duration-300 animate-fade-in-up ${isClickable ? 'cursor-pointer hover:bg-white/20' : ''}`}
                 style={{ animationDelay: `${0.4 + index * 0.1}s` }}
@@ -137,7 +136,8 @@ const HeroSection = () => {
             
             return <StatCard key={index} />;
           })}
-         
+        </div>
+      </div>
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
