@@ -3,6 +3,7 @@ import "./App.css";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import HeroSection from "./components/HeroSection";
+import PresentationSection from "./components/PresentationSection";
 import MissionSection from "./components/MissionSection";
 import ActionsSection from "./components/ActionsSection";
 import GovernanceSection from "./components/GovernanceSection";
@@ -20,6 +21,7 @@ const HomePage = () => (
   <>
     <Navigation />
     <HeroSection />
+    <PresentationSection />
     <MissionSection />
     <ActionsSection />
     <GovernanceSection />
@@ -38,8 +40,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/mentions-legales" element={<MentionsLegales />} />
-  <Route path="/profil-methodologique" element={<ProfilMethodologique />} />
           <Route path="/confidentialite" element={<PolitiqueConfidentialite />} />
+          <Route path="/profil-methodologique" element={<ProfilMethodologique />} />
         </Routes>
         <Toaster />
       </div>
@@ -48,3 +50,4 @@ function App() {
 }
 
 export default App;
+Ajout PresentationSection dans App
