@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Users, Target, Sparkles, TrendingUp } from 'lucide-react';
 import { Button } from './ui/button';
 import { heroData } from '../mock/altactData';
