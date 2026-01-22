@@ -109,8 +109,9 @@ const HeroSection = () => {
             const Icon = icons[index];
             const isClickable = stat.linkTo;
             
-            const StatCard = () => (
+            return (
               <div
+                key={index}
                 onClick={() => isClickable && navigate(stat.linkTo)}
                 className={`bg-white/10 backdrop-blur-md rounded-2xl p-6 transform hover:scale-105 transition-all duration-300 animate-fade-in-up ${isClickable ? 'cursor-pointer hover:bg-white/20' : ''}`}
                 style={{ animationDelay: `${0.4 + index * 0.1}s` }}
@@ -133,8 +134,6 @@ const HeroSection = () => {
                 )}
               </div>
             );
-            
-            return <StatCard key={index} />;
           })}
         </div>
       </div>
