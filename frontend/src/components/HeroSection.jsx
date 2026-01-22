@@ -105,6 +105,38 @@ const HeroSection = () => {
 
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            {heroData.stats.map((stat, index) => {
+            const Icon = icons[index];
+            const isClickable = stat.linkTo;
+            
+            const StatCard = () => (
+              <div
+                key={index}
+                onClick={() => isClickable && navigate(stat.linkTo)}
+                className={`bg-white/10 backdrop-blur-md rounded-2xl p-6 transform hover:scale-105 transition-all duration-300 animate-fade-in-up ${isClickable ? 'cursor-pointer hover:bg-white/20' : ''}`}
+                style={{ animationDelay: `${0.4 + index * 0.1}s` }}
+              >
+                <div className="flex justify-center mb-3">
+                  <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
+                    <Icon className="w-6 h-6 text-white" />
+                  </div>
+                </div>
+                <div className="text-4xl font-bold text-white mb-2">
+                  {counters[index]}{stat.suffix}
+                </div>
+                <div className="text-blue-200 text-sm font-medium">
+                  {stat.label}
+                </div>
+                {isClickable && (
+                  <div className="mt-2 text-xs text-blue-100 opacity-75">
+                    Cliquez pour en savoir plus
+                  </div>
+                )}
+              </div>
+            );
+            
+            return <StatCard key={index} />;
+          })}
           {heroData.stats.map((stat, index) => {
             const Icon = icons[index];
             return (
