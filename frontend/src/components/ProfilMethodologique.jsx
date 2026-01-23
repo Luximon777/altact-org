@@ -16,7 +16,6 @@ function ProfilMethodologique() {
   };
 
   const expertises = [
-  const expertises = [
     "Insertion et transition professionnelle (tous publics)",
     "Accompagnement des parcours de reconversion",
     "Développement des compétences psychosociales (soft skills)",
@@ -59,7 +58,7 @@ function ProfilMethodologique() {
               <strong className="text-[#0b2a55]">Chitrasen Luximon</strong> accompagne depuis plus de 7 ans des publics variés dans leurs parcours d&apos;insertion, de reconversion et de sécurisation professionnelle.
             </p>
             <p className="text-gray-700 leading-relaxed text-lg mb-6">
-              Son approche se distingue par une <strong>priorité méthodologique donnée au travail sur l&apos;identité professionnelle</strong>, considérée comme le socle préalable à toute stratégie d&apos;employabilité durable, plutôt qu&apos;à la seule notion d&apos;image professionnelle.
+              Son approche se distingue par une <strong>priorité méthodologique donnée au travail sur l&apos;identité professionnelle</strong>, considérée comme le socle préalable à toute stratégie d&apos;employabilité durable.
             </p>
           </section>
 
@@ -96,11 +95,8 @@ function ProfilMethodologique() {
           <section>
             <div className="flex items-center gap-3 mb-6">
               <Brain className="w-8 h-8 text-[#0b2a55]" />
-              <h2 className="text-3xl font-bold text-gray-900">Approches et fondements méthodologiques</h2>
+              <h2 className="text-3xl font-bold text-gray-900">Approches méthodologiques</h2>
             </div>
-            <p className="text-gray-700 leading-relaxed text-lg mb-6">
-              Sa pratique s&apos;appuie sur une architecture méthodologique structurée, intégrant notamment :
-            </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
               {approches.map((item, index) => (
                 <Card key={index} className="border-l-4 border-l-[#0b2a55]">
@@ -111,27 +107,19 @@ function ProfilMethodologique() {
                 </Card>
               ))}
             </div>
-            <div className="p-6 bg-gradient-to-r from-[#0b2a55]/10 to-[#1a4280]/10 rounded-xl border-2 border-[#0b2a55]/20">
-              <p className="text-gray-700 leading-relaxed">
-                Ces approches sont mobilisées dans une <strong>logique humaniste, systémique et non normative</strong>, favorisant l&apos;autonomie, la responsabilité et l&apos;estime de soi comme leviers d&apos;action.
-              </p>
-            </div>
           </section>
 
           <section>
             <div className="flex items-center gap-3 mb-6">
               <Heart className="w-8 h-8 text-[#0b2a55]" />
-              <h2 className="text-3xl font-bold text-gray-900">Orientation méthodologique centrale</h2>
+              <h2 className="text-3xl font-bold text-gray-900">Orientation méthodologique</h2>
             </div>
             <div className="p-6 bg-gradient-to-r from-orange-50 to-yellow-50 border-l-4 border-orange-500 rounded-lg">
               <p className="text-gray-900 leading-relaxed text-lg font-semibold mb-4">
-                La priorité méthodologique est donnée au travail sur l&apos;identité professionnelle, et non sur la seule image professionnelle.
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                L&apos;image professionnelle relève de la perception externe et des codes attendus dans un contexte donné. Elle est variable et dépendante du regard d&apos;autrui.
+                La priorité est donnée au travail sur l&apos;identité professionnelle, et non sur la seule image professionnelle.
               </p>
               <p className="text-gray-700 leading-relaxed">
-                L&apos;identité professionnelle constitue en revanche un socle interne plus stable, structurant la capacité à se positionner, à agir et à évoluer durablement dans un environnement professionnel en mutation.
+                L&apos;identité professionnelle constitue un socle interne stable, structurant la capacité à se positionner et évoluer durablement.
               </p>
             </div>
           </section>
@@ -142,28 +130,11 @@ function ProfilMethodologique() {
               <h2 className="text-3xl font-bold text-gray-900">Déploiement au sein d&apos;Alt&amp;Act</h2>
             </div>
             <p className="text-gray-700 leading-relaxed text-lg mb-6">
-              Dans le cadre de l&apos;association Alt&amp;Act, cette méthodologie a été <strong>enrichie, formalisée et adaptée</strong> afin d&apos;être déployée collectivement dans les actions d&apos;accompagnement portées par l&apos;association.
+              Cette méthodologie a été enrichie et adaptée pour être déployée collectivement dans les actions d&apos;accompagnement de l&apos;association.
             </p>
-            <div className="space-y-4">
-              <p className="text-gray-900 font-semibold text-lg">Cette approche permet :</p>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-[#0b2a55] rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-gray-700">d&apos;accompagner des <strong>trajectoires professionnelles hétérogènes</strong></span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-[#0b2a55] rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-gray-700">de <strong>sécuriser les parcours</strong> dans un contexte de mutations économiques et sociales</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-[#0b2a55] rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-gray-700">de favoriser une <strong>insertion professionnelle durable</strong>, fondée sur une identité professionnelle consolidée</span>
-                </li>
-              </ul>
-            </div>
             <div className="mt-6 p-6 bg-blue-50 border-2 border-[#0b2a55]/30 rounded-xl">
               <p className="text-gray-700 leading-relaxed text-lg">
-                L&apos;action de l&apos;association Alt&amp;Act s&apos;inscrit dans une <strong className="text-[#0b2a55]">logique d&apos;intérêt général</strong>, visant à renforcer la capacité des personnes à contribuer pleinement à la société.
+                L&apos;action d&apos;Alt&amp;Act s&apos;inscrit dans une <strong className="text-[#0b2a55]">logique d&apos;intérêt général</strong>.
               </p>
             </div>
           </section>
