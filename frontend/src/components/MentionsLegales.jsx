@@ -1,15 +1,18 @@
 import React, { useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from './ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const MentionsLegales = () => {
+  const navigate = useNavigate();
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-    const handleBackHome = () => {
-    window.location.href = '/#/';
-  };;
+  const handleBackHome = () => {
+    navigate('/');
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
