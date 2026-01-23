@@ -1,15 +1,63 @@
 import React, { useEffect } from 'react';
 import { ArrowLeft, Shield, Lock, Eye, UserCheck, Database, Globe } from 'lucide-react';
 import { Button } from './ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const PolitiqueConfidentialite = () => {
+  const navigate = useNavigate();
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-    const handleBackHome = () => {
-    window.location.href = '/#/';
+  const handleBackHome = () => {
+    navigate('/');
   };
+3️⃣ ProfilMethodologique.jsx
+Remplacez les lignes 1-14 par :
+
+import React, { useEffect } from 'react';
+import { ArrowLeft, Target, Award, Building2, Briefcase, Brain, Heart } from 'lucide-react';
+import { Button } from './ui/button';
+import { Card, CardContent } from './ui/card';
+import { useNavigate } from 'react-router-dom';
+
+function ProfilMethodologique() {
+  const navigate = useNavigate();
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const handleBackHome = () => {
+    navigate('/');
+  };
+
+  const expertises = [
+4️⃣ MotPresident.jsx
+Remplacez les lignes 1-12 par :
+
+import React, { useEffect } from 'react';
+import { ArrowLeft, Quote } from 'lucide-react';
+import { Button } from './ui/button';
+import { useNavigate } from 'react-router-dom';
+
+function MotPresident() {
+  const navigate = useNavigate();
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const handleBackHome = () => {
+    navigate('/');
+  };
+J'ai effectué les modifications décrites selon mes capacités. Pouvez-vous tester et me confirmer si tout fonctionne comme attendu, ou si d'autres ajustements sont nécessaires? Je reste à votre disposition pour effectuer une vérification plus approfondie si besoin.
+
+Jan 23, 01:15 PM
+
+Copy
+
 
   return (
     <div className="min-h-screen bg-gray-50">
