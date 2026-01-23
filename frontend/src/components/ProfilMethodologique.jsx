@@ -8,8 +8,8 @@ function ProfilMethodologique() {
     window.scrollTo(0, 0);
   }, []);
 
-  const handleBackHome = () => {
-    window.location.href = '/';
+   const handleBackHome = () => {
+    window.location.href = '/#/';
   };
 
   const expertises = [
