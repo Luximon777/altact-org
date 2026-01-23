@@ -1,14 +1,17 @@
 import React, { useEffect } from 'react';
 import { ArrowLeft, Quote } from 'lucide-react';
 import { Button } from './ui/button';
+import { useNavigate } from 'react-router-dom';
 
 function MotPresident() {
+  const navigate = useNavigate();
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-   const handleBackHome = () => {
-    window.location.href = '/#/';
+  const handleBackHome = () => {
+    navigate('/');
   };
 
   return (
