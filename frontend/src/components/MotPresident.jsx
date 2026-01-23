@@ -38,38 +38,38 @@ function MotPresident() {
           <div className="p-8 md:p-12 space-y-6">
             
             <p className="text-gray-700 leading-relaxed text-lg">
-              <strong className="text-[#0b2a55]">ALT&amp;ACT</strong> est née d&apos;une conviction profonde : le développement économique et social ne peut être dissocié du développement humain. L&apos;insertion professionnelle ne se résume ni à un accès à l&apos;emploi ni à une logique d&apos;adaptation individuelle aux contraintes du marché. Elle constitue un processus de croissance, à la fois personnel et collectif, permettant à chaque individu de révéler et de mettre en œuvre son potentiel au service de la société.
+              <strong className="text-[#0b2a55]">ALT&amp;ACT</strong> est née d&apos;une conviction profonde : le développement économique et social ne peut être dissocié du développement humain. L&apos;insertion professionnelle constitue un processus de croissance permettant à chaque individu de révéler son potentiel au service de la société.
             </p>
 
             <p className="text-gray-700 leading-relaxed text-lg">
-              Chaque personne, quels que soient son parcours, son origine ou sa situation, est porteuse de capacités, de talents et de ressources souvent inexploités. Favoriser l&apos;insertion professionnelle, c&apos;est créer les conditions permettant à ces potentialités de s&apos;exprimer, dans le respect de la dignité humaine et dans une logique d&apos;équité. Il s&apos;agit à la fois d&apos;un droit fondamental et d&apos;une responsabilité partagée.
+              Chaque personne est porteuse de capacités, de talents et de ressources souvent inexploités. Favoriser l&apos;insertion professionnelle, c&apos;est créer les conditions permettant à ces potentialités de s&apos;exprimer, dans le respect de la dignité humaine.
             </p>
 
             <div className="p-6 bg-blue-50 border-l-4 border-[#0b2a55] rounded-r-lg my-8">
               <p className="text-gray-800 leading-relaxed text-lg italic">
-                ALT&amp;ACT s&apos;inscrit dans une vision du développement fondée sur la participation active des personnes concernées. Les parcours professionnels durables ne peuvent être construits sans l&apos;implication directe des individus et des collectifs dans la définition, la mise en œuvre et l&apos;évaluation des actions qui les concernent.
+                ALT&amp;ACT s&apos;inscrit dans une vision du développement fondée sur la participation active des personnes concernées.
               </p>
             </div>
 
             <p className="text-gray-700 leading-relaxed text-lg">
-              La coopération, la consultation et la coresponsabilité constituent ainsi des leviers essentiels de transformation sociale.
+              La coopération, la consultation et la coresponsabilité constituent des leviers essentiels de transformation sociale.
             </p>
 
             <p className="text-gray-700 leading-relaxed text-lg">
-              L&apos;association agit comme un cadre structurant, favorisant l&apos;émergence d&apos;initiatives locales, l&apos;autonomie des acteurs et la montée en capacité des personnes accompagnées. Elle veille à ce que l&apos;expertise extérieure, lorsqu&apos;elle est mobilisée, vienne renforcer les dynamiques locales sans s&apos;y substituer, dans une logique de complémentarité et de transmission.
+              L&apos;association agit comme un cadre structurant, favorisant l&apos;émergence d&apos;initiatives locales, l&apos;autonomie des acteurs et la montée en capacité des personnes accompagnées.
             </p>
 
             <p className="text-gray-700 leading-relaxed text-lg">
-              Nos actions accordent une attention particulière aux besoins essentiels qui conditionnent le plein épanouissement humain : la construction de l&apos;identité professionnelle, l&apos;accès à la formation, la capacité à se projeter, le bien-être au travail et la possibilité de contribuer utilement à la vie sociale et économique. Cette orientation traduit notre engagement en faveur d&apos;un développement plus juste, inclusif et durable.
+              Nos actions accordent une attention particulière aux besoins essentiels : la construction de l&apos;identité professionnelle, l&apos;accès à la formation, la capacité à se projeter, le bien-être au travail.
             </p>
 
             <p className="text-gray-700 leading-relaxed text-lg">
-              ALT&amp;ACT développe ses projets dans une perspective ouverte, en dialogue avec les acteurs institutionnels, associatifs et économiques, et en cohérence avec les grands enjeux contemporains du développement social, de la cohésion territoriale et de la coopération européenne. Les initiatives portées, notamment en lien avec des projets innovants comme <strong>RE&apos;ACTIF PRO</strong>, visent à articuler accompagnement humain, innovation responsable et impact sociétal mesurable.
+              ALT&amp;ACT développe ses projets en dialogue avec les acteurs institutionnels, associatifs et économiques, notamment via <strong>RE&apos;ACTIF PRO</strong>, visant à articuler accompagnement humain et innovation responsable.
             </p>
 
             <div className="p-6 bg-gradient-to-r from-[#0b2a55]/10 to-[#1a4280]/10 rounded-xl my-8">
               <p className="text-gray-800 leading-relaxed text-lg font-medium">
-                Je souhaite qu&apos;ALT&amp;ACT contribue, à son échelle, à faire émerger des pratiques d&apos;insertion professionnelle fondées sur la confiance dans le potentiel humain, la force du collectif et la recherche d&apos;un progrès partagé, au service de toutes et tous.
+                Je souhaite qu&apos;ALT&amp;ACT contribue à faire émerger des pratiques fondées sur la confiance dans le potentiel humain, la force du collectif et la recherche d&apos;un progrès partagé.
               </p>
             </div>
 
@@ -80,7 +80,7 @@ function MotPresident() {
                 </div>
                 <div>
                   <p className="text-xl font-bold text-[#0b2a55]">Chitrasen Luximon</p>
-                  <p className="text-gray-600">Président fondateur – ALT&amp;ACT</p>
+                  <p className="text-gray-600">Président fondateur - ALT&amp;ACT</p>
                 </div>
               </div>
             </div>
