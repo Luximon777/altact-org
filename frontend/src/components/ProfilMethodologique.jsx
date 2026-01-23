@@ -2,16 +2,20 @@ import React, { useEffect } from 'react';
 import { ArrowLeft, Target, Award, Building2, Briefcase, Brain, Heart } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
+import { useNavigate } from 'react-router-dom';
 
 function ProfilMethodologique() {
+  const navigate = useNavigate();
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-   const handleBackHome = () => {
-    window.location.href = '/#/';
+  const handleBackHome = () => {
+    navigate('/');
   };
 
+  const expertises = [
   const expertises = [
     "Insertion et transition professionnelle (tous publics)",
     "Accompagnement des parcours de reconversion",
