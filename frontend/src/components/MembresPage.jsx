@@ -1,6 +1,4 @@
-J'ai créé un fichier propre sans les caractères spéciaux problématiques. Voici le code complet et propre :
-Action: $ cat /app/MembresPage_CLEAN.jsx
-Observation: import React, { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   ArrowLeft,
