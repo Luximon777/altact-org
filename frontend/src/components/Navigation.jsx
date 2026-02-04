@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, FileText, Quote, Users } from 'lucide-react';
+import { Menu, X, ChevronDown, FileText, Quote, Users, UserCircle } from 'lucide-react';
 import { Button } from './ui/button';
 import { useNavigate } from 'react-router-dom';
 
@@ -45,6 +45,12 @@ function Navigation() {
     navigate('/mot-president');
   };
 
+  const goToMembres = (e) => {
+    e.preventDefault();
+    setIsMobileMenuOpen(false);
+    navigate('/membres');
+  };
+
   return (
     <React.Fragment>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-lg shadow-lg' : 'bg-transparent'}`}>
@@ -82,6 +88,15 @@ function Navigation() {
                         <div>
                           <p className="font-semibold">Le mot du Président</p>
                           <p className="text-xs text-gray-500">Vision et engagement</p>
+                        </div>
+                      </a>
+                      <a href="/membres" onClick={goToMembres} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-[#0b2a55]/10 hover:text-[#0b2a55] transition-all duration-200 group/item">
+                        <div className="w-10 h-10 rounded-lg bg-teal-100 flex items-center justify-center group-hover/item:bg-teal-500 transition-colors duration-200">
+                          <UserCircle className="w-5 h-5 text-teal-600 group-hover/item:text-white transition-colors duration-200" />
+                        </div>
+                        <div>
+                          <p className="font-semibold">Nos membres</p>
+                          <p className="text-xs text-gray-500">Gouvernance et équipe</p>
                         </div>
                       </a>
                     </div>
@@ -129,6 +144,10 @@ function Navigation() {
             <a href="/mot-president" onClick={goToMotPresident} className="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-[#0b2a55]/10 transition-colors">
               <Quote className="w-5 h-5 text-orange-600" />
               <span className="font-medium">Le mot du Président</span>
+            </a>
+            <a href="/membres" onClick={goToMembres} className="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-[#0b2a55]/10 transition-colors">
+              <UserCircle className="w-5 h-5 text-teal-600" />
+              <span className="font-medium">Nos membres</span>
             </a>
             <div className="border-t border-gray-100 my-3"></div>
             {navLinks.map((link) => (
