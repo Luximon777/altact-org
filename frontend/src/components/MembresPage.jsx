@@ -1,6 +1,5 @@
-Voici le code complet à copier-coller dans `MembresPage.jsx` :
-Action: $ cat /tmp/altact-org/altact-org-main/frontend/src/components/MembresPage.jsx
-Observation: import React, { useState } from "react";
+
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   ArrowLeft,
