@@ -17,6 +17,7 @@ import PolitiqueConfidentialite from "./components/PolitiqueConfidentialite";
 import ProfilMethodologique from "./components/ProfilMethodologique";
 import MotPresident from "./components/MotPresident";
 import MembresPage from "./components/MembresPage";
+import CharteEthique from "./components/CharteEthique";
 import { Toaster } from "./components/ui/sonner";
 
 function HomePage() {
@@ -48,6 +49,7 @@ function App() {
           <Route path="/profil-methodologique" element={<ProfilMethodologique />} />
           <Route path="/mot-president" element={<MotPresident />} />
           <Route path="/membres" element={<MembresPage />} />
+          <Route path="/charte-ethique" element={<CharteEthique />} />
         </Routes>
         <Toaster />
       </div>
