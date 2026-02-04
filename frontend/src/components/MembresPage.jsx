@@ -254,6 +254,247 @@ const MembreCard = ({ membre, color }) => {
   
   const colors = colorClasses[color] || colorClasses.teal;
   const initials = membre.nom.split(" ").map(n => n[0]).join("").slice(0, 2);
-  const isEnriched = membre.vision || membr
-... [stdout truncated]
-Exit code: 0
+  const isEnriched = membre.vision || membre.realisations || membre.signature;
+  
+  return (
+    <Card className={"bg-white border border-gray-200 shadow-md hover:shadow-lg transition-all " + (expanded ? "ring-2 ring-offset-2 ring-[#0b2a55] " : "") + (isEnriched ? "md:col-span-2 lg:col-span-3" : "")}>
+      <CardContent className="pt-6">
+        <div className="flex items-start gap-4">
+          <div className={"w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0 " + colors.bg}>
+            {membre.photo ? (
+              <img src={membre.photo} alt={membre.nom} className="w-full h-full rounded-full object-cover" />
+            ) : (
+              <span className={"text-xl font-bold " + colors.text}>{initials}</span>
+            )}
+          </div>
+          
+          <div className="flex-1 min-w-0">
+            <h4 className="font-semibold text-[#0b2a55] text-lg">{membre.nom}</h4>
+            <p className={"text-sm font-medium " + colors.text}>{membre.fonction}</p>
+            {membre.soustitre && (
+              <p className="text-xs text-gray-500 mt-1">{membre.soustitre}</p>
+            )}
+            <Badge variant="outline" className={"mt-2 text-xs " + colors.border + " " + colors.text}>
+              {membre.role}
+            </Badge>
+          </div>
+        </div>
+        
+        <div className="mt-4">
+          <button 
+            onClick={() => setExpanded(!expanded)}
+            className="flex items-center gap-1 text-sm text-gray-500 hover:text-[#0b2a55] transition-colors"
+          >
+            {expanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+            {expanded ? "Voir moins" : "Voir le profil complet"}
+          </button>
+          
+          {expanded && (
+            <div className="mt-6 space-y-6">
+              <div>
+                <h5 className="text-sm font-semibold text-[#0b2a55] mb-2 flex items-center gap-2">
+                  <Award className="w-4 h-4 text-amber-500" />
+                  Profil executif
+                </h5>
+                <p className="text-sm text-gray-600 leading-relaxed whitespace-pre-line">
+                  {membre.bio}
+                </p>
+              </div>
+
+              {membre.vision && (
+                <div>
+                  <h5 className="text-sm font-semibold text-[#0b2a55] mb-2 flex items-center gap-2">
+                    <Lightbulb className="w-4 h-4 text-amber-500" />
+                    Vision strategique
+                  </h5>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    {membre.vision}
+                  </p>
+                </div>
+              )}
+
+              {membre.realisations && (
+                <div>
+                  <h5 className="text-sm font-semibold text-[#0b2a55] mb-2 flex items-center gap-2">
+                    <Briefcase className="w-4 h-4 text-teal-500" />
+                    Trajectoire et realisations
+                  </h5>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    {membre.realisations}
+                  </p>
+                </div>
+              )}
+
+              {membre.signature && (
+                <div className="bg-gradient-to-r from-amber-50 to-teal-50 p-4 rounded-xl border-l-4 border-l-amber-500">
+                  <h5 className="text-sm font-semibold text-[#0b2a55] mb-2">Signature professionnelle</h5>
+                  <p className="text-sm text-gray-600 italic leading-relaxed">
+                    {membre.signature}
+                  </p>
+                </div>
+              )}
+              
+              <div>
+                <p className="text-xs text-gray-400 uppercase tracking-wider mb-2">
+                  {isEnriched ? "Domaines d'autorite" : "Domaines d'expertise"}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {membre.expertise.map((exp, idx) => (
+                    <Badge key={idx} variant="secondary" className={colors.bg + " " + colors.text + " text-xs"}>
+                      {exp}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+
+              {membre.formation && (
+                <div>
+                  <p className="text-xs text-gray-400 uppercase tracking-wider mb-2">Formation</p>
+                  <ul className="space-y-1">
+                    {membre.formation.map((f, idx) => (
+                      <li key={idx} className="text-sm text-gray-600 flex items-start gap-2">
+                        <GraduationCap className="w-4 h-4 text-purple-500 mt-0.5 flex-shrink-0" />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      </CardContent>
+    </Card>
+  );
+};
+
+function MembresPage() {
+  const navigate = useNavigate();
+  const [activeComite, setActiveComite] = useState("all");
+  
+  const filteredComites = activeComite === "all" 
+    ? COMITES 
+    : COMITES.filter(c => c.id === activeComite);
+  
+  const colorClasses = {
+    amber: { bg: "bg-amber-500", hover: "hover:bg-amber-600", light: "bg-amber-100", text: "text-amber-700" },
+    teal: { bg: "bg-teal-500", hover: "hover:bg-teal-600", light: "bg-teal-100", text: "text-teal-700" },
+    purple: { bg: "bg-purple-500", hover: "hover:bg-purple-600", light: "bg-purple-100", text: "text-purple-700" },
+    green: { bg: "bg-green-500", hover: "hover:bg-green-600", light: "bg-green-100", text: "text-green-700" }
+  };
+
+  return (
+    <div className="min-h-screen bg-gray-50" data-testid="membres-page">
+      <div className="bg-gradient-to-r from-[#0b2a55] to-[#1a4280] text-white py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <Button 
+            variant="ghost" 
+            onClick={() => navigate("/")} 
+            className="text-white hover:bg-white/20 mb-6"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" /> Retour a l'accueil
+          </Button>
+          
+          <Badge className="mb-4 bg-white/20 text-white border-white/30">Gouvernance ALT&ACT</Badge>
+          <h1 className="text-3xl md:text-5xl font-bold mb-4">
+            Nos Membres
+          </h1>
+          <p className="text-blue-100 text-lg max-w-2xl">
+            Decouvrez les femmes et les hommes qui portent la vision d'ALT&ACT et construisent 
+            ensemble un dispositif d'insertion professionnelle durable.
+          </p>
+        </div>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-4 py-12">
+        <div className="flex flex-wrap gap-3 mb-12 justify-center">
+          <Button
+            variant={activeComite === "all" ? "default" : "outline"}
+            onClick={() => setActiveComite("all")}
+            className={"rounded-full " + (activeComite === "all" ? "bg-[#0b2a55] hover:bg-[#1a4280]" : "")}
+          >
+            <Users className="w-4 h-4 mr-2" />
+            Tous les membres
+          </Button>
+          {COMITES.map((comite) => {
+            const Icon = comite.icon;
+            const colors = colorClasses[comite.color];
+            return (
+              <Button
+                key={comite.id}
+                variant={activeComite === comite.id ? "default" : "outline"}
+                onClick={() => setActiveComite(comite.id)}
+                className={"rounded-full " + (activeComite === comite.id ? colors.bg + " " + colors.hover : "")}
+              >
+                <Icon className="w-4 h-4 mr-2" />
+                {comite.nom}
+              </Button>
+            );
+          })}
+        </div>
+
+        <div className="space-y-16">
+          {filteredComites.map((comite) => {
+            const Icon = comite.icon;
+            const colors = colorClasses[comite.color];
+            
+            return (
+              <section key={comite.id}>
+                <div className="flex items-center gap-4 mb-8">
+                  <div className={"w-14 h-14 rounded-2xl flex items-center justify-center " + colors.light}>
+                    <Icon className={"w-7 h-7 " + colors.text} />
+                  </div>
+                  <div>
+                    <h2 className="text-2xl font-bold text-[#0b2a55]">
+                      {comite.nom}
+                    </h2>
+                    <p className="text-gray-500">{comite.description}</p>
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {comite.membres.map((membre, idx) => (
+                    <MembreCard key={idx} membre={membre} color={comite.color} />
+                  ))}
+                </div>
+              </section>
+            );
+          })}
+        </div>
+
+        <section className="mt-20 bg-gradient-to-r from-[#0b2a55]/5 to-orange-50 rounded-3xl p-8 md:p-12">
+          <div className="text-center mb-10">
+            <h3 className="text-2xl font-bold text-[#0b2a55] mb-2">
+              Une gouvernance au service de notre mission
+            </h3>
+            <p className="text-gray-500 max-w-2xl mx-auto">
+              Version institutionnelle - statuts, reglement interieur et communication alignes
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-4 gap-6">
+            {[
+              { icon: Heart, title: "Ethique", desc: "Respect et integrite au coeur de nos actions" },
+              { icon: Globe, title: "Inclusion", desc: "L'insertion sans barrieres pour tous" },
+              { icon: Lock, title: "Confiance", desc: "Protection des donnees et transparence" },
+              { icon: Award, title: "Excellence", desc: "Innovation responsable et qualite" }
+            ].map((value, idx) => {
+              const Icon = value.icon;
+              return (
+                <div key={idx} className="text-center">
+                  <div className="w-12 h-12 mx-auto rounded-full bg-white shadow-md flex items-center justify-center mb-3">
+                    <Icon className="w-6 h-6 text-[#0b2a55]" />
+                  </div>
+                  <h4 className="font-semibold text-[#0b2a55]">{value.title}</h4>
+                  <p className="text-sm text-gray-500">{value.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      </div>
+    </div>
+  );
+}
+
+export default MembresPage;
