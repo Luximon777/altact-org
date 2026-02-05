@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'; 
 import { ArrowLeft, Route, Heart, Users, Target, Handshake, Sparkles, Building, Shield, TrendingUp, UserCheck, MessageCircle, Leaf, Award, CheckCircle, Briefcase } from 'lucide-react';
 import { Button } from './ui/button';
 import { useNavigate } from 'react-router-dom';
