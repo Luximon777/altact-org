@@ -271,3 +271,4 @@ export const footerData = {
     { label: "Contact", href: "#contact" }
   ]
 };
+Expliquer
