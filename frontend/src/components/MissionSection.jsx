@@ -95,4 +95,3 @@ const Target = ({ className }) => (
 );
 
 export default MissionSection;
-Expliquer
