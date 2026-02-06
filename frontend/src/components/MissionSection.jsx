@@ -1,5 +1,3 @@
-Voici le code complet pour MissionSection.jsx :
-
 import React from 'react';
 import { Heart, Users, Globe, Compass } from 'lucide-react';
 import { missionData } from '../mock/altactData';
@@ -97,3 +95,4 @@ const Target = ({ className }) => (
 );
 
 export default MissionSection;
+Expliquer
