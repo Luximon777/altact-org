@@ -498,4 +498,3 @@ function MembresPage() {
 }
 
 export default MembresPage;
-Expliquer
