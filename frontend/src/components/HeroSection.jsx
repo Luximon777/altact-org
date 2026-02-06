@@ -70,10 +70,14 @@ const HeroSection = () => {
           <span className="text-white text-sm font-medium">Association d'intérêt général</span>
         </div>
 
-        {/* Title */}
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in-up">
-          {heroData.title}
-        </h1>
+        {/* Logo Image instead of Title */}
+        <div className="mb-6 animate-fade-in-up">
+          <img 
+            src="https://customer-assets.emergentagent.com/job_d4392e18-68a6-4d72-af1f-982787d9dcde/artifacts/2ly4eg7d_assetslogo-altact.png" 
+            alt="Alt&Act" 
+            className="h-24 md:h-32 lg:h-40 w-auto mx-auto"
+          />
+        </div>
         
         <p className="text-2xl md:text-3xl text-blue-100 mb-4 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
           {heroData.subtitle}
