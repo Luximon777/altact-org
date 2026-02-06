@@ -5,7 +5,7 @@ export const heroData = {
   subtitle: "L'insertion professionnelle sans barrières",
   description: "Association humaniste œuvrant pour l'intégration professionnelle et sociale, le soutien aux transitions et la promotion de pratiques éthiques et inclusives.",
   stats: [
-  { label: "Personnes accompagnées", value: 2000, suffix: "+", linkTo: "/profil-methodologique" },
+    { label: "Personnes accompagnées", value: 2000, suffix: "+", linkTo: "/profil-methodologique" },
     { label: "Partenaires", value: 45, suffix: "+" },
     { label: "Projets innovants", value: 12, suffix: "" },
     { label: "Taux de réussite", value: 85, suffix: "%" }
@@ -13,57 +13,60 @@ export const heroData = {
   backgroundImage: "https://images.unsplash.com/photo-1573164574572-cb89e39749b4"
 };
 
+// MISSION = POURQUOI nous existons (vision, valeurs, raison d'être)
 export const missionData = {
-  vision: "Une vision humaniste fondée sur la dignité intrinsèque de chaque personne, l'unité dans la diversité et la justice sociale.",
+  vision: "Nous croyons que chaque personne porte en elle une valeur unique et une capacité à contribuer à la société. Notre raison d'être est de révéler ce potentiel et de créer les conditions d'une insertion professionnelle durable et épanouissante.",
   pillars: [
     {
-      icon: "Lightbulb",
-      title: "Innovation Sociale",
-      description: "Développement de dispositifs favorisant l'estime de soi, l'autonomie et la capacité d'agir à travers l'innovation sociale, pédagogique et numérique."
+      icon: "Heart",
+      title: "Dignité humaine",
+      description: "Chaque personne mérite d'être reconnue pour sa valeur intrinsèque, au-delà de son statut professionnel ou de ses difficultés passées."
     },
     {
       icon: "Users",
-      title: "Accompagnement Pluridimensionnel",
-      description: "Soutien aux transitions professionnelles, reconversions et mobilités pour les personnes en situation de vulnérabilité ou d'exclusion."
+      title: "Inclusion universelle",
+      description: "L'accès à l'emploi et à l'épanouissement professionnel doit être un droit effectif pour tous, sans distinction ni discrimination."
     },
     {
       icon: "Globe",
-      title: "Impact Systémique",
-      description: "Contribution aux politiques publiques par l'expérimentation, l'évaluation et la production de données d'impact."
+      title: "Cohésion sociale",
+      description: "L'insertion professionnelle est un pilier de la stabilité sociale. Une société où chacun trouve sa place est une société plus forte et plus solidaire."
     }
   ],
+  conviction: "L'utilité sociale d'une personne ne se décrète pas — elle se révèle, se structure et se sécurise.",
   image: "https://images.unsplash.com/photo-1622675363311-3e1904dc1885"
 };
 
+// ACTIONS = CE QUE nous faisons concrètement (services, activités)
 export const actionsData = [
   {
-    title: "Insertion Professionnelle",
-    description: "Accompagnement personnalisé des personnes en situation de vulnérabilité vers l'emploi et l'autonomie professionnelle.",
+    title: "Accompagnement à l'insertion",
+    description: "Parcours personnalisés pour les demandeurs d'emploi : bilan de compétences, construction de projet professionnel, préparation aux entretiens et mise en relation avec les employeurs.",
     icon: "Briefcase"
   },
   {
-    title: "Transitions de Carrière",
-    description: "Soutien aux reconversions professionnelles, changements de carrière et mobilités dans un contexte de mutations économiques.",
+    title: "Sécurisation des transitions",
+    description: "Accompagnement des reconversions professionnelles, gestion des mobilités internes et externes, appui en cas d'inaptitude ou d'usure professionnelle.",
     icon: "TrendingUp"
   },
   {
-    title: "Innovation Pédagogique",
-    description: "Développement d'outils et de méthodes innovantes au service de l'employabilité et des droits sociaux.",
-    icon: "Sparkles"
+    title: "Conseil aux entreprises",
+    description: "Appui aux politiques RH inclusives, conseil en posture managériale, accompagnement RSE et renforcement de la marque employeur.",
+    icon: "Building"
   },
   {
-    title: "Pratiques Éthiques",
-    description: "Promotion de pratiques éthiques, responsables et inclusives au sein des organisations publiques et privées.",
-    icon: "Shield"
-  },
-  {
-    title: "Accompagnement Handicap",
-    description: "Support spécialisé pour les personnes en situation de handicap dans leur parcours professionnel.",
+    title: "Accompagnement handicap",
+    description: "Support spécialisé pour les personnes en situation de handicap : adaptation du poste, médiation avec l'employeur, suivi personnalisé.",
     icon: "Heart"
   },
   {
-    title: "Structures Coopératives",
-    description: "Accompagnement à la préfiguration et animation de structures coopératives d'intérêt collectif.",
+    title: "Ingénierie de formation",
+    description: "Conception et déploiement de parcours de formation adaptés aux besoins des territoires et des publics accompagnés.",
+    icon: "GraduationCap"
+  },
+  {
+    title: "Interface territoriale",
+    description: "Coordination entre entreprises, partenaires sociaux et acteurs publics de l'emploi pour fluidifier les parcours d'insertion.",
     icon: "Network"
   }
 ];
