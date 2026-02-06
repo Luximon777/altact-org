@@ -206,4 +206,3 @@ function Navigation() {
 }
 
 export default Navigation;
-Expliquer
