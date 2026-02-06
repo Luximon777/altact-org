@@ -69,7 +69,7 @@ function MotPresident() {
 
             <div className="p-6 bg-gradient-to-r from-[#0b2a55]/10 to-[#1a4280]/10 rounded-xl my-8">
               <p className="text-gray-800 leading-relaxed text-lg font-medium">
-                Je souhaite qu&apos;ALT&amp;ACT contribue à faire émerger des pratiques fondées sur la confiance dans le potentiel humain, la force du collectif et la recherche d&apos;un progrès partagé.
+                Je souhaite qu&apos;ALT&amp;ACT œuvre pour un changement de paradigme : passer d&apos;une logique de &quot;demandeurs d&apos;emploi&quot; à une reconnaissance pleine des personnes comme <strong>contributeurs à la société</strong>. Convaincue du potentiel de chacun, l&apos;association développe des pratiques qui mobilisent l&apos;intelligence collective au service d&apos;un progrès partagé.
               </p>
             </div>
 
