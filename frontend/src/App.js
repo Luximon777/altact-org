@@ -20,6 +20,7 @@ import MembresPage from "./components/MembresPage";
 import CharteEthique from "./components/CharteEthique";
 import ConseilsAccompagnement from "./components/ConseilsAccompagnement";
 import EspaceUbuntoo from "./components/EspaceUbuntoo";
+import VisionMethode from "./components/VisionMethode";
 import { Toaster } from "./components/ui/sonner";
 
 function HomePage() {
@@ -54,6 +55,7 @@ function App() {
           <Route path="/charte-ethique" element={<CharteEthique />} />
           <Route path="/conseils-accompagnement" element={<ConseilsAccompagnement />} />
           <Route path="/espace-ubuntoo" element={<EspaceUbuntoo />} />
+          <Route path="/vision-methode" element={<VisionMethode />} />
         </Routes>
         <Toaster />
       </div>
