@@ -93,7 +93,7 @@ function Navigation() {
                           <Quote className="w-5 h-5 text-orange-600 group-hover/item:text-white transition-colors duration-200" />
                         </div>
                         <div>
-                          <p className="font-semibold">Le mot du Président</p>
+                          <p className="font-semibold">Le mot du fondateur</p>
                           <p className="text-xs text-gray-500">Vision et engagement</p>
                         </div>
                       </a>
@@ -161,7 +161,7 @@ function Navigation() {
             </a>
             <a href="/mot-president" onClick={goToMotPresident} className="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-[#0b2a55]/10 transition-colors">
               <Quote className="w-5 h-5 text-orange-600" />
-              <span className="font-medium">Le mot du Président</span>
+              <span className="font-medium">Le mot du fondateur</span>
             </a>
             <a href="/membres" onClick={goToMembres} className="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-[#0b2a55]/10 transition-colors">
               <UserCircle className="w-5 h-5 text-teal-600" />
