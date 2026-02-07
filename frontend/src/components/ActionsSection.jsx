@@ -1,131 +1,131 @@
-"import React from 'react';
+import React from 'react';
 import { Users, ArrowRight, Compass, Heart, Building, Globe, Sparkles, X, Check } from 'lucide-react';
 import { Card } from './ui/card';
 
 const ActionsSection = () => {
   const actionsData = [
     {
-      public: \"Personnes en recherche d'emploi\",
-      title: \"Devenir auteur de sa trajectoire\",
-      before: \"Orienter et prescrire\",
-      after: \"Eveiller et reveler\",
-      description: \"Nous ne cherchons pas a inserer une personne dans un systeme. Nous l'accompagnons a decouvrir sa capacite unique de contribution et a devenir suffisamment solide pour prendre part au monde.\",
+      public: "Personnes en recherche d'emploi",
+      title: "Devenir auteur de sa trajectoire",
+      before: "Orienter et prescrire",
+      after: "Eveiller et reveler",
+      description: "Nous ne cherchons pas a inserer une personne dans un systeme. Nous l'accompagnons a decouvrir sa capacite unique de contribution et a devenir suffisamment solide pour prendre part au monde.",
       icon: Compass,
-      color: \"from-[#0b2a55] to-[#1a4280]\"
+      color: "from-[#0b2a55] to-[#1a4280]"
     },
     {
-      public: \"Personnes en transition\",
-      title: \"Traverser sans perdre sa direction\",
-      before: \"Securiser un parcours\",
-      after: \"Structurer la personne\",
-      description: \"Les transitions ne se traversent pas avec des outils, mais avec une solidite interieure. Nous developpons la maturite qui permet d'affronter l'incertitude avec autonomie et sens.\",
+      public: "Personnes en transition",
+      title: "Traverser sans perdre sa direction",
+      before: "Securiser un parcours",
+      after: "Structurer la personne",
+      description: "Les transitions ne se traversent pas avec des outils, mais avec une solidite interieure. Nous developpons la maturite qui permet d'affronter l'incertitude avec autonomie et sens.",
       icon: ArrowRight,
-      color: \"from-orange-500 to-amber-500\"
+      color: "from-orange-500 to-amber-500"
     },
     {
-      public: \"Personnes en situation de handicap\",
-      title: \"Talents a valoriser\",
-      before: \"Compenser des limites\",
-      after: \"Reveler des ressources\",
-      description: \"La ou d'autres voient des limites, nous reconnaissons des competences, des talents et des atouts a valoriser dans une dynamique de participation pleine et entiere.\",
+      public: "Personnes en situation de handicap",
+      title: "Talents a valoriser",
+      before: "Compenser des limites",
+      after: "Reveler des ressources",
+      description: "La ou d'autres voient des limites, nous reconnaissons des competences, des talents et des atouts a valoriser dans une dynamique de participation pleine et entiere.",
       icon: Heart,
-      color: \"from-rose-500 to-pink-500\"
+      color: "from-rose-500 to-pink-500"
     },
     {
-      public: \"Entreprises et Organisations\",
-      title: \"Espaces de contribution\",
-      before: \"Inclusion par obligation\",
-      after: \"Transformation par conviction\",
-      description: \"Nous accompagnons les organisations a devenir des lieux ou chacun peut apporter sa valeur unique - pas seulement des structures qui integrent, mais des espaces qui font grandir.\",
+      public: "Entreprises et Organisations",
+      title: "Espaces de contribution",
+      before: "Inclusion par obligation",
+      after: "Transformation par conviction",
+      description: "Nous accompagnons les organisations a devenir des lieux ou chacun peut apporter sa valeur unique - pas seulement des structures qui integrent, mais des espaces qui font grandir.",
       icon: Building,
-      color: \"from-teal-500 to-emerald-500\"
+      color: "from-teal-500 to-emerald-500"
     },
     {
-      public: \"Territoires et Partenaires\",
-      title: \"Architectes du developpement humain\",
-      before: \"Coordonner des dispositifs\",
-      after: \"Creer des ecosystemes de maturation\",
-      description: \"Nous batissons avec les acteurs locaux des espaces capables de redonner du sens, de soutenir la responsabilite et de former des adultes capables de contribuer.\",
+      public: "Territoires et Partenaires",
+      title: "Architectes du developpement humain",
+      before: "Coordonner des dispositifs",
+      after: "Creer des ecosystemes de maturation",
+      description: "Nous batissons avec les acteurs locaux des espaces capables de redonner du sens, de soutenir la responsabilite et de former des adultes capables de contribuer.",
       icon: Globe,
-      color: \"from-purple-500 to-violet-500\"
+      color: "from-purple-500 to-violet-500"
     }
   ];
 
   return (
-    <section id=\"actions\" className=\"py-24 bg-gradient-to-b from-gray-50 to-white\">
-      <div className=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\">
+    <section id="actions" className="py-24 bg-gradient-to-b from-gray-50 to-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className=\"text-center mb-16\">
-          <div className=\"inline-flex items-center gap-2 px-4 py-2 bg-orange-100 rounded-full mb-4\">
-            <Sparkles className=\"w-4 h-4 text-orange-600\" />
-            <span className=\"text-orange-600 text-sm font-semibold\">NOS ENGAGEMENTS</span>
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 rounded-full mb-4">
+            <Sparkles className="w-4 h-4 text-orange-600" />
+            <span className="text-orange-600 text-sm font-semibold">NOS ENGAGEMENTS</span>
           </div>
-          <h2 className=\"text-4xl md:text-5xl font-bold text-gray-900 mb-6\">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Un changement de paradigme
           </h2>
-          <p className=\"text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed\">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Nous ne cherchons pas a inserer des personnes dans un systeme existant - nous les accompagnons a devenir suffisamment solides pour y contribuer et, parfois, pour le transformer.
           </p>
         </div>
 
         {/* Paradigm shift banner */}
-        <div className=\"mb-16 p-6 md:p-8 bg-gradient-to-r from-[#0b2a55] to-[#1a4280] rounded-2xl text-white text-center\">
-          <p className=\"text-lg md:text-xl font-medium mb-4\">
+        <div className="mb-16 p-6 md:p-8 bg-gradient-to-r from-[#0b2a55] to-[#1a4280] rounded-2xl text-white text-center">
+          <p className="text-lg md:text-xl font-medium mb-4">
             De l'insertion a la contribution
           </p>
-          <div className=\"flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8\">
-            <div className=\"flex items-center gap-2 text-blue-200\">
-              <X className=\"w-5 h-5 text-red-400\" />
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
+            <div className="flex items-center gap-2 text-blue-200">
+              <X className="w-5 h-5 text-red-400" />
               <span>Former - Adapter - Placer</span>
             </div>
-            <ArrowRight className=\"w-6 h-6 text-orange-400 hidden md:block\" />
-            <div className=\"flex items-center gap-2 text-white font-semibold\">
-              <Check className=\"w-5 h-5 text-green-400\" />
+            <ArrowRight className="w-6 h-6 text-orange-400 hidden md:block" />
+            <div className="flex items-center gap-2 text-white font-semibold">
+              <Check className="w-5 h-5 text-green-400" />
               <span>Eveiller - Structurer - Contribuer</span>
             </div>
           </div>
         </div>
 
         {/* Actions Grid */}
-        <div className=\"grid md:grid-cols-2 lg:grid-cols-3 gap-8\">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {actionsData.map((action, index) => {
             const Icon = action.icon;
             return (
               <Card
                 key={index}
-                className=\"group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2\"
+                className="group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
               >
                 {/* Gradient header */}
                 <div className={`bg-gradient-to-r ${action.color} p-5`}>
-                  <div className=\"flex items-center gap-3\">
-                    <div className=\"w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center\">
-                      <Icon className=\"w-6 h-6 text-white\" />
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                      <Icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <p className=\"text-white/80 text-sm font-medium\">{action.public}</p>
+                      <p className="text-white/80 text-sm font-medium">{action.public}</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className=\"p-6\">
-                  <h3 className=\"text-xl font-bold text-gray-900 mb-4\">
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">
                     {action.title}
                   </h3>
 
                   {/* Paradigm shift contrast */}
-                  <div className=\"mb-4 p-4 bg-gray-50 rounded-xl space-y-2\">
-                    <div className=\"flex items-start gap-2\">
-                      <X className=\"w-4 h-4 text-red-400 flex-shrink-0 mt-0.5\" />
-                      <span className=\"text-gray-500 text-sm line-through\">{action.before}</span>
+                  <div className="mb-4 p-4 bg-gray-50 rounded-xl space-y-2">
+                    <div className="flex items-start gap-2">
+                      <X className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-500 text-sm line-through">{action.before}</span>
                     </div>
-                    <div className=\"flex items-start gap-2\">
-                      <Check className=\"w-4 h-4 text-green-500 flex-shrink-0 mt-0.5\" />
-                      <span className=\"text-gray-800 text-sm font-semibold\">{action.after}</span>
+                    <div className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-800 text-sm font-semibold">{action.after}</span>
                     </div>
                   </div>
 
-                  <p className=\"text-gray-600 leading-relaxed text-sm\">
+                  <p className="text-gray-600 leading-relaxed text-sm">
                     {action.description}
                   </p>
                 </div>
@@ -135,45 +135,45 @@ const ActionsSection = () => {
         </div>
 
         {/* Bottom quote */}
-        <div className=\"mt-16 text-center\">
-          <div className=\"inline-block p-8 bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl border border-orange-100 max-w-3xl\">
-            <p className=\"text-xl text-gray-800 italic leading-relaxed mb-4\">
-              \"Accompagner ne consiste pas a integrer une personne dans un systeme, mais a l'aider a devenir suffisamment structuree pour contribuer a transformer ce systeme.\"
+        <div className="mt-16 text-center">
+          <div className="inline-block p-8 bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl border border-orange-100 max-w-3xl">
+            <p className="text-xl text-gray-800 italic leading-relaxed mb-4">
+              "Accompagner ne consiste pas a integrer une personne dans un systeme, mais a l'aider a devenir suffisamment structuree pour contribuer a transformer ce systeme."
             </p>
-            <p className=\"text-orange-600 font-semibold\">- Notre conviction</p>
+            <p className="text-orange-600 font-semibold">- Notre conviction</p>
           </div>
         </div>
 
         {/* CTA sections */}
-        <div className=\"mt-16 grid md:grid-cols-2 gap-8\">
+        <div className="mt-16 grid md:grid-cols-2 gap-8">
           {/* Lien vers Conseils et Accompagnement */}
-          <div className=\"p-8 bg-gradient-to-r from-[#0b2a55]/5 to-orange-50 rounded-2xl border border-orange-100\">
-            <h3 className=\"text-2xl font-bold text-gray-900 mb-2\">
+          <div className="p-8 bg-gradient-to-r from-[#0b2a55]/5 to-orange-50 rounded-2xl border border-orange-100">
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">
               Vous etes une entreprise ?
             </h3>
-            <p className=\"text-gray-600 mb-6\">
+            <p className="text-gray-600 mb-6">
               Decouvrez comment transformer votre organisation en espace de contribution
             </p>
             <a 
-              href=\"#/conseils-accompagnement\" 
-              className=\"inline-flex items-center gap-2 px-6 py-3 bg-orange-500 text-white rounded-lg font-semibold hover:bg-orange-600 transition-colors duration-200\"
+              href="#/conseils-accompagnement" 
+              className="inline-flex items-center gap-2 px-6 py-3 bg-orange-500 text-white rounded-lg font-semibold hover:bg-orange-600 transition-colors duration-200"
             >
               En savoir plus
-              <ArrowRight className=\"w-4 h-4\" />
+              <ArrowRight className="w-4 h-4" />
             </a>
           </div>
 
           {/* Contact CTA */}
-          <div className=\"p-8 bg-gradient-to-r from-[#0b2a55]/5 to-[#1a4280]/5 rounded-2xl border border-[#0b2a55]/10\">
-            <h3 className=\"text-2xl font-bold text-gray-900 mb-2\">
+          <div className="p-8 bg-gradient-to-r from-[#0b2a55]/5 to-[#1a4280]/5 rounded-2xl border border-[#0b2a55]/10">
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">
               Besoin d'accompagnement ?
             </h3>
-            <p className=\"text-gray-600 mb-6\">
+            <p className="text-gray-600 mb-6">
               Echangeons sur votre parcours et vos aspirations
             </p>
-            <button className=\"inline-flex items-center gap-2 px-6 py-3 bg-[#0b2a55] text-white rounded-lg font-semibold hover:bg-[#1a4280] transition-colors duration-200\">
+            <button className="inline-flex items-center gap-2 px-6 py-3 bg-[#0b2a55] text-white rounded-lg font-semibold hover:bg-[#1a4280] transition-colors duration-200">
               Prendre rendez-vous
-              <ArrowRight className=\"w-4 h-4\" />
+              <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         </div>
@@ -183,4 +183,3 @@ const ActionsSection = () => {
 };
 
 export default ActionsSection;
-"
