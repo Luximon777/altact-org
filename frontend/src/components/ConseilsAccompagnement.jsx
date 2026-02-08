@@ -1,4 +1,4 @@
-Je vous donne les deux fichiers complets à copier :
+import React, { useEffect } from 'react';
 
 ---
 
