@@ -1,5 +1,5 @@
 
-1|import React, { useEffect } from 'react';
+import React, { useEffect } from 'react';
 2|import { ArrowLeft, User, Shield, Heart, Compass, Scale, Brain, Phone, FileText, CheckCircle, Sparkles, MessageCircle, ArrowRight } from 'lucide-react';
 3|import { Button } from './ui/button';
 4|import { useNavigate } from 'react-router-dom';
