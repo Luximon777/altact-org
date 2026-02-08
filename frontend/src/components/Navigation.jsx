@@ -67,9 +67,9 @@ function Navigation() {
     <React.Fragment>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-lg shadow-lg' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-36">
+          <div className="flex items-center justify-between h-20">
             <a href="#top" onClick={(e) => scrollToSection(e, '#top')} className="flex items-center group">
-              <img src="https://customer-assets.emergentagent.com/job_institut-fusion/artifacts/n4nzcgj5_LOGOS%202.png" alt="Alt and Act" className="h-32 w-auto transform group-hover:scale-105 transition-transform duration-200" />
+              <span className="text-2xl font-bold text-[#0b2a55]">ALT&ACT</span>
             </a>
 
             <div className="hidden md:flex items-center space-x-8">
@@ -150,8 +150,8 @@ function Navigation() {
               
               {/* Espace Employeurs */}
               <a 
-                href="/espace-employeurs" 
-                onClick={(e) => { e.preventDefault(); navigate('/espace-employeurs'); }}
+                href="/conseils-accompagnement" 
+                onClick={(e) => { e.preventDefault(); navigate('/conseils-accompagnement'); }}
                 className="flex items-center gap-2 bg-teal-600 text-white px-4 py-2.5 rounded-full font-semibold text-sm transition-all duration-200 hover:bg-teal-700 hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 <Building className="w-4 h-4" />
@@ -177,7 +177,7 @@ function Navigation() {
       </nav>
 
       <div className={`fixed inset-0 bg-black/50 z-40 md:hidden transition-opacity duration-300 ${isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsMobileMenuOpen(false)}>
-        <div className={`fixed top-36 right-0 bottom-0 w-72 bg-white shadow-2xl transform transition-transform duration-300 overflow-y-auto ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`} onClick={(e) => e.stopPropagation()}>
+        <div className={`fixed top-20 right-0 bottom-0 w-72 bg-white shadow-2xl transform transition-transform duration-300 overflow-y-auto ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`} onClick={(e) => e.stopPropagation()}>
           <div className="flex flex-col p-6 space-y-2">
             {/* Section Présentation - Mobile */}
             <p className="text-xs text-gray-400 uppercase tracking-wider mb-2">Présentation</p>
@@ -225,8 +225,8 @@ function Navigation() {
             
             {/* Espace Employeurs - Mobile */}
             <a 
-              href="/espace-employeurs" 
-              onClick={(e) => { e.preventDefault(); setIsMobileMenuOpen(false); navigate('/espace-employeurs'); }}
+              href="/conseils-accompagnement" 
+              onClick={(e) => { e.preventDefault(); setIsMobileMenuOpen(false); navigate('/conseils-accompagnement'); }}
               className="flex items-center justify-center gap-2 bg-teal-600 text-white py-3 px-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors"
             >
               <Building className="w-5 h-5" />
@@ -243,10 +243,3 @@ function Navigation() {
               Espace Personnel
             </a>
           </div>
-        </div>
-      </div>
-    </React.Fragment>
-  );
-}
-
-export default Navigation;
