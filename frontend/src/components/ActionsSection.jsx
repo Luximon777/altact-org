@@ -1,4 +1,3 @@
-═══════════════════════════════════════
 
 import React from 'react';
 import { Users, ArrowRight, Compass, Heart, Building, Globe, Sparkles, X, Check } from 'lucide-react';
