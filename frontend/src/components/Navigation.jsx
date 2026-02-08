@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, FileText, Quote, Users, UserCircle, Heart } from 'lucide-react';
+import { Menu, X, ChevronDown, FileText, Quote, Users, UserCircle, Heart, Building, User } from 'lucide-react';
 import { Button } from './ui/button';
 import { useNavigate } from 'react-router-dom';
 
@@ -147,6 +147,26 @@ function Navigation() {
               <Button onClick={(e) => scrollToSection(e, '#contact')} className="bg-[#0b2a55] hover:bg-[#1a4280] text-white transition-all duration-200 transform hover:scale-105 font-semibold">
                 Contact
               </Button>
+              
+              {/* Espace Employeurs */}
+              <a 
+                href="/espace-employeurs" 
+                onClick={(e) => { e.preventDefault(); navigate('/espace-employeurs'); }}
+                className="flex items-center gap-2 bg-teal-600 text-white px-4 py-2.5 rounded-full font-semibold text-sm transition-all duration-200 hover:bg-teal-700 hover:scale-105 shadow-lg hover:shadow-xl"
+              >
+                <Building className="w-4 h-4" />
+                Espace Employeurs
+              </a>
+              
+              {/* Espace Personnel */}
+              <a 
+                href="/espace-personnel" 
+                onClick={(e) => { e.preventDefault(); navigate('/espace-personnel'); }}
+                className="flex items-center gap-2 bg-orange-500 text-white px-4 py-2.5 rounded-full font-semibold text-sm transition-all duration-200 hover:bg-orange-600 hover:scale-105 shadow-lg hover:shadow-xl"
+              >
+                <User className="w-4 h-4" />
+                Espace Personnel
+              </a>
             </div>
 
             <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200" aria-label="Toggle menu">
@@ -202,6 +222,26 @@ function Navigation() {
                 Contact
               </Button>
             </div>
+            
+            {/* Espace Employeurs - Mobile */}
+            <a 
+              href="/espace-employeurs" 
+              onClick={(e) => { e.preventDefault(); setIsMobileMenuOpen(false); navigate('/espace-employeurs'); }}
+              className="flex items-center justify-center gap-2 bg-teal-600 text-white py-3 px-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors"
+            >
+              <Building className="w-5 h-5" />
+              Espace Employeurs
+            </a>
+            
+            {/* Espace Personnel - Mobile */}
+            <a 
+              href="/espace-personnel" 
+              onClick={(e) => { e.preventDefault(); setIsMobileMenuOpen(false); navigate('/espace-personnel'); }}
+              className="flex items-center justify-center gap-2 bg-orange-500 text-white py-3 px-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors"
+            >
+              <User className="w-5 h-5" />
+              Espace Personnel
+            </a>
           </div>
         </div>
       </div>
