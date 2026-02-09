@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, FileText, Quote, Users, UserCircle, Heart, Building, User, Shield } from 'lucide-react';
+import { Menu, X, ChevronDown, FileText, Quote, Users, UserCircle, Heart, Building, User, Shield, Scale } from 'lucide-react';
 import { Button } from './ui/button';
 import { useNavigate } from 'react-router-dom';
 
@@ -38,6 +38,7 @@ function Navigation() {
   const goToMotPresident = (e) => { e.preventDefault(); setIsMobileMenuOpen(false); navigate('/mot-president'); };
   const goToMembres = (e) => { e.preventDefault(); setIsMobileMenuOpen(false); navigate('/membres'); };
   const goToCharteEthique = (e) => { e.preventDefault(); setIsMobileMenuOpen(false); navigate('/charte-ethique'); };
+  const goToGouvernanceConsultative = (e) => { e.preventDefault(); setIsMobileMenuOpen(false); navigate('/gouvernance-consultative'); };
 
   return (
     <React.Fragment>
@@ -48,6 +49,7 @@ function Navigation() {
               <span className="text-2xl font-bold text-[#0b2a55]">ALT&ACT</span>
             </a>
             <div className="hidden md:flex items-center space-x-6">
+              {/* Dropdown Présentation */}
               <div className="relative group">
                 <a href="#presentation" onClick={(e) => scrollToSection(e, '#presentation')} className="text-orange-600 hover:text-orange-700 font-semibold text-base transition-colors duration-200 flex items-center gap-1 py-4">
                   Présentation
@@ -77,16 +79,40 @@ function Navigation() {
                         </div>
                         <div><p className="font-semibold">Nos membres</p><p className="text-xs text-gray-500">Équipe et structure</p></div>
                       </a>
-                      <a href="/charte-ethique" onClick={goToCharteEthique} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-[#0b2a55]/10 hover:text-[#0b2a55] transition-all duration-200 group/item">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Dropdown Charte éthique */}
+              <div className="relative group">
+                <a href="/charte-ethique" onClick={goToCharteEthique} className="text-orange-600 hover:text-orange-700 font-semibold text-base transition-colors duration-200 flex items-center gap-1 py-4">
+                  Charte éthique
+                  <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
+                </a>
+                <div className="absolute top-full left-1/2 -translate-x-1/2 w-72 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
+                  <div className="bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden">
+                    <div className="bg-gradient-to-r from-rose-500 to-orange-500 px-4 py-3">
+                      <p className="text-white text-sm font-medium">Nos engagements</p>
+                    </div>
+                    <div className="p-2">
+                      <a href="/charte-ethique" onClick={goToCharteEthique} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-rose-50 hover:text-rose-600 transition-all duration-200 group/item">
                         <div className="w-10 h-10 rounded-lg bg-rose-100 flex items-center justify-center group-hover/item:bg-rose-500 transition-colors duration-200">
                           <Heart className="w-5 h-5 text-rose-600 group-hover/item:text-white transition-colors duration-200" />
                         </div>
-                        <div><p className="font-semibold">Charte éthique et gouvernance</p><p className="text-xs text-gray-500">Nos engagements</p></div>
+                        <div><p className="font-semibold">Charte éthique</p><p className="text-xs text-gray-500">10 principes fondateurs</p></div>
+                      </a>
+                      <a href="/gouvernance-consultative" onClick={goToGouvernanceConsultative} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-rose-50 hover:text-rose-600 transition-all duration-200 group/item">
+                        <div className="w-10 h-10 rounded-lg bg-indigo-100 flex items-center justify-center group-hover/item:bg-indigo-500 transition-colors duration-200">
+                          <Users className="w-5 h-5 text-indigo-600 group-hover/item:text-white transition-colors duration-200" />
+                        </div>
+                        <div><p className="font-semibold">Gouvernance consultative</p><p className="text-xs text-gray-500">Notre mode de décision</p></div>
                       </a>
                     </div>
                   </div>
                 </div>
               </div>
+
               {navLinks.map((link) => (
                 <a key={link.href} href={link.href} onClick={(e) => scrollToSection(e, link.href)} className="text-orange-600 hover:text-orange-700 font-semibold text-base transition-colors duration-200 relative group">
                   {link.label}
@@ -131,9 +157,14 @@ function Navigation() {
               <UserCircle className="w-5 h-5 text-teal-600" />
               <span className="font-medium">Nos membres</span>
             </a>
-            <a href="/charte-ethique" onClick={goToCharteEthique} className="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-[#0b2a55]/10 transition-colors">
+            <p className="text-xs text-gray-400 uppercase tracking-wider mt-4 mb-2">Charte éthique</p>
+            <a href="/charte-ethique" onClick={goToCharteEthique} className="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-rose-50 transition-colors">
               <Heart className="w-5 h-5 text-rose-600" />
-              <span className="font-medium">Charte éthique et gouvernance</span>
+              <span className="font-medium">Charte éthique</span>
+            </a>
+            <a href="/gouvernance-consultative" onClick={goToGouvernanceConsultative} className="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-rose-50 transition-colors">
+              <Users className="w-5 h-5 text-indigo-600" />
+              <span className="font-medium">Gouvernance consultative</span>
             </a>
             <div className="border-t border-gray-100 my-3"></div>
             {navLinks.map((link) => (
