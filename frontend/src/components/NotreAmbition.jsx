@@ -209,13 +209,8 @@ const NotreAmbition = () => {
               </div>
               <div className="text-center pt-8">
                 <div className="inline-flex flex-col sm:flex-row gap-4">
-                  <Button onClick={() => navigate('/notre-action')} className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg rounded-full">
-                    Decouvrir notre action
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </Button>
-                  <Button onClick={() => navigate('/notre-mission')} variant="outline" className="border-[#0b2a55] text-[#0b2a55] hover:bg-[#0b2a55] hover:text-white px-8 py-6 text-lg rounded-full">
-                    Revenir a notre mission
-                  </Button>
+                  <Button onClick={() => navigate('/notre-action')} className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg rounded-full">Decouvrir notre action<ArrowRight className="w-5 h-5 ml-2" /></Button>
+                  <Button onClick={() => navigate('/notre-mission')} variant="outline" className="border-[#0b2a55] text-[#0b2a55] hover:bg-[#0b2a55] hover:text-white px-8 py-6 text-lg rounded-full">Revenir a notre mission</Button>
                 </div>
               </div>
             </main>
