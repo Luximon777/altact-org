@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Eye, Globe, Heart, Users, ArrowRight, Sparkles, Scale, Leaf, Building, HandHeart, ChevronRight, Star } from 'lucide-react';
+import { Globe, Heart, Users, ArrowRight, Sparkles, Scale, Leaf, Building, HandHeart, ChevronRight, Star } from 'lucide-react';
 import { Button } from './ui/button';
 import { useNavigate } from 'react-router-dom';
 import Navigation from './Navigation';
@@ -28,6 +28,7 @@ const NotreAmbition = () => {
     }
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const handleScroll = () => {
       const sections = memoItems.map(item => document.getElementById(item.id));
@@ -49,7 +50,6 @@ const NotreAmbition = () => {
     <div className="min-h-screen bg-gray-50" data-testid="notre-ambition-page">
       <Navigation />
       
-      {/* Hero Section */}
       <section className="relative pt-32 pb-20 bg-gradient-to-br from-blue-900 via-blue-800 to-[#0b2a55] overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400 rounded-full blur-3xl"></div>
@@ -72,16 +72,13 @@ const NotreAmbition = () => {
         </div>
       </section>
 
-      {/* Main Content with Memo Sidebar */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-8">
             
-            {/* Sidebar Mémo - à gauche */}
             <aside className="hidden lg:block lg:w-80 flex-shrink-0">
               <div className="sticky top-24">
                 <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-                  {/* Header du mémo */}
                   <div className="bg-gradient-to-r from-blue-600 to-teal-600 px-5 py-4">
                     <h3 className="text-white font-bold text-lg flex items-center gap-2">
                       <Star className="w-5 h-5" />
@@ -90,7 +87,6 @@ const NotreAmbition = () => {
                     <p className="text-blue-100 text-sm mt-1">Les points clés de notre ambition</p>
                   </div>
                   
-                  {/* Liste des sections */}
                   <div className="p-3">
                     {memoItems.map((item) => {
                       const Icon = item.icon;
@@ -128,7 +124,6 @@ const NotreAmbition = () => {
                     })}
                   </div>
 
-                  {/* Citation */}
                   <div className="px-5 pb-5">
                     <div className="bg-gradient-to-br from-blue-50 to-teal-50 rounded-xl p-4 border border-blue-100">
                       <p className="text-sm text-gray-700 italic leading-relaxed">
@@ -141,23 +136,20 @@ const NotreAmbition = () => {
               </div>
             </aside>
 
-            {/* Main Content */}
             <main className="flex-1 min-w-0 space-y-12">
           
-              {/* Vision principale */}
               <div id="ambition" className="bg-gradient-to-r from-blue-50 to-teal-50 rounded-3xl p-8 md:p-12 border-l-4 border-blue-500">
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
                   Notre ambition
                 </h2>
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  Nous œuvrons à l'émergence d'une société plus juste et durable, où le <strong className="text-blue-700">développement humain devient le fondement</strong> des dynamiques professionnelles et sociales.
+                  Nous oeuvrons à l'émergence d'une société plus juste et durable, où le <strong className="text-blue-700">développement humain devient le fondement</strong> des dynamiques professionnelles et sociales.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
                   Dans cette société, le travail dépasse la seule logique de production pour devenir un <strong className="text-blue-700">lieu de contribution, de dignité et de progrès partagé</strong>.
                 </p>
               </div>
 
-              {/* Le travail comme contribution */}
               <div id="travail">
                 <div className="text-center mb-10">
                   <h3 className="text-2xl font-bold text-gray-900">Le travail réinventé</h3>
@@ -195,7 +187,6 @@ const NotreAmbition = () => {
                 </div>
               </div>
 
-              {/* Organisations responsables */}
               <div id="organisations" className="grid md:grid-cols-2 gap-8 items-center">
                 <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 text-white">
                   <Building className="w-12 h-12 text-amber-400 mb-6" />
@@ -225,7 +216,6 @@ const NotreAmbition = () => {
                 </div>
               </div>
 
-              {/* Citation centrale */}
               <div id="citation" className="bg-gradient-to-r from-blue-600 to-teal-600 rounded-3xl p-8 md:p-12 text-center text-white">
                 <Sparkles className="w-12 h-12 mx-auto mb-6 text-amber-300" />
                 <blockquote className="text-xl md:text-2xl font-medium leading-relaxed mb-6">
@@ -236,7 +226,6 @@ const NotreAmbition = () => {
                 </p>
               </div>
 
-              {/* Une société où chacun trouve sa place */}
               <div id="inclusive">
                 <div className="text-center mb-10">
                   <h3 className="text-2xl font-bold text-gray-900">Une société inclusive</h3>
@@ -263,7 +252,6 @@ const NotreAmbition = () => {
                 </div>
               </div>
 
-              {/* Alignement européen */}
               <div id="europe" className="bg-blue-900 rounded-3xl p-8 md:p-12 text-white">
                 <div className="flex items-center gap-3 mb-6">
                   <Globe className="w-8 h-8 text-amber-400" />
@@ -288,7 +276,6 @@ const NotreAmbition = () => {
                 </div>
               </div>
 
-              {/* CTA */}
               <div className="text-center pt-8">
                 <div className="inline-flex flex-col sm:flex-row gap-4">
                   <Button
