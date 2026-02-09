@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Target, Heart, Users, Globe, ArrowRight, Sparkles, Shield, Brain, HandHeart, ChevronRight, Eye } from 'lucide-react';
+import { Target, Heart, Users, Globe, ArrowRight, Sparkles, Shield, Brain, HandHeart, ChevronRight } from 'lucide-react';
 import { Button } from './ui/button';
 import { useNavigate } from 'react-router-dom';
 import Navigation from './Navigation';
@@ -13,7 +13,7 @@ const NotreMission = () => {
     { id: 'conviction', title: 'Notre conviction', summary: 'Chaque personne porte un potentiel de développement', icon: Heart, color: 'bg-amber-500' },
     { id: 'travail', title: 'Le travail réinventé', summary: 'Expression, apprentissage et responsabilité', icon: Brain, color: 'bg-blue-500' },
     { id: 'service', title: 'Acte de service', summary: 'Le travail au service de la communauté', icon: HandHeart, color: 'bg-rose-500' },
-    { id: 'europe', title: 'Directives européennes', summary: 'Alignés sur les orientations de l\'UE', icon: Globe, color: 'bg-teal-500' },
+    { id: 'europe', title: 'Directives européennes', summary: "Alignés sur les orientations de l'UE", icon: Globe, color: 'bg-teal-500' },
     { id: 'piliers', title: 'Nos piliers', summary: 'Révéler, structurer, contribuer', icon: Target, color: 'bg-purple-500' },
   ];
 
@@ -27,6 +27,7 @@ const NotreMission = () => {
     }
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const handleScroll = () => {
       const sections = memoItems.map(item => document.getElementById(item.id));
@@ -48,7 +49,6 @@ const NotreMission = () => {
     <div className="min-h-screen bg-gray-50" data-testid="notre-mission-page">
       <Navigation />
       
-      {/* Hero Section */}
       <section className="relative pt-32 pb-20 bg-gradient-to-br from-[#0b2a55] via-[#1a4280] to-[#0b2a55] overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-10 w-72 h-72 bg-amber-400 rounded-full blur-3xl"></div>
@@ -71,16 +71,13 @@ const NotreMission = () => {
         </div>
       </section>
 
-      {/* Main Content with Memo Sidebar */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-8">
             
-            {/* Sidebar Mémo - à gauche */}
             <aside className="hidden lg:block lg:w-80 flex-shrink-0">
               <div className="sticky top-24">
                 <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-                  {/* Header du mémo */}
                   <div className="bg-gradient-to-r from-amber-500 to-orange-500 px-5 py-4">
                     <h3 className="text-white font-bold text-lg flex items-center gap-2">
                       <Target className="w-5 h-5" />
@@ -89,7 +86,6 @@ const NotreMission = () => {
                     <p className="text-amber-100 text-sm mt-1">Les points clés de notre mission</p>
                   </div>
                   
-                  {/* Liste des sections */}
                   <div className="p-3">
                     {memoItems.map((item) => {
                       const Icon = item.icon;
@@ -127,7 +123,6 @@ const NotreMission = () => {
                     })}
                   </div>
 
-                  {/* Citation */}
                   <div className="px-5 pb-5">
                     <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-4 border border-amber-100">
                       <p className="text-sm text-gray-700 italic leading-relaxed">
@@ -140,10 +135,8 @@ const NotreMission = () => {
               </div>
             </aside>
 
-            {/* Main Content */}
             <main className="flex-1 min-w-0 space-y-12">
               
-              {/* Conviction essentielle */}
               <div id="conviction" className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-3xl p-8 md:p-12 border-l-4 border-amber-500">
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
                   Notre conviction essentielle
@@ -156,7 +149,6 @@ const NotreMission = () => {
                 </p>
               </div>
 
-              {/* Le travail comme expression */}
               <div id="travail" className="grid md:grid-cols-2 gap-8 items-center">
                 <div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-6">
@@ -193,7 +185,6 @@ const NotreMission = () => {
                 </div>
               </div>
 
-              {/* Le travail comme service */}
               <div id="service" className="bg-gradient-to-r from-[#0b2a55] to-[#1a4280] rounded-3xl p-8 md:p-12 text-white">
                 <div className="flex items-center gap-3 mb-6">
                   <HandHeart className="w-8 h-8 text-amber-400" />
@@ -207,7 +198,6 @@ const NotreMission = () => {
                 </p>
               </div>
 
-              {/* Alignement européen */}
               <div id="europe" className="bg-blue-50 rounded-3xl p-8 md:p-12 border border-blue-200">
                 <div className="flex items-center gap-3 mb-6">
                   <Globe className="w-8 h-8 text-blue-600" />
@@ -221,7 +211,6 @@ const NotreMission = () => {
                 </p>
               </div>
 
-              {/* Nos piliers */}
               <div id="piliers">
                 <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Les piliers de notre mission</h3>
                 <div className="grid md:grid-cols-3 gap-6">
@@ -249,7 +238,6 @@ const NotreMission = () => {
                 </div>
               </div>
 
-              {/* CTA */}
               <div className="text-center pt-8">
                 <div className="inline-flex flex-col sm:flex-row gap-4">
                   <Button
