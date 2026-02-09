@@ -25,6 +25,11 @@ import EspacePersonnel from "./components/EspacePersonnel";
 import GouvernanceConsultative from "./components/GouvernanceConsultative";
 import { Toaster } from "./components/ui/sonner";
 
+// Nouvelles pages Mission
+import NotreMission from "./components/NotreMission";
+import NotreAmbition from "./components/NotreAmbition";
+import NotreAction from "./components/NotreAction";
+
 function HomePage() {
   return (
     <React.Fragment>
@@ -60,6 +65,11 @@ function App() {
           <Route path="/vision-methode" element={<VisionMethode />} />
           <Route path="/espace-personnel" element={<EspacePersonnel />} />
           <Route path="/gouvernance-consultative" element={<GouvernanceConsultative />} />
+          
+          {/* Nouvelles pages Mission */}
+          <Route path="/notre-mission" element={<NotreMission />} />
+          <Route path="/notre-ambition" element={<NotreAmbition />} />
+          <Route path="/notre-action" element={<NotreAction />} />
         </Routes>
         <Toaster />
       </div>
