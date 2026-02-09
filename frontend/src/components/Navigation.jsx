@@ -71,8 +71,6 @@ function Navigation() {
                         </div>
                         <div><p className="font-semibold">Le mot du fondateur</p><p className="text-xs text-gray-500">Vision et engagement</p></div>
                       </a>
-                      <div className="border-t border-gray-100 my-2 mx-4"></div>
-                      <p className="text-xs text-gray-400 uppercase tracking-wider px-4 py-2">Gouvernance</p>
                       <a href="/membres" onClick={goToMembres} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-[#0b2a55]/10 hover:text-[#0b2a55] transition-all duration-200 group/item">
                         <div className="w-10 h-10 rounded-lg bg-teal-100 flex items-center justify-center group-hover/item:bg-teal-500 transition-colors duration-200">
                           <UserCircle className="w-5 h-5 text-teal-600 group-hover/item:text-white transition-colors duration-200" />
@@ -83,7 +81,7 @@ function Navigation() {
                         <div className="w-10 h-10 rounded-lg bg-rose-100 flex items-center justify-center group-hover/item:bg-rose-500 transition-colors duration-200">
                           <Heart className="w-5 h-5 text-rose-600 group-hover/item:text-white transition-colors duration-200" />
                         </div>
-                        <div><p className="font-semibold">Charte éthique</p><p className="text-xs text-gray-500">Nos engagements</p></div>
+                        <div><p className="font-semibold">Charte éthique et gouvernance</p><p className="text-xs text-gray-500">Nos engagements</p></div>
                       </a>
                     </div>
                   </div>
@@ -129,14 +127,13 @@ function Navigation() {
               <Quote className="w-5 h-5 text-orange-600" />
               <span className="font-medium">Le mot du fondateur</span>
             </a>
-            <p className="text-xs text-gray-400 uppercase tracking-wider mt-4 mb-2">Gouvernance</p>
             <a href="/membres" onClick={goToMembres} className="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-[#0b2a55]/10 transition-colors">
               <UserCircle className="w-5 h-5 text-teal-600" />
               <span className="font-medium">Nos membres</span>
             </a>
             <a href="/charte-ethique" onClick={goToCharteEthique} className="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-[#0b2a55]/10 transition-colors">
               <Heart className="w-5 h-5 text-rose-600" />
-              <span className="font-medium">Charte éthique</span>
+              <span className="font-medium">Charte éthique et gouvernance</span>
             </a>
             <div className="border-t border-gray-100 my-3"></div>
             {navLinks.map((link) => (
