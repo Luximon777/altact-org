@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { ArrowLeft, Heart, Eye, Shield, Users, Target, Database, Scale, Building, Handshake, Rocket, CheckCircle, ChevronRight, Scroll, UserCircle } from 'lucide-react';
+import { ArrowLeft, Heart, Eye, Shield, Users, Target, Database, Scale, Building, Handshake, Rocket, CheckCircle, ChevronRight, Scroll } from 'lucide-react';
 import { Button } from './ui/button';
 import { useNavigate } from 'react-router-dom';
 import { Badge } from './ui/badge';
-import { Card, CardContent } from './ui/card';
 
 const CharteEthique = () => {
   const navigate = useNavigate();
@@ -15,7 +14,7 @@ const CharteEthique = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['manifeste', 'principe-1', 'principe-2', 'principe-3', 'principe-4', 'principe-5', 'principe-6', 'principe-7', 'principe-8', 'principe-9', 'principe-10', 'engagement', 'gouvernance', 'portee'];
+      const sections = ['manifeste', 'principe-1', 'principe-2', 'principe-3', 'principe-4', 'principe-5', 'principe-6', 'principe-7', 'principe-8', 'principe-9', 'principe-10', 'engagement', 'portee'];
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -57,7 +56,6 @@ const CharteEthique = () => {
     { id: 'principe-8', icon: Building, title: '8. Gouvernance', summary: 'Anticiper l\'avenir', color: 'bg-slate-500' },
     { id: 'principe-9', icon: Handshake, title: '9. Coopérations', summary: 'Élever les pratiques', color: 'bg-orange-500' },
     { id: 'principe-10', icon: Rocket, title: '10. Futur du travail', summary: 'Lucidité et action', color: 'bg-cyan-500' },
-    { id: 'gouvernance', icon: Users, title: 'Notre Consultation', summary: 'Sociocratie', color: 'bg-rose-500' },
   ];
 
   const sections = [
@@ -73,15 +71,6 @@ const CharteEthique = () => {
     { id: "principe-10", number: "10", title: "Préparer le futur du travail avec lucidité", icon: Rocket, color: "cyan", intro: "Les mutations professionnelles redessinent déjà les équilibres sociaux.", responsibility: "ALT&ACT fait le choix de :", points: ["développer des approches anticipatrices", "contribuer à la compréhension des compétences émergentes", "soutenir l'adaptabilité des individus", "favoriser une économie plus inclusive"], conclusion: "Préparer l'avenir n'est pas une option. C'est une responsabilité." }
   ];
 
-  const governanceBodies = [
-    { name: "Assemblée Générale", description: "Organe souverain composé de l'ensemble des membres. Prend les décisions stratégiques par consentement sociocratique.", icon: Users, color: "bg-[#0b2a55]" },
-    { name: "Comité Directeur", description: "Organe d'administration composé de 3 à 9 membres élus pour 3 ans. Assure la gestion courante et la mise en œuvre des décisions.", icon: Shield, color: "bg-teal-500" },
-    { name: "Comité Éthique", description: "Garant des valeurs de l'association, de son intégrité et de la conformité éthique. Dispose d'un droit d'alerte et de recommandation.", icon: Scale, color: "bg-rose-500" },
-    { name: "Comité de Mission", description: "Organe indépendant assurant la cohérence entre les activités menées et la mission d'intérêt général.", icon: Target, color: "bg-amber-500" }
-  ];
-
-  const sociocracyPrinciples = ["Équivalence", "Consentement", "Organisation en cercles", "Double lien", "Élection sans candidat", "Responsabilité collective", "Transparence", "Intelligence collective"];
-
   const colorClasses = { amber: "bg-amber-100 text-amber-700 border-amber-200", teal: "bg-teal-100 text-teal-700 border-teal-200", purple: "bg-purple-100 text-purple-700 border-purple-200", blue: "bg-blue-100 text-blue-700 border-blue-200", green: "bg-green-100 text-green-700 border-green-200", red: "bg-red-100 text-red-700 border-red-200", indigo: "bg-indigo-100 text-indigo-700 border-indigo-200", slate: "bg-slate-100 text-slate-700 border-slate-200", orange: "bg-orange-100 text-orange-700 border-orange-200", cyan: "bg-cyan-100 text-cyan-700 border-cyan-200" };
   const iconBgClasses = { amber: "bg-amber-500", teal: "bg-teal-500", purple: "bg-purple-500", blue: "bg-blue-500", green: "bg-green-500", red: "bg-red-500", indigo: "bg-indigo-500", slate: "bg-slate-500", orange: "bg-orange-500", cyan: "bg-cyan-500" };
 
@@ -95,7 +84,7 @@ const CharteEthique = () => {
             <ArrowLeft className="w-4 h-4 mr-2" /> Retour
           </Button>
           <Badge className="mb-4 bg-white/20 text-white border-white/30">Engagement ALT&ACT</Badge>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Charte éthique et gouvernance</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Charte éthique</h1>
           <p className="text-xl text-blue-100">Pour une société où chacun peut se sentir utile</p>
         </div>
       </header>
@@ -182,55 +171,6 @@ const CharteEthique = () => {
               <p className="text-lg font-medium">ALT&ACT agit pour que l'insertion professionnelle devienne un espace de reconnaissance, de structuration et de projection.</p>
             </div>
 
-            {/* Section Notre Consultation */}
-            <div id="gouvernance" className="bg-white rounded-2xl shadow-lg p-8 md:p-12 mt-8">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-full bg-rose-500 flex items-center justify-center"><Users className="w-6 h-6 text-white" /></div>
-                <div>
-                  <h2 className="text-2xl font-bold text-gray-900">Notre Consultation</h2>
-                  <p className="text-gray-600">Une organisation démocratique et participative</p>
-                </div>
-              </div>
-              
-              <div className="space-y-6 text-gray-700">
-                <p className="text-lg leading-relaxed">ALT&ACT s'inscrit dans une gouvernance démocratique, éthique et participative, <strong className="text-[#0b2a55]">inspirée des principes de la sociocratie</strong>.</p>
-                
-                <div className="bg-gradient-to-r from-rose-50 to-orange-50 rounded-xl p-6 border border-rose-100">
-                  <h3 className="font-bold text-gray-900 mb-4">Principes sociocratiques</h3>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                    {sociocracyPrinciples.map((principle, idx) => (
-                      <div key={idx} className="flex items-center gap-2 bg-white rounded-lg p-3 shadow-sm">
-                        <CheckCircle className="w-4 h-4 text-rose-500 flex-shrink-0" />
-                        <span className="text-sm font-medium">{principle}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <h3 className="font-bold text-gray-900 text-xl mt-8 mb-4">Nos organes de gouvernance</h3>
-                <div className="grid md:grid-cols-2 gap-6">
-                  {governanceBodies.map((body, idx) => {
-                    const Icon = body.icon;
-                    return (
-                      <Card key={idx} className="border-0 shadow-md hover:shadow-lg transition-shadow">
-                        <CardContent className="p-6">
-                          <div className="flex items-start gap-4">
-                            <div className={`w-12 h-12 rounded-xl ${body.color} flex items-center justify-center flex-shrink-0`}>
-                              <Icon className="w-6 h-6 text-white" />
-                            </div>
-                            <div>
-                              <h4 className="font-bold text-gray-900 mb-2">{body.name}</h4>
-                              <p className="text-sm text-gray-600">{body.description}</p>
-                            </div>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-
             <div id="portee" className="bg-white rounded-2xl shadow-lg p-8 md:p-12 mt-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Portée de la charte</h2>
               <p className="text-gray-700 mb-4">Cette charte :</p>
@@ -256,3 +196,6 @@ const CharteEthique = () => {
 };
 
 export default CharteEthique;
+
+
+
