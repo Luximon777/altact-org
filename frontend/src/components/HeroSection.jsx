@@ -2,7 +2,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Heart, Users, Globe, Scale } from 'lucide-react';
 import { Button } from './ui/button';
-import { heroData } from '../mock/altactData';
 
 const HeroSection = () => {
   const navigate = useNavigate();
@@ -28,12 +27,12 @@ const HeroSection = () => {
   ];
 
   return (
-    <section id="top" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="top" className="relative min-h-screen flex items-center justify-center overflow-hidden" data-testid="hero-section">
       {/* Background Image with Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"
         style={{
-          backgroundImage: `url(${heroData.backgroundImage})`,
+          backgroundImage: `url(https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&q=80)`,
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-br from-[#0b2a55]/95 via-[#0b2a55]/90 to-[#1a4280]/85"></div>
@@ -47,13 +46,12 @@ const HeroSection = () => {
           <span className="text-white text-sm font-medium">Association d'intérêt général</span>
         </div>
 
-        {/* Logo Image instead of Title */}
-        <div className="mb-6 animate-fade-in-up">
-          <img 
-            src="https://customer-assets.emergentagent.com/job_d4392e18-68a6-4d72-af1f-982787d9dcde/artifacts/2ly4eg7d_assetslogo-altact.png" 
-            alt="Alt&Act" 
-            className="h-12 md:h-16 lg:h-20 w-auto mx-auto"
-          />
+        {/* Logo/Title */}
+        <div className="mb-6 animate-fade-in-up flex justify-center">
+          <div className="inline-block">
+            <img src="/logo.png" alt="Alt&Act" className="h-12 md:h-14 lg:h-16 w-auto" />
+            <p className="text-[14px] italic text-blue-100 mt-1 text-right">Altérité & Action</p>
+          </div>
         </div>
         
         <p className="text-2xl md:text-3xl text-blue-100 mb-8 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
@@ -75,9 +73,10 @@ const HeroSection = () => {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
           <Button
-            onClick={() => scrollToSection('#mission')}
+            onClick={() => navigate('/notre-mission')}
             size="lg"
             className="bg-white text-[#0b2a55] hover:bg-blue-50 text-lg px-8 py-6 transform hover:scale-105 transition-all duration-200 shadow-xl"
+            data-testid="discover-mission-btn"
           >
             Découvrir notre mission
             <ArrowRight className="ml-2 w-5 h-5" />
@@ -87,6 +86,7 @@ const HeroSection = () => {
             size="lg"
             variant="outline"
             className="border-2 border-white text-white hover:bg-white hover:text-[#0b2a55] text-lg px-8 py-6 transform hover:scale-105 transition-all duration-200"
+            data-testid="contact-btn"
           >
             Nous contacter
           </Button>
