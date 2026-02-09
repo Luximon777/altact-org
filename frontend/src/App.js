@@ -22,6 +22,7 @@ import ConseilsAccompagnement from "./components/ConseilsAccompagnement";
 import EspaceUbuntoo from "./components/EspaceUbuntoo";
 import VisionMethode from "./components/VisionMethode";
 import EspacePersonnel from "./components/EspacePersonnel";
+import GouvernanceConsultative from "./components/GouvernanceConsultative";
 import { Toaster } from "./components/ui/sonner";
 
 function HomePage() {
@@ -58,6 +59,7 @@ function App() {
           <Route path="/espace-ubuntoo" element={<EspaceUbuntoo />} />
           <Route path="/vision-methode" element={<VisionMethode />} />
           <Route path="/espace-personnel" element={<EspacePersonnel />} />
+          <Route path="/gouvernance-consultative" element={<GouvernanceConsultative />} />
         </Routes>
         <Toaster />
       </div>
