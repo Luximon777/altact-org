@@ -15,10 +15,10 @@ const HeroSection = () => {
     }
   };
   const valeurs = [
-    { icon: Heart, label: "Humanisme", description: "L'humain au coeur de tout" },
-    { icon: Users, label: "Inclusion", description: "L'insertion sans barrieres" },
+    { icon: Heart, label: "Humanisme", description: "L'humain au cœur de tout" },
+    { icon: Users, label: "Inclusion", description: "L'insertion sans barrières" },
     { icon: Globe, label: "Impact social", description: "Transformer durablement" },
-    { icon: Scale, label: "Ethique", description: "Integrite et transparence" }
+    { icon: Scale, label: "Éthique", description: "Intégrité et transparence" }
   ];
   return (
     <section id="top" className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -28,27 +28,27 @@ const HeroSection = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-8">
           <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-          <span className="text-white text-sm font-medium">Association d'interet general</span>
+          <span className="text-white text-sm font-medium">Association d'intérêt général</span>
         </div>
         <div className="mb-6 flex justify-center">
           <div className="inline-block">
             <img src="https://customer-assets.emergentagent.com/job_d3bc6ef5-a9cd-4c9e-82cd-f8d680b06566/artifacts/ahmzyvay_LOGOS%202%20%281%29.png" alt="Alt&Act" className="h-12 md:h-14 lg:h-16 w-auto" />
-            <p className="text-sm italic text-blue-100 mt-1 text-right">Alterite & Action</p>
+            <p className="text-sm italic text-blue-100 mt-1 text-right">Altérité & Action</p>
           </div>
         </div>
-        <p className="text-2xl md:text-3xl text-blue-100 mb-8">Des trajectoires professionnelles sans barrieres</p>
+        <p className="text-2xl md:text-3xl text-blue-100 mb-8">Des trajectoires professionnelles sans barrières</p>
         <div className="max-w-4xl mx-auto mb-12">
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-white/20">
-            <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Une ethique tournee vers l'avenir</h3>
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Une éthique tournée vers l'avenir</h3>
             <div className="text-blue-100 text-sm md:text-base leading-relaxed space-y-3 text-left">
-              <p>Dans un monde en quete de reperes, l'ethique devient une force d'orientation. ALT&ACT s'inscrit dans cette perspective en faisant le choix d'une <strong className="text-white">ethique vivante</strong> qui eclaire les decisions et soutient les transformations durables.</p>
-              <p>Nous considerons que la <strong className="text-white">confiance, l'equite et la reconnaissance des capacites</strong> constituent les fondements d'une societe capable de traverser la complexite sans renoncer a sa cohesion.</p>
-              <p className="italic text-blue-200">Car les organisations qui compteront demain seront celles qui auront su faire de l'ethique non pas une contrainte, mais une boussole.</p>
+              <p>Dans un monde en quête de repères, l'éthique devient une force d'orientation. ALT&ACT s'inscrit dans cette perspective en faisant le choix d'une <strong className="text-white">éthique vivante</strong> qui éclaire les décisions et soutient les transformations durables.</p>
+              <p>Nous considérons que la <strong className="text-white">confiance, l'équité et la reconnaissance des capacités</strong> constituent les fondements d'une société capable de traverser la complexité sans renoncer à sa cohésion.</p>
+              <p className="italic text-blue-200">Car les organisations qui compteront demain seront celles qui auront su faire de l'éthique non pas une contrainte, mais une boussole.</p>
             </div>
           </div>
         </div>
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-          <Button onClick={() => navigate('/notre-mission')} size="lg" className="bg-white text-[#0b2a55] hover:bg-blue-50 text-lg px-8 py-6 shadow-xl">Decouvrir notre mission<ArrowRight className="ml-2 w-5 h-5" /></Button>
+          <Button onClick={() => navigate('/notre-mission')} size="lg" className="bg-white text-[#0b2a55] hover:bg-blue-50 text-lg px-8 py-6 shadow-xl">Découvrir notre mission<ArrowRight className="ml-2 w-5 h-5" /></Button>
           <Button onClick={() => scrollToSection('#contact')} size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#0b2a55] text-lg px-8 py-6">Nous contacter</Button>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
