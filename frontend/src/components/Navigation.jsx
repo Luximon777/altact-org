@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, FileText, Quote, Users, UserCircle, Heart, Building, User, Shield, Scale } from 'lucide-react';
+import { Menu, X, ChevronDown, FileText, Quote, Users, UserCircle, Heart, Building, User, Mail, UserPlus } from 'lucide-react';
 import { Button } from './ui/button';
 import { useNavigate } from 'react-router-dom';
 
@@ -18,8 +18,7 @@ function Navigation() {
 
   const navLinks = [
     { label: 'Mission', href: '#mission' },
-    { label: 'Actions & Impact', href: '#actions' },
-    { label: 'Devenir membre', href: '#membre' }
+    { label: 'Actions & Impact', href: '#actions' }
   ];
 
   const scrollToSection = (e, href) => {
@@ -119,9 +118,36 @@ function Navigation() {
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-600 group-hover:w-full transition-all duration-300"></span>
                 </a>
               ))}
-              <Button onClick={(e) => scrollToSection(e, '#contact')} className="bg-[#0b2a55] hover:bg-[#1a4280] text-white transition-all duration-200 transform hover:scale-105 font-semibold">
-                Contact
-              </Button>
+
+              {/* Dropdown Contact */}
+              <div className="relative group">
+                <a href="#contact" onClick={(e) => scrollToSection(e, '#contact')} className="text-orange-600 hover:text-orange-700 font-semibold text-base transition-colors duration-200 flex items-center gap-1 py-4">
+                  Contact
+                  <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
+                </a>
+                <div className="absolute top-full left-1/2 -translate-x-1/2 w-64 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
+                  <div className="bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden">
+                    <div className="bg-gradient-to-r from-[#0b2a55] to-[#1a4280] px-4 py-3">
+                      <p className="text-white text-sm font-medium">Nous rejoindre</p>
+                    </div>
+                    <div className="p-2">
+                      <a href="#contact" onClick={(e) => scrollToSection(e, '#contact')} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-[#0b2a55]/10 hover:text-[#0b2a55] transition-all duration-200 group/item">
+                        <div className="w-10 h-10 rounded-lg bg-[#0b2a55]/10 flex items-center justify-center group-hover/item:bg-[#0b2a55] transition-colors duration-200">
+                          <Mail className="w-5 h-5 text-[#0b2a55] group-hover/item:text-white transition-colors duration-200" />
+                        </div>
+                        <div><p className="font-semibold">Contact</p><p className="text-xs text-gray-500">Nous écrire</p></div>
+                      </a>
+                      <a href="#membre" onClick={(e) => scrollToSection(e, '#membre')} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-[#0b2a55]/10 hover:text-[#0b2a55] transition-all duration-200 group/item">
+                        <div className="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center group-hover/item:bg-green-500 transition-colors duration-200">
+                          <UserPlus className="w-5 h-5 text-green-600 group-hover/item:text-white transition-colors duration-200" />
+                        </div>
+                        <div><p className="font-semibold">Devenir membre</p><p className="text-xs text-gray-500">Rejoindre ALT&ACT</p></div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               <a href="/conseils-accompagnement" onClick={(e) => { e.preventDefault(); navigate('/conseils-accompagnement'); }} className="flex items-center gap-2 bg-teal-600 text-white px-4 py-2.5 rounded-full font-semibold text-sm transition-all duration-200 hover:bg-teal-700 hover:scale-105 shadow-lg hover:shadow-xl">
                 <Building className="w-4 h-4" />
                 Espace Employeurs
@@ -172,11 +198,16 @@ function Navigation() {
                 {link.label}
               </a>
             ))}
-            <div className="pt-4">
-              <Button onClick={(e) => scrollToSection(e, '#contact')} className="bg-[#0b2a55] hover:bg-[#1a4280] text-white w-full font-semibold">
-                Contact
-              </Button>
-            </div>
+            <p className="text-xs text-gray-400 uppercase tracking-wider mt-4 mb-2">Contact</p>
+            <a href="#contact" onClick={(e) => scrollToSection(e, '#contact')} className="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-[#0b2a55]/10 transition-colors">
+              <Mail className="w-5 h-5 text-[#0b2a55]" />
+              <span className="font-medium">Contact</span>
+            </a>
+            <a href="#membre" onClick={(e) => scrollToSection(e, '#membre')} className="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-[#0b2a55]/10 transition-colors">
+              <UserPlus className="w-5 h-5 text-green-600" />
+              <span className="font-medium">Devenir membre</span>
+            </a>
+            <div className="border-t border-gray-100 my-3"></div>
             <a href="/conseils-accompagnement" onClick={(e) => { e.preventDefault(); setIsMobileMenuOpen(false); navigate('/conseils-accompagnement'); }} className="flex items-center justify-center gap-2 bg-teal-600 text-white py-3 px-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors">
               <Building className="w-5 h-5" />
               Espace Employeurs
