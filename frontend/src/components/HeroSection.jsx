@@ -1,6 +1,3 @@
-Voici le fichier HeroSection.jsx simplifié et propre :
-
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Heart, Users, Globe, Scale } from 'lucide-react';
 import { Button } from './ui/button';
@@ -46,26 +43,21 @@ const HeroSection = () => {
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-white/20">
             <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Une ethique tournee vers l avenir</h3>
             <div className="text-blue-100 text-sm md:text-base leading-relaxed space-y-3 text-left">
-              <p>Dans un monde en quete de reperes, l ethique n est plus un simple cadre de conformite : elle devient une force d orientation. ALT et ACT s inscrit dans cette perspective en faisant le choix d une <strong className="text-white">ethique vivante</strong> qui eclaire les decisions, structure les pratiques et soutient les transformations durables.</p>
-              <p>Etre en avance aujourd hui, c est savoir placer l humain au coeur des evolutions economiques et sociales. Nous considerons que la <strong className="text-white">confiance, l equite et la reconnaissance des capacites</strong> constituent les fondements d une societe capable de traverser la complexite sans renoncer a sa cohesion.</p>
+              <p>Dans un monde en quete de reperes, l ethique devient une force d orientation. ALT et ACT s inscrit dans cette perspective en faisant le choix d une <strong className="text-white">ethique vivante</strong> qui eclaire les decisions et soutient les transformations durables.</p>
+              <p>Nous considerons que la <strong className="text-white">confiance, l equite et la reconnaissance des capacites</strong> constituent les fondements d une societe capable de traverser la complexite sans renoncer a sa cohesion.</p>
               <p className="italic text-blue-200">Car les organisations qui compteront demain seront celles qui auront su faire de l ethique non pas une contrainte, mais une boussole.</p>
             </div>
           </div>
         </div>
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-          <Button onClick={() => navigate('/notre-mission')} size="lg" className="bg-white text-[#0b2a55] hover:bg-blue-50 text-lg px-8 py-6 transform hover:scale-105 transition-all duration-200 shadow-xl">
-            Decouvrir notre mission
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
-          <Button onClick={() => scrollToSection('#contact')} size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#0b2a55] text-lg px-8 py-6 transform hover:scale-105 transition-all duration-200">
-            Nous contacter
-          </Button>
+          <Button onClick={() => navigate('/notre-mission')} size="lg" className="bg-white text-[#0b2a55] hover:bg-blue-50 text-lg px-8 py-6 shadow-xl">Decouvrir notre mission<ArrowRight className="ml-2 w-5 h-5" /></Button>
+          <Button onClick={() => scrollToSection('#contact')} size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#0b2a55] text-lg px-8 py-6">Nous contacter</Button>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
           {valeurs.map((valeur, index) => {
             const Icon = valeur.icon;
             return (
-              <div key={index} className="bg-white/10 backdrop-blur-md rounded-2xl p-6 transform hover:scale-105 transition-all duration-300 hover:bg-white/20">
+              <div key={index} className="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20">
                 <div className="flex justify-center mb-3">
                   <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
                     <Icon className="w-6 h-6 text-white" />
