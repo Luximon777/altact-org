@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, FileText, Quote, Users, UserCircle, Heart, Building, User, Mail, UserPlus, Target, Eye, Zap } from 'lucide-react';
+import { Menu, X, ChevronDown, FileText, Quote, UserCircle, Heart, Building, User, Mail, UserPlus, Target, Eye, Zap, Users } from 'lucide-react';
 import { Button } from './ui/button';
 import { useNavigate } from 'react-router-dom';
 
@@ -36,20 +36,20 @@ function Navigation() {
 
   return (
     <React.Fragment>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-lg shadow-lg' : 'bg-transparent'}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-lg shadow-lg' : 'bg-transparent'}`} data-testid="navigation">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            <a href="#top" onClick={(e) => scrollToSection(e, '#top')} className="flex items-center group">
-              <span className="text-2xl font-bold text-[#0b2a55]">ALT&ACT</span>
+            <a href="/" onClick={(e) => goToPage(e, '/')} className="flex items-center group" data-testid="logo-link">
+              <img src="/logo.png" alt="Alt&Act" className="h-6 w-auto" />
             </a>
             <div className="hidden md:flex items-center space-x-6">
               
               {/* Dropdown Présentation */}
               <div className="relative group">
-                <a href="#presentation" onClick={(e) => scrollToSection(e, '#presentation')} className="text-orange-600 hover:text-orange-700 font-semibold text-base transition-colors duration-200 flex items-center gap-1 py-4">
+                <button className="text-orange-600 hover:text-orange-700 font-semibold text-base transition-colors duration-200 flex items-center gap-1 py-4" data-testid="presentation-dropdown">
                   Présentation
                   <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
-                </a>
+                </button>
                 <div className="absolute top-full left-1/2 -translate-x-1/2 w-72 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
                   <div className="bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden">
                     <div className="bg-gradient-to-r from-[#0b2a55] to-[#1a4280] px-4 py-3">
@@ -79,7 +79,7 @@ function Navigation() {
                 </div>
               </div>
 
-              {/* Dropdown Mission - NOUVEAU */}
+              {/* Dropdown Mission */}
               <div className="relative group">
                 <button className="text-orange-600 hover:text-orange-700 font-semibold text-base transition-colors duration-200 flex items-center gap-1 py-4">
                   Mission
