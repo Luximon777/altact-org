@@ -1,4 +1,4 @@
-📄 2. NotreAmbition.jsx
+
 import React, { useState, useEffect } from 'react';
 import { Globe, Heart, Users, ArrowRight, Sparkles, Scale, Leaf, Building, HandHeart, ChevronRight, Star } from 'lucide-react';
 import { Button } from './ui/button';
