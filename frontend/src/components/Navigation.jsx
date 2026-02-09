@@ -39,9 +39,22 @@ function Navigation() {
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-lg shadow-lg' : 'bg-transparent'}`} data-testid="navigation">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            <a href="/" onClick={(e) => goToPage(e, '/')} className="flex items-center group" data-testid="logo-link">
-              <img src="/logo.png" alt="Alt&Act" className="h-6 w-auto" />
-            </a>
+           <a href="/" onClick={(e) => goToPage(e, '/')} className="flex items-center group" data-testid="logo-link">
+  <img src={process.env.PUBLIC_URL + '/logo.png'} alt="Alt&Act" className="h-6 w-auto" />
+</a>
+Et dans HeroSection.jsx, cherchez (vers la ligne 52) :
+
+<img src="/logo.png" alt="Alt&Act" className="h-12 md:h-14 lg:h-16 w-auto" />
+Remplacez par :
+
+<img src={process.env.PUBLIC_URL + '/logo.png'} alt="Alt&Act" className="h-12 md:h-14 lg:h-16 w-auto" />
+Feb 9, 03:35 PM
+
+Rollback
+Rollback
+
+Copy
+
             <div className="hidden md:flex items-center space-x-6">
               
               {/* Dropdown Présentation */}
