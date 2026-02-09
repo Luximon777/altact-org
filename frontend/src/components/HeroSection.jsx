@@ -56,16 +56,24 @@ const HeroSection = () => {
           />
         </div>
         
-        <p className="text-2xl md:text-3xl text-blue-100 mb-4 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-          {heroData.subtitle}
-        </p>
-        
-        <p className="text-lg md:text-xl text-blue-200 max-w-3xl mx-auto mb-12 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-          {heroData.description}
+        <p className="text-2xl md:text-3xl text-blue-100 mb-8 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+          Des trajectoires professionnelles sans barrières
         </p>
 
+        {/* Encart éthique */}
+        <div className="max-w-4xl mx-auto mb-12 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-white/20">
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Une éthique tournée vers l'avenir</h3>
+            <div className="text-blue-100 text-sm md:text-base leading-relaxed space-y-3 text-left">
+              <p>Dans un monde en quête de repères, l'éthique n'est plus un simple cadre de conformité : elle devient une force d'orientation. ALT&ACT s'inscrit dans cette perspective en faisant le choix d'une <strong className="text-white">éthique vivante</strong> — une éthique qui éclaire les décisions, structure les pratiques et soutient les transformations durables.</p>
+              <p>Être en avance aujourd'hui, c'est savoir placer l'humain au cœur des évolutions économiques et sociales. Nous considérons que la <strong className="text-white">confiance, l'équité et la reconnaissance des capacités</strong> constituent les fondements d'une société capable de traverser la complexité sans renoncer à sa cohésion.</p>
+              <p className="italic text-blue-200">Car les organisations qui compteront demain seront celles qui auront su faire de l'éthique non pas une contrainte, mais une boussole.</p>
+            </div>
+          </div>
+        </div>
+
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-20 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
           <Button
             onClick={() => scrollToSection('#mission')}
             size="lg"
