@@ -11,10 +11,10 @@ const NotreMission = () => {
 
   const memoItems = [
     { id: 'conviction', title: 'Notre conviction', summary: 'Chaque personne porte un potentiel de développement', icon: Heart, color: 'bg-amber-500' },
-    { id: 'travail', title: 'Le travail réinventé', summary: 'Expression, apprentissage et responsabilité', icon: Brain, color: 'bg-blue-500' },
-    { id: 'service', title: 'Acte de service', summary: 'Le travail au service de la communauté', icon: HandHeart, color: 'bg-rose-500' },
-    { id: 'europe', title: 'Directives européennes', summary: "Alignés sur les orientations de l'UE", icon: Globe, color: 'bg-teal-500' },
-    { id: 'piliers', title: 'Nos piliers', summary: 'Révéler, structurer, contribuer', icon: Target, color: 'bg-purple-500' },
+    { id: 'travail', title: 'Le travail reinvente', summary: 'Expression, apprentissage et responsabilite', icon: Brain, color: 'bg-blue-500' },
+    { id: 'service', title: 'Acte de service', summary: 'Le travail au service de la communaute', icon: HandHeart, color: 'bg-rose-500' },
+    { id: 'europe', title: 'Directives europeennes', summary: 'Alignes sur les orientations de UE', icon: Globe, color: 'bg-teal-500' },
+    { id: 'piliers', title: 'Nos piliers', summary: 'Reveler, structurer, contribuer', icon: Target, color: 'bg-purple-500' },
   ];
 
   const scrollToSection = (id) => {
@@ -27,7 +27,6 @@ const NotreMission = () => {
     }
   };
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const handleScroll = () => {
       const sections = memoItems.map(item => document.getElementById(item.id));
@@ -43,10 +42,11 @@ const NotreMission = () => {
     
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50" data-testid="notre-mission-page">
+    <div className="min-h-screen bg-gray-50">
       <Navigation />
       
       <section className="relative pt-32 pb-20 bg-gradient-to-br from-[#0b2a55] via-[#1a4280] to-[#0b2a55] overflow-hidden">
@@ -62,11 +62,11 @@ const NotreMission = () => {
           </div>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
-            Révéler les capacités humaines
+            Reveler les capacites humaines
           </h1>
           
           <p className="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
-            Structurer le pouvoir d'agir et permettre à chacun de contribuer pleinement à la société.
+            Structurer le pouvoir d agir et permettre a chacun de contribuer pleinement a la societe.
           </p>
         </div>
       </section>
@@ -81,9 +81,9 @@ const NotreMission = () => {
                   <div className="bg-gradient-to-r from-amber-500 to-orange-500 px-5 py-4">
                     <h3 className="text-white font-bold text-lg flex items-center gap-2">
                       <Target className="w-5 h-5" />
-                      En résumé
+                      En resume
                     </h3>
-                    <p className="text-amber-100 text-sm mt-1">Les points clés de notre mission</p>
+                    <p className="text-amber-100 text-sm mt-1">Les points cles de notre mission</p>
                   </div>
                   
                   <div className="p-3">
@@ -126,9 +126,9 @@ const NotreMission = () => {
                   <div className="px-5 pb-5">
                     <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-4 border border-amber-100">
                       <p className="text-sm text-gray-700 italic leading-relaxed">
-                        "Révéler les capacités humaines, c'est permettre à chacun de contribuer pleinement à la société."
+                        Reveler les capacites humaines, c est permettre a chacun de contribuer pleinement a la societe.
                       </p>
-                      <p className="text-xs text-amber-700 mt-2 font-medium">— Notre mission</p>
+                      <p className="text-xs text-amber-700 mt-2 font-medium">- Notre mission</p>
                     </div>
                   </div>
                 </div>
@@ -142,30 +142,30 @@ const NotreMission = () => {
                   Notre conviction essentielle
                 </h2>
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  Nous partons d'une conviction essentielle : <strong className="text-amber-700">chaque personne porte en elle un potentiel de développement</strong> qui, lorsqu'il est reconnu et cultivé, devient une force pour l'ensemble de la collectivité.
+                  Nous partons d une conviction essentielle : <strong className="text-amber-700">chaque personne porte en elle un potentiel de developpement</strong> qui, lorsqu il est reconnu et cultive, devient une force pour l ensemble de la collectivite.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Notre mission consiste à créer les conditions dans lesquelles ces capacités peuvent <strong className="text-amber-700">émerger, se renforcer et s'inscrire dans des trajectoires professionnelles porteuses de sens</strong>.
+                  Notre mission consiste a creer les conditions dans lesquelles ces capacites peuvent <strong className="text-amber-700">emerger, se renforcer et s inscrire dans des trajectoires professionnelles porteuses de sens</strong>.
                 </p>
               </div>
 
               <div id="travail" className="grid md:grid-cols-2 gap-8 items-center">
                 <div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                    Le travail, bien plus qu'une fonction économique
+                    Le travail, bien plus qu une fonction economique
                   </h3>
                   <p className="text-gray-700 leading-relaxed mb-4">
-                    Nous considérons le travail non comme une simple fonction économique, mais comme un <strong>espace d'expression, d'apprentissage continu et de responsabilité</strong>.
+                    Nous considerons le travail non comme une simple fonction economique, mais comme un <strong>espace d expression, d apprentissage continu et de responsabilite</strong>.
                   </p>
                   <p className="text-gray-700 leading-relaxed">
-                    En favorisant l'autonomie, la maturité et la capacité de coopération, nous contribuons à former des femmes et des hommes capables de s'orienter dans un monde en transformation et de participer activement au bien commun.
+                    En favorisant l autonomie, la maturite et la capacite de cooperation, nous contribuons a former des femmes et des hommes capables de s orienter dans un monde en transformation et de participer activement au bien commun.
                   </p>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-amber-50 rounded-2xl p-6 text-center">
                     <Heart className="w-10 h-10 text-amber-600 mx-auto mb-3" />
                     <p className="font-semibold text-gray-900">Expression</p>
-                    <p className="text-sm text-gray-600">Espace de développement</p>
+                    <p className="text-sm text-gray-600">Espace de developpement</p>
                   </div>
                   <div className="bg-blue-50 rounded-2xl p-6 text-center">
                     <Brain className="w-10 h-10 text-blue-600 mx-auto mb-3" />
@@ -174,12 +174,12 @@ const NotreMission = () => {
                   </div>
                   <div className="bg-green-50 rounded-2xl p-6 text-center">
                     <Shield className="w-10 h-10 text-green-600 mx-auto mb-3" />
-                    <p className="font-semibold text-gray-900">Responsabilité</p>
+                    <p className="font-semibold text-gray-900">Responsabilite</p>
                     <p className="text-sm text-gray-600">Engagement citoyen</p>
                   </div>
                   <div className="bg-purple-50 rounded-2xl p-6 text-center">
                     <Users className="w-10 h-10 text-purple-600 mx-auto mb-3" />
-                    <p className="font-semibold text-gray-900">Coopération</p>
+                    <p className="font-semibold text-gray-900">Cooperation</p>
                     <p className="text-sm text-gray-600">Force collective</p>
                   </div>
                 </div>
@@ -191,23 +191,23 @@ const NotreMission = () => {
                   <h3 className="text-2xl font-bold">Le travail comme acte de service</h3>
                 </div>
                 <p className="text-blue-100 text-lg leading-relaxed mb-6">
-                  Nous concevons le rapport au travail comme un <strong className="text-white">acte de service à la communauté</strong>. Chaque contribution professionnelle, quelle que soit sa nature, participe à l'édification d'une société plus solidaire et plus humaine.
+                  Nous concevons le rapport au travail comme un <strong className="text-white">acte de service a la communaute</strong>. Chaque contribution professionnelle, quelle que soit sa nature, participe a l edification d une societe plus solidaire et plus humaine.
                 </p>
                 <p className="text-blue-100 text-lg leading-relaxed">
-                  Cette vision transforme le travail en un vecteur de dignité, de reconnaissance mutuelle et de progrès partagé.
+                  Cette vision transforme le travail en un vecteur de dignite, de reconnaissance mutuelle et de progres partage.
                 </p>
               </div>
 
               <div id="europe" className="bg-blue-50 rounded-3xl p-8 md:p-12 border border-blue-200">
                 <div className="flex items-center gap-3 mb-6">
                   <Globe className="w-8 h-8 text-blue-600" />
-                  <h3 className="text-2xl font-bold text-gray-900">Alignés sur les directives européennes</h3>
+                  <h3 className="text-2xl font-bold text-gray-900">Alignes sur les directives europeennes</h3>
                 </div>
                 <p className="text-gray-700 text-lg leading-relaxed mb-4">
-                  Notre action s'inscrit dans le cadre des orientations et visions européennes en matière d'emploi, d'inclusion sociale et de développement durable.
+                  Notre action s inscrit dans le cadre des orientations et visions europeennes en matiere d emploi, d inclusion sociale et de developpement durable.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
-                  Nous portons une attention particulière aux recommandations du <strong>Socle européen des droits sociaux</strong>, à la <strong>Stratégie européenne pour l'emploi</strong> et aux objectifs de développement durable (ODD), notamment ceux liés au travail décent et à la réduction des inégalités.
+                  Nous portons une attention particuliere aux recommandations du <strong>Socle europeen des droits sociaux</strong>, a la <strong>Strategie europeenne pour l emploi</strong> et aux objectifs de developpement durable (ODD), notamment ceux lies au travail decent et a la reduction des inegalites.
                 </p>
               </div>
 
@@ -216,23 +216,23 @@ const NotreMission = () => {
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-amber-500 hover:shadow-xl transition-shadow">
                     <Target className="w-12 h-12 text-amber-500 mb-4" />
-                    <h4 className="text-xl font-bold text-gray-900 mb-3">Révéler</h4>
+                    <h4 className="text-xl font-bold text-gray-900 mb-3">Reveler</h4>
                     <p className="text-gray-600">
-                      Mettre en lumière les potentiels cachés et les capacités inexploitées de chaque personne.
+                      Mettre en lumiere les potentiels caches et les capacites inexploitees de chaque personne.
                     </p>
                   </div>
                   <div className="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-blue-500 hover:shadow-xl transition-shadow">
                     <Sparkles className="w-12 h-12 text-blue-500 mb-4" />
                     <h4 className="text-xl font-bold text-gray-900 mb-3">Structurer</h4>
                     <p className="text-gray-600">
-                      Accompagner le développement du pouvoir d'agir et de l'autonomie décisionnelle.
+                      Accompagner le developpement du pouvoir d agir et de l autonomie decisionnelle.
                     </p>
                   </div>
                   <div className="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-green-500 hover:shadow-xl transition-shadow">
                     <Users className="w-12 h-12 text-green-500 mb-4" />
                     <h4 className="text-xl font-bold text-gray-900 mb-3">Contribuer</h4>
                     <p className="text-gray-600">
-                      Permettre à chacun de participer pleinement à la vie économique et sociale.
+                      Permettre a chacun de participer pleinement a la vie economique et sociale.
                     </p>
                   </div>
                 </div>
@@ -244,7 +244,7 @@ const NotreMission = () => {
                     onClick={() => navigate('/notre-ambition')}
                     className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-6 text-lg rounded-full"
                   >
-                    Découvrir notre ambition
+                    Decouvrir notre ambition
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
                   <Button
