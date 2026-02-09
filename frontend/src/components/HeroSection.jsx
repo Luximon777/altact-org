@@ -1,7 +1,6 @@
-import React from 'react';
-import React from 'react';
-Puis copiez le reste :
+Supprimez tout et copiez ce fichier complet en une seule fois :
 
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Heart, Users, Globe, Scale } from 'lucide-react';
 import { Button } from './ui/button';
