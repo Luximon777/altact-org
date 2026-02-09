@@ -49,7 +49,7 @@ const HeroSection = () => {
         {/* Logo/Title */}
         <div className="mb-6 animate-fade-in-up flex justify-center">
           <div className="inline-block">
-            <img src="/logo.png" alt="Alt&Act" className="h-12 md:h-14 lg:h-16 w-auto" />
+            <img src={process.env.PUBLIC_URL + '/logo.png'} alt="Alt&Act" className="h-12 md:h-14 lg:h-16 w-auto" />
             <p className="text-[14px] italic text-blue-100 mt-1 text-right">Altérité & Action</p>
           </div>
         </div>
