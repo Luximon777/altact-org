@@ -101,35 +101,7 @@ const ContactSection = () => {
               </div>
             </div>
 
-            {/* Social Media */}
-            <div>
-              <h4 className="font-semibold text-gray-900 mb-4">Suivez-nous</h4>
-              <div className="flex gap-4">
-                <a
-                  href={contactData.social.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-lg bg-[#0b2a55] flex items-center justify-center hover:bg-[#1a4280] transform hover:scale-110 transition-all duration-200"
-                >
-                  <Linkedin className="w-6 h-6 text-white" />
-                </a>
-                <a
-                  href={contactData.social.twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-lg bg-[#0b2a55] flex items-center justify-center hover:bg-[#1a4280] transform hover:scale-110 transition-all duration-200"
-                >
-                  <Twitter className="w-6 h-6 text-white" />
-                </a>
-                <a
-                  href={contactData.social.facebook}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-lg bg-[#0b2a55] flex items-center justify-center hover:bg-[#1a4280] transform hover:scale-110 transition-all duration-200"
-                >
-                  <Facebook className="w-6 h-6 text-white" />
-                </a>
-              </div>
+            
             </div>
           </div>
 
