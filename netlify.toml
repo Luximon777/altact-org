@@ -1,1 +1,9 @@
+[build]
+  base = "frontend"
+  command = "CI=false yarn build"
+  publish = "frontend/build"
 
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
