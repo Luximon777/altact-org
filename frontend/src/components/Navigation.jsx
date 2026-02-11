@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, FileText, Quote, UserCircle, Heart, Building, User, Mail, UserPlus, Target, Eye, Zap, Users, Globe } from 'lucide-react';
+import { Menu, X, ChevronDown, FileText, Quote, UserCircle, Heart, Building, User, Mail, UserPlus, Target, Eye, Zap, Users, Globe, Briefcase, UserCog, Network } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 function Navigation() {
@@ -44,7 +44,6 @@ function Navigation() {
     setCurrentLang(langLabel.substring(0, 2).toUpperCase());
     setIsLangOpen(false);
     
-    // Utiliser Google Translate
     setTimeout(() => {
       const select = document.querySelector('select.goog-te-combo');
       if (select) {
@@ -77,12 +76,16 @@ function Navigation() {
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-lg shadow-lg' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
+            
+            {/* Logo */}
             <a href="/" onClick={(e) => goToPage(e, '/')} className="flex items-center group">
               <img src="https://customer-assets.emergentagent.com/job_d3bc6ef5-a9cd-4c9e-82cd-f8d680b06566/artifacts/ahmzyvay_LOGOS%202%20%281%29.png" alt="Alt&Act" className="h-6 w-auto" />
             </a>
             
+            {/* Menu principal */}
             <div className="hidden md:flex items-center space-x-6">
               
+              {/* Présentation */}
               <div className="relative group">
                 <button className="text-orange-600 hover:text-orange-700 font-semibold text-base transition-colors duration-200 flex items-center gap-1 py-4">
                   Présentation
@@ -117,6 +120,7 @@ function Navigation() {
                 </div>
               </div>
 
+              {/* Mission */}
               <div className="relative group">
                 <button className="text-orange-600 hover:text-orange-700 font-semibold text-base transition-colors duration-200 flex items-center gap-1 py-4">
                   Mission
@@ -151,11 +155,12 @@ function Navigation() {
                 </div>
               </div>
 
+              {/* Charte éthique */}
               <div className="relative group">
-                <a href="/charte-ethique" onClick={(e) => goToPage(e, '/charte-ethique')} className="text-orange-600 hover:text-orange-700 font-semibold text-base transition-colors duration-200 flex items-center gap-1 py-4">
+                <button className="text-orange-600 hover:text-orange-700 font-semibold text-base transition-colors duration-200 flex items-center gap-1 py-4">
                   Charte éthique
                   <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
-                </a>
+                </button>
                 <div className="absolute top-full left-1/2 -translate-x-1/2 w-72 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
                   <div className="bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden">
                     <div className="bg-gradient-to-r from-rose-500 to-orange-500 px-4 py-3">
@@ -179,11 +184,12 @@ function Navigation() {
                 </div>
               </div>
 
+              {/* Contact */}
               <div className="relative group">
-                <a href="#contact" onClick={(e) => scrollToSection(e, '#contact')} className="text-orange-600 hover:text-orange-700 font-semibold text-base transition-colors duration-200 flex items-center gap-1 py-4">
+                <button className="text-orange-600 hover:text-orange-700 font-semibold text-base transition-colors duration-200 flex items-center gap-1 py-4">
                   Contact
                   <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
-                </a>
+                </button>
                 <div className="absolute top-full left-1/2 -translate-x-1/2 w-64 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
                   <div className="bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden">
                     <div className="bg-gradient-to-r from-[#0b2a55] to-[#1a4280] px-4 py-3">
@@ -207,18 +213,40 @@ function Navigation() {
                 </div>
               </div>
 
-              <a href="/conseils-accompagnement" onClick={(e) => goToPage(e, '/conseils-accompagnement')} className="flex items-center gap-2 bg-teal-600 text-white px-4 py-2.5 rounded-full font-semibold text-sm transition-all duration-200 hover:bg-teal-700 hover:scale-105 shadow-lg hover:shadow-xl">
-                <Building className="w-4 h-4" />
-                Espace Employeurs
-              </a>
-              <a href="/espace-personnel" onClick={(e) => goToPage(e, '/espace-personnel')} className="flex items-center gap-2 bg-[#0b2a55] text-white px-4 py-2.5 rounded-full font-semibold text-sm transition-all duration-200 hover:bg-[#1a4280] hover:scale-105 shadow-lg hover:shadow-xl">
-                <User className="w-4 h-4" />
-                Espace Personnel
-              </a>
-              <a href="/espace-ubuntoo" onClick={(e) => goToPage(e, '/espace-ubuntoo')} className="flex items-center gap-2 bg-[#0F4C5C] text-white px-4 py-2.5 rounded-full font-semibold text-sm transition-all duration-200 hover:bg-[#0A3844] hover:scale-105 shadow-lg hover:shadow-xl">
-                <Users className="w-4 h-4" />
-                Espace Ubuntoo
-              </a>
+              {/* VOS ACCÈS - Nouvelle rubrique */}
+              <div className="relative group">
+                <button className="bg-gradient-to-r from-teal-600 to-[#0b2a55] text-white font-semibold text-base px-4 py-2 rounded-full transition-all duration-200 flex items-center gap-2 hover:shadow-lg hover:scale-105">
+                  Vos accès
+                  <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
+                </button>
+                <div className="absolute top-full right-0 w-72 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
+                  <div className="bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden">
+                    <div className="bg-gradient-to-r from-teal-600 to-[#0b2a55] px-4 py-3">
+                      <p className="text-white text-sm font-medium">Accédez à votre espace</p>
+                    </div>
+                    <div className="p-2">
+                      <a href="/conseils-accompagnement" onClick={(e) => goToPage(e, '/conseils-accompagnement')} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-teal-50 hover:text-teal-700 transition-all duration-200 group/item">
+                        <div className="w-10 h-10 rounded-lg bg-teal-100 flex items-center justify-center group-hover/item:bg-teal-600 transition-colors duration-200">
+                          <Building className="w-5 h-5 text-teal-600 group-hover/item:text-white transition-colors duration-200" />
+                        </div>
+                        <div><p className="font-semibold">Espace Employeurs</p><p className="text-xs text-gray-500">Conseils et accompagnement</p></div>
+                      </a>
+                      <a href="/espace-personnel" onClick={(e) => goToPage(e, '/espace-personnel')} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition-all duration-200 group/item">
+                        <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center group-hover/item:bg-[#0b2a55] transition-colors duration-200">
+                          <User className="w-5 h-5 text-[#0b2a55] group-hover/item:text-white transition-colors duration-200" />
+                        </div>
+                        <div><p className="font-semibold">Espace Personnel</p><p className="text-xs text-gray-500">Protection et accompagnement</p></div>
+                      </a>
+                      <a href="/espace-ubuntoo" onClick={(e) => goToPage(e, '/espace-ubuntoo')} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 transition-all duration-200 group/item">
+                        <div className="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center group-hover/item:bg-[#0F4C5C] transition-colors duration-200">
+                          <Network className="w-5 h-5 text-[#0F4C5C] group-hover/item:text-white transition-colors duration-200" />
+                        </div>
+                        <div><p className="font-semibold">Espace Ubuntoo</p><p className="text-xs text-gray-500">Communauté et réseau</p></div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               {/* Sélecteur de langue - à l'extrême droite */}
               <div className="relative lang-selector">
@@ -226,7 +254,7 @@ function Navigation() {
                   onClick={() => setIsLangOpen(!isLangOpen)}
                   className={`flex items-center gap-2 px-3 py-2 rounded-lg border transition-all duration-200 ${
                     isScrolled 
-                      ? 'border-gray-300 text-gray-700 hover:bg-gray-100' 
+                      ? 'border-gray-300 text-gray-700 hover:bg-gray-100 bg-white' 
                       : 'border-white/30 text-white hover:bg-white/20'
                   }`}
                 >
@@ -260,6 +288,7 @@ function Navigation() {
               </div>
             </div>
 
+            {/* Bouton menu mobile */}
             <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200" aria-label="Toggle menu">
               {isMobileMenuOpen ? <X className="w-6 h-6 text-[#0b2a55]" /> : <Menu className="w-6 h-6 text-[#0b2a55]" />}
             </button>
@@ -267,7 +296,7 @@ function Navigation() {
         </div>
       </nav>
 
-      {/* Mobile Menu */}
+      {/* Menu Mobile */}
       <div className={`fixed inset-0 bg-black/50 z-40 md:hidden transition-opacity duration-300 ${isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsMobileMenuOpen(false)}>
         <div className={`fixed top-20 right-0 bottom-0 w-72 bg-white shadow-2xl transform transition-transform duration-300 overflow-y-auto ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`} onClick={(e) => e.stopPropagation()}>
           <div className="flex flex-col p-6 space-y-2">
@@ -292,6 +321,20 @@ function Navigation() {
                 ))}
               </select>
             </div>
+
+            {/* Vos accès mobile */}
+            <p className="text-xs text-gray-400 uppercase tracking-wider mb-2">Vos accès</p>
+            <a href="/conseils-accompagnement" onClick={(e) => goToPage(e, '/conseils-accompagnement')} className="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-teal-50 transition-colors">
+              <Building className="w-5 h-5 text-teal-600" /><span className="font-medium">Espace Employeurs</span>
+            </a>
+            <a href="/espace-personnel" onClick={(e) => goToPage(e, '/espace-personnel')} className="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-blue-50 transition-colors">
+              <User className="w-5 h-5 text-[#0b2a55]" /><span className="font-medium">Espace Personnel</span>
+            </a>
+            <a href="/espace-ubuntoo" onClick={(e) => goToPage(e, '/espace-ubuntoo')} className="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-emerald-50 transition-colors">
+              <Network className="w-5 h-5 text-[#0F4C5C]" /><span className="font-medium">Espace Ubuntoo</span>
+            </a>
+            
+            <div className="border-t border-gray-100 my-3"></div>
             
             <p className="text-xs text-gray-400 uppercase tracking-wider mb-2">Présentation</p>
             <a href="/vision-methode" onClick={(e) => goToPage(e, '/vision-methode')} className="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-[#0b2a55]/10 transition-colors">
@@ -329,18 +372,6 @@ function Navigation() {
             </a>
             <a href="#membre" onClick={(e) => scrollToSection(e, '#membre')} className="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-[#0b2a55]/10 transition-colors">
               <UserPlus className="w-5 h-5 text-green-600" /><span className="font-medium">Devenir membre</span>
-            </a>
-            
-            <div className="border-t border-gray-100 my-3"></div>
-            
-            <a href="/conseils-accompagnement" onClick={(e) => goToPage(e, '/conseils-accompagnement')} className="flex items-center justify-center gap-2 bg-teal-600 text-white py-3 px-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors">
-              <Building className="w-5 h-5" />Espace Employeurs
-            </a>
-            <a href="/espace-personnel" onClick={(e) => goToPage(e, '/espace-personnel')} className="flex items-center justify-center gap-2 bg-[#0b2a55] text-white py-3 px-3 rounded-lg font-semibold hover:bg-[#1a4280] transition-colors">
-              <User className="w-5 h-5" />Espace Personnel
-            </a>
-            <a href="/espace-ubuntoo" onClick={(e) => goToPage(e, '/espace-ubuntoo')} className="flex items-center justify-center gap-2 bg-[#0F4C5C] text-white py-3 px-3 rounded-lg font-semibold hover:bg-[#0A3844] transition-colors">
-              <Users className="w-5 h-5" />Espace Ubuntoo
             </a>
           </div>
         </div>
