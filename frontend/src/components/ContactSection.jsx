@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Mail, Phone, Send, Linkedin, Twitter, Facebook } from 'lucide-react';
+import { MapPin, Mail, Phone, Send } from 'lucide-react';
 import { contactData } from '../mock/altactData';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
@@ -99,9 +99,6 @@ const ContactSection = () => {
                   </a>
                 </div>
               </div>
-            </div>
-
-            
             </div>
           </div>
 
