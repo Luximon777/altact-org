@@ -33,7 +33,6 @@ import NotreAction from "./components/NotreAction";
 function HomePage() {
   return (
     <React.Fragment>
-      <Navigation />
       <HeroSection />
       <PresentationSection />
       <MissionSection />
@@ -52,6 +51,7 @@ function App() {
   return (
     <HashRouter>
       <div className="App">
+        <Navigation />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/mentions-legales" element={<MentionsLegales />} />
