@@ -5,7 +5,22 @@ import { useNavigate } from 'react-router-dom';
 function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLangOpen, setIsLangOpen] = useState(false);
+  const [currentLang, setCurrentLang] = useState('FR');
   const navigate = useNavigate();
+
+  const languages = [
+    { code: 'fr', label: 'Français', flag: '🇫🇷' },
+    { code: 'en', label: 'English', flag: '🇬🇧' },
+    { code: 'es', label: 'Español', flag: '🇪🇸' },
+    { code: 'de', label: 'Deutsch', flag: '🇩🇪' },
+    { code: 'it', label: 'Italiano', flag: '🇮🇹' },
+    { code: 'pt', label: 'Português', flag: '🇵🇹' },
+    { code: 'ar', label: 'العربية', flag: '🇸🇦' },
+    { code: 'zh-CN', label: '中文', flag: '🇨🇳' },
+    { code: 'ja', label: '日本語', flag: '🇯🇵' },
+    { code: 'ru', label: 'Русский', flag: '🇷🇺' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +29,30 @@ function Navigation() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isLangOpen && !event.target.closest('.lang-selector')) {
+        setIsLangOpen(false);
+      }
+    };
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [isLangOpen]);
+
+  const changeLanguage = (langCode, langLabel) => {
+    setCurrentLang(langLabel.substring(0, 2).toUpperCase());
+    setIsLangOpen(false);
+    
+    // Utiliser Google Translate
+    setTimeout(() => {
+      const select = document.querySelector('select.goog-te-combo');
+      if (select) {
+        select.value = langCode;
+        select.dispatchEvent(new Event('change'));
+      }
+    }, 100);
+  };
 
   const scrollToSection = (e, href) => {
     e.preventDefault();
@@ -41,6 +80,7 @@ function Navigation() {
             <a href="/" onClick={(e) => goToPage(e, '/')} className="flex items-center group">
               <img src="https://customer-assets.emergentagent.com/job_d3bc6ef5-a9cd-4c9e-82cd-f8d680b06566/artifacts/ahmzyvay_LOGOS%202%20%281%29.png" alt="Alt&Act" className="h-6 w-auto" />
             </a>
+            
             <div className="hidden md:flex items-center space-x-6">
               
               <div className="relative group">
@@ -167,20 +207,6 @@ function Navigation() {
                 </div>
               </div>
 
-              {/* Sélecteur de langue */}
-              <div className="relative group">
-                <button className={`flex items-center gap-1 px-3 py-2 rounded-lg transition-colors duration-200 ${isScrolled ? 'text-[#0b2a55] hover:bg-gray-100' : 'text-white hover:bg-white/20'}`}>
-                  <Globe className="w-4 h-4" />
-                  <span className="text-sm font-medium">FR</span>
-                  <ChevronDown className="w-3 h-3" />
-                </button>
-                <div className="absolute top-full right-0 w-48 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                  <div className="bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden p-2">
-                    <div id="google_translate_element"></div>
-                  </div>
-                </div>
-              </div>
-
               <a href="/conseils-accompagnement" onClick={(e) => goToPage(e, '/conseils-accompagnement')} className="flex items-center gap-2 bg-teal-600 text-white px-4 py-2.5 rounded-full font-semibold text-sm transition-all duration-200 hover:bg-teal-700 hover:scale-105 shadow-lg hover:shadow-xl">
                 <Building className="w-4 h-4" />
                 Espace Employeurs
@@ -193,7 +219,47 @@ function Navigation() {
                 <Users className="w-4 h-4" />
                 Espace Ubuntoo
               </a>
+
+              {/* Sélecteur de langue - à l'extrême droite */}
+              <div className="relative lang-selector">
+                <button 
+                  onClick={() => setIsLangOpen(!isLangOpen)}
+                  className={`flex items-center gap-2 px-3 py-2 rounded-lg border transition-all duration-200 ${
+                    isScrolled 
+                      ? 'border-gray-300 text-gray-700 hover:bg-gray-100' 
+                      : 'border-white/30 text-white hover:bg-white/20'
+                  }`}
+                >
+                  <Globe className="w-4 h-4" />
+                  <span className="text-sm font-semibold">{currentLang}</span>
+                  <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${isLangOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                {isLangOpen && (
+                  <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden z-50">
+                    <div className="bg-gradient-to-r from-[#0b2a55] to-[#1a4280] px-4 py-2">
+                      <p className="text-white text-sm font-medium flex items-center gap-2">
+                        <Globe className="w-4 h-4" />
+                        Choisir la langue
+                      </p>
+                    </div>
+                    <div className="max-h-64 overflow-y-auto">
+                      {languages.map((lang) => (
+                        <button
+                          key={lang.code}
+                          onClick={() => changeLanguage(lang.code, lang.label)}
+                          className="w-full flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition-colors duration-200 text-left"
+                        >
+                          <span className="text-xl">{lang.flag}</span>
+                          <span className="font-medium">{lang.label}</span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
+
             <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200" aria-label="Toggle menu">
               {isMobileMenuOpen ? <X className="w-6 h-6 text-[#0b2a55]" /> : <Menu className="w-6 h-6 text-[#0b2a55]" />}
             </button>
@@ -201,17 +267,30 @@ function Navigation() {
         </div>
       </nav>
 
+      {/* Mobile Menu */}
       <div className={`fixed inset-0 bg-black/50 z-40 md:hidden transition-opacity duration-300 ${isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsMobileMenuOpen(false)}>
         <div className={`fixed top-20 right-0 bottom-0 w-72 bg-white shadow-2xl transform transition-transform duration-300 overflow-y-auto ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`} onClick={(e) => e.stopPropagation()}>
           <div className="flex flex-col p-6 space-y-2">
             
             {/* Sélecteur de langue mobile */}
-            <div className="bg-gray-100 rounded-lg p-3 mb-4">
-              <p className="text-xs text-gray-500 uppercase tracking-wider mb-2 flex items-center gap-2">
+            <div className="bg-gradient-to-r from-[#0b2a55] to-[#1a4280] rounded-xl p-4 mb-4">
+              <p className="text-white text-sm font-medium flex items-center gap-2 mb-3">
                 <Globe className="w-4 h-4" />
                 Langue
               </p>
-              <div id="google_translate_element_mobile"></div>
+              <select 
+                onChange={(e) => {
+                  const selected = languages.find(l => l.code === e.target.value);
+                  if (selected) changeLanguage(selected.code, selected.label);
+                }}
+                className="w-full bg-white/20 text-white border border-white/30 rounded-lg px-3 py-2 text-sm"
+              >
+                {languages.map((lang) => (
+                  <option key={lang.code} value={lang.code} className="text-gray-900">
+                    {lang.flag} {lang.label}
+                  </option>
+                ))}
+              </select>
             </div>
             
             <p className="text-xs text-gray-400 uppercase tracking-wider mb-2">Présentation</p>
