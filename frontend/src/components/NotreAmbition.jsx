@@ -2,7 +2,6 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { Globe, Heart, Users, ArrowRight, Sparkles, Scale, Leaf, Building, HandHeart, ChevronRight, Star } from 'lucide-react';
 import { Button } from './ui/button';
 import { useNavigate } from 'react-router-dom';
-
 import Footer from './Footer';
 
 const NotreAmbition = () => {
@@ -47,13 +46,12 @@ const NotreAmbition = () => {
 
   return (
     <div className="min-h-screen bg-gray-50" data-testid="notre-ambition-page">
-     
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-blue-900 via-blue-800 to-[#0b2a55] overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-teal-400 rounded-full blur-3xl"></div>
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src="https://images.unsplash.com/photo-1758518729240-7162d07427b8?w=1920&q=80" alt="Collaboration professionnelle" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-blue-800/85 to-[#0b2a55]/90"></div>
         </div>
         
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
