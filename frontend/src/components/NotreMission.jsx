@@ -2,7 +2,6 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { Target, Heart, Users, Globe, ArrowRight, Sparkles, Shield, Brain, HandHeart, ChevronRight } from 'lucide-react';
 import { Button } from './ui/button';
 import { useNavigate } from 'react-router-dom';
-import Navigation from './Navigation';
 import Footer from './Footer';
 
 const NotreMission = () => {
@@ -46,7 +45,6 @@ const NotreMission = () => {
 
   return (
     <div className="min-h-screen bg-gray-50" data-testid="notre-mission-page">
-      <Navigation />
       
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 bg-gradient-to-br from-[#0b2a55] via-[#1a4280] to-[#0b2a55] overflow-hidden">
