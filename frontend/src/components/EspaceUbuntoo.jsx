@@ -65,7 +65,7 @@ function EspaceUbuntoo() {
           </div>
           <div className="flex justify-center mb-4">
             <img 
-              src="/logo ubuntoo.png" 
+              src="/logo%20ubuntoo.png"  
               alt="Ubuntoo" 
               className="h-32 md:h-40 w-auto"
             />
