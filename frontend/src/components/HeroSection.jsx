@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Heart, Users, Globe, Scale } from 'lucide-react';
 import { Button } from './ui/button';
 
 const HeroSection = () => {
   const navigate = useNavigate();
-  const [logoError, setLogoError] = useState(false);
 
   const scrollToSection = (href) => {
     const element = document.querySelector(href);
@@ -108,18 +107,30 @@ const HeroSection = () => {
         {/* Logo/Title */}
         <div className="mb-6 animate-fade-in-up">
           <div className="flex flex-col items-center justify-center">
-            {!logoError ? (
+            <div className="relative">
               <img 
                 src="/logo.png" 
                 alt="Alt&Act" 
-                className="h-16 md:h-20 lg:h-24 w-auto mx-auto"
-                onError={() => setLogoError(true)}
+                className="h-16 md:h-20 lg:h-24 w-auto mx-auto logo-image"
+                style={{ display: 'block' }}
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  document.getElementById('logo-fallback').style.display = 'block';
+                }}
               />
-            ) : (
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white">
-                Alt<span className="text-[#7CB342]">&</span>Act
-              </h1>
-            )}
+              <div 
+                id="logo-fallback" 
+                className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight"
+                style={{ 
+                  display: 'none',
+                  fontFamily: "'Fraunces', serif"
+                }}
+              >
+                <span className="text-white">Alt</span>
+                <span className="text-[#7CB342]">&</span>
+                <span className="text-white">Act</span>
+              </div>
+            </div>
             <p className="text-sm md:text-base italic text-blue-100 mt-2">Altérité & Action</p>
           </div>
         </div>
