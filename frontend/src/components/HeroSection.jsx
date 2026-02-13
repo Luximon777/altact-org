@@ -110,7 +110,7 @@ const HeroSection = () => {
             <img 
               src={process.env.PUBLIC_URL + '/logo.png'}
               alt="Alt&Act" 
-              className="h-14 md:h-20 lg:h-24 w-auto mx-auto"
+              className="h-10 md:h-14 lg:h-16 w-auto mx-auto"
             />
             <p className="text-sm md:text-base italic text-blue-100 mt-3">Altérité & Action</p>
           </div>
