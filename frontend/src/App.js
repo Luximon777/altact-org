@@ -67,7 +67,8 @@ function App() {
           <Route path="/vision-methode" element={<VisionMethode />} />
           <Route path="/espace-personnel" element={<EspacePersonnel />} />
           <Route path="/gouvernance-consultative" element={<GouvernanceConsultative />} />
-          
+          <Route path="/contact" element={<ContactPage />} />
+<Route path="/devenir-membre" element={<DevenirMembrePage />} />
           {/* Nouvelles pages Mission */}
           <Route path="/notre-mission" element={<NotreMission />} />
           <Route path="/notre-ambition" element={<NotreAmbition />} />
