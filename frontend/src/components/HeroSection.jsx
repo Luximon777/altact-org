@@ -104,15 +104,15 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Logo/Title */}
+        {/* Logo - Image uniquement */}
         <div className="mb-6 animate-fade-in-up">
           <div className="flex flex-col items-center justify-center">
             <img 
               src="/logo.png" 
               alt="Alt&Act" 
-              className="h-16 md:h-20 lg:h-24 w-auto mx-auto"
+              className="h-20 md:h-28 lg:h-32 w-auto mx-auto"
             />
-            <p className="text-sm md:text-base italic text-blue-100 mt-2">Altérité & Action</p>
+            <p className="text-sm md:text-base italic text-blue-100 mt-3">Altérité & Action</p>
           </div>
         </div>
         
