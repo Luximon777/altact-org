@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, FileText, Quote, UserCircle, Heart, Building, User, Mail, UserPlus, Target, Eye, Zap, Users } from 'lucide-react';
+import { Button } from './ui/button';
 import { useNavigate } from 'react-router-dom';
 
 function Navigation() {
@@ -14,6 +15,34 @@ function Navigation() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const scrollToSection = (e, href) => {
+    e.preventDefault();
+    setIsMobileMenuOpen(false);
+    
+    const scrollToElement = () => {
+      const element = document.querySelector(href);
+      if (element) {
+        const offset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+      }
+    };
+
+    // Check if we're on the homepage
+    const isHomePage = window.location.hash === '' || window.location.hash === '#/' || window.location.hash === '#';
+    
+    if (isHomePage) {
+      // Already on homepage, just scroll
+      scrollToElement();
+    } else {
+      // Navigate to homepage first, then scroll
+      navigate('/');
+      // Wait for navigation and DOM update
+      setTimeout(scrollToElement, 100);
+    }
+  };
 
   const goToPage = (e, path) => { 
     e.preventDefault(); 
@@ -30,7 +59,6 @@ function Navigation() {
               <img src={process.env.PUBLIC_URL + '/logo.png'} alt="Alt&Act" className="h-6 w-auto" />
             </a>
             <div className="hidden md:flex items-center space-x-6">
-              
               {/* Dropdown Présentation */}
               <div className="relative group">
                 <button className="text-orange-600 hover:text-orange-700 font-semibold text-base transition-colors duration-200 flex items-center gap-1 py-4" data-testid="presentation-dropdown">
@@ -43,19 +71,19 @@ function Navigation() {
                       <p className="text-white text-sm font-medium">Découvrir ALT&ACT</p>
                     </div>
                     <div className="p-2">
-                      <a href="/vision-methode" onClick={(e) => goToPage(e, '/vision-methode')} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-[#0b2a55]/10 hover:text-[#0b2a55] transition-all duration-200 group/item">
+                      <a href="/vision-methode" onClick={(e) => goToPage(e, '/vision-methode')} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-[#0b2a55]/10 hover:text-[#0b2a55] transition-all duration-200 group/item" data-testid="vision-methode-link">
                         <div className="w-10 h-10 rounded-lg bg-[#0b2a55]/10 flex items-center justify-center group-hover/item:bg-[#0b2a55] transition-colors duration-200">
                           <FileText className="w-5 h-5 text-[#0b2a55] group-hover/item:text-white transition-colors duration-200" />
                         </div>
                         <div><p className="font-semibold">Vision et méthode</p><p className="text-xs text-gray-500">Notre approche</p></div>
                       </a>
-                      <a href="/mot-president" onClick={(e) => goToPage(e, '/mot-president')} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-[#0b2a55]/10 hover:text-[#0b2a55] transition-all duration-200 group/item">
+                      <a href="/mot-president" onClick={(e) => goToPage(e, '/mot-president')} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-[#0b2a55]/10 hover:text-[#0b2a55] transition-all duration-200 group/item" data-testid="mot-president-link">
                         <div className="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center group-hover/item:bg-orange-500 transition-colors duration-200">
                           <Quote className="w-5 h-5 text-orange-600 group-hover/item:text-white transition-colors duration-200" />
                         </div>
                         <div><p className="font-semibold">Le mot du fondateur</p><p className="text-xs text-gray-500">Vision et engagement</p></div>
                       </a>
-                      <a href="/membres" onClick={(e) => goToPage(e, '/membres')} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-[#0b2a55]/10 hover:text-[#0b2a55] transition-all duration-200 group/item">
+                      <a href="/membres" onClick={(e) => goToPage(e, '/membres')} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-[#0b2a55]/10 hover:text-[#0b2a55] transition-all duration-200 group/item" data-testid="membres-link">
                         <div className="w-10 h-10 rounded-lg bg-teal-100 flex items-center justify-center group-hover/item:bg-teal-500 transition-colors duration-200">
                           <UserCircle className="w-5 h-5 text-teal-600 group-hover/item:text-white transition-colors duration-200" />
                         </div>
@@ -78,19 +106,19 @@ function Navigation() {
                       <p className="text-white text-sm font-medium">Notre raison d'être</p>
                     </div>
                     <div className="p-2">
-                      <a href="/notre-mission" onClick={(e) => goToPage(e, '/notre-mission')} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-amber-50 hover:text-amber-700 transition-all duration-200 group/item">
+                      <a href="/notre-mission" onClick={(e) => goToPage(e, '/notre-mission')} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-amber-50 hover:text-amber-700 transition-all duration-200 group/item" data-testid="notre-mission-link">
                         <div className="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center group-hover/item:bg-amber-500 transition-colors duration-200">
                           <Target className="w-5 h-5 text-amber-600 group-hover/item:text-white transition-colors duration-200" />
                         </div>
                         <div><p className="font-semibold">Notre mission</p><p className="text-xs text-gray-500">Révéler et structurer</p></div>
                       </a>
-                      <a href="/notre-ambition" onClick={(e) => goToPage(e, '/notre-ambition')} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-amber-50 hover:text-amber-700 transition-all duration-200 group/item">
+                      <a href="/notre-ambition" onClick={(e) => goToPage(e, '/notre-ambition')} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-amber-50 hover:text-amber-700 transition-all duration-200 group/item" data-testid="notre-ambition-link">
                         <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center group-hover/item:bg-blue-500 transition-colors duration-200">
                           <Eye className="w-5 h-5 text-blue-600 group-hover/item:text-white transition-colors duration-200" />
                         </div>
                         <div><p className="font-semibold">Notre ambition</p><p className="text-xs text-gray-500">Le travail comme service</p></div>
                       </a>
-                      <a href="/notre-action" onClick={(e) => goToPage(e, '/notre-action')} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-amber-50 hover:text-amber-700 transition-all duration-200 group/item">
+                      <a href="/notre-action" onClick={(e) => goToPage(e, '/notre-action')} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-amber-50 hover:text-amber-700 transition-all duration-200 group/item" data-testid="notre-action-link">
                         <div className="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center group-hover/item:bg-green-500 transition-colors duration-200">
                           <Zap className="w-5 h-5 text-green-600 group-hover/item:text-white transition-colors duration-200" />
                         </div>
@@ -113,13 +141,13 @@ function Navigation() {
                       <p className="text-white text-sm font-medium">Nos engagements</p>
                     </div>
                     <div className="p-2">
-                      <a href="/charte-ethique" onClick={(e) => goToPage(e, '/charte-ethique')} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-rose-50 hover:text-rose-600 transition-all duration-200 group/item">
+                      <a href="/charte-ethique" onClick={(e) => goToPage(e, '/charte-ethique')} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-rose-50 hover:text-rose-600 transition-all duration-200 group/item" data-testid="charte-ethique-link">
                         <div className="w-10 h-10 rounded-lg bg-rose-100 flex items-center justify-center group-hover/item:bg-rose-500 transition-colors duration-200">
                           <Heart className="w-5 h-5 text-rose-600 group-hover/item:text-white transition-colors duration-200" />
                         </div>
                         <div><p className="font-semibold">Charte éthique</p><p className="text-xs text-gray-500">10 principes fondateurs</p></div>
                       </a>
-                      <a href="/gouvernance-consultative" onClick={(e) => goToPage(e, '/gouvernance-consultative')} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-rose-50 hover:text-rose-600 transition-all duration-200 group/item">
+                      <a href="/gouvernance-consultative" onClick={(e) => goToPage(e, '/gouvernance-consultative')} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-rose-50 hover:text-rose-600 transition-all duration-200 group/item" data-testid="gouvernance-link">
                         <div className="w-10 h-10 rounded-lg bg-indigo-100 flex items-center justify-center group-hover/item:bg-indigo-500 transition-colors duration-200">
                           <Users className="w-5 h-5 text-indigo-600 group-hover/item:text-white transition-colors duration-200" />
                         </div>
@@ -142,19 +170,19 @@ function Navigation() {
                       <p className="text-white text-sm font-medium">Espaces dédiés</p>
                     </div>
                     <div className="p-2">
-                      <a href="/conseils-accompagnement" onClick={(e) => goToPage(e, '/conseils-accompagnement')} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-teal-50 hover:text-teal-700 transition-all duration-200 group/item">
+                      <a href="/conseils-accompagnement" onClick={(e) => goToPage(e, '/conseils-accompagnement')} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-teal-50 hover:text-teal-700 transition-all duration-200 group/item" data-testid="espace-employeurs-link">
                         <div className="w-10 h-10 rounded-lg bg-teal-100 flex items-center justify-center group-hover/item:bg-teal-600 transition-colors duration-200">
                           <Building className="w-5 h-5 text-teal-600 group-hover/item:text-white transition-colors duration-200" />
                         </div>
                         <div><p className="font-semibold">Espace Employeurs</p><p className="text-xs text-gray-500">Conseils et accompagnement</p></div>
                       </a>
-                      <a href="/espace-personnel" onClick={(e) => goToPage(e, '/espace-personnel')} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-[#0b2a55]/10 hover:text-[#0b2a55] transition-all duration-200 group/item">
+                      <a href="/espace-personnel" onClick={(e) => goToPage(e, '/espace-personnel')} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-[#0b2a55]/10 hover:text-[#0b2a55] transition-all duration-200 group/item" data-testid="espace-personnel-link">
                         <div className="w-10 h-10 rounded-lg bg-[#0b2a55]/10 flex items-center justify-center group-hover/item:bg-[#0b2a55] transition-colors duration-200">
                           <User className="w-5 h-5 text-[#0b2a55] group-hover/item:text-white transition-colors duration-200" />
                         </div>
                         <div><p className="font-semibold">Espace Personnel</p><p className="text-xs text-gray-500">Mon compte</p></div>
                       </a>
-                      <a href="/espace-ubuntoo" onClick={(e) => goToPage(e, '/espace-ubuntoo')} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-[#0F4C5C]/10 hover:text-[#0F4C5C] transition-all duration-200 group/item">
+                      <a href="/espace-ubuntoo" onClick={(e) => goToPage(e, '/espace-ubuntoo')} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-[#0F4C5C]/10 hover:text-[#0F4C5C] transition-all duration-200 group/item" data-testid="espace-ubuntoo-link">
                         <div className="w-10 h-10 rounded-lg bg-[#0F4C5C]/10 flex items-center justify-center group-hover/item:bg-[#0F4C5C] transition-colors duration-200">
                           <Users className="w-5 h-5 text-[#0F4C5C] group-hover/item:text-white transition-colors duration-200" />
                         </div>
@@ -177,13 +205,13 @@ function Navigation() {
                       <p className="text-white text-sm font-medium">Nous rejoindre</p>
                     </div>
                     <div className="p-2">
-                      <a href="/contact" onClick={(e) => goToPage(e, '/contact')} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-[#0b2a55]/10 hover:text-[#0b2a55] transition-all duration-200 group/item">
+                      <a href="/contact" onClick={(e) => goToPage(e, '/contact')} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-[#0b2a55]/10 hover:text-[#0b2a55] transition-all duration-200 group/item" data-testid="contact-link">
                         <div className="w-10 h-10 rounded-lg bg-[#0b2a55]/10 flex items-center justify-center group-hover/item:bg-[#0b2a55] transition-colors duration-200">
                           <Mail className="w-5 h-5 text-[#0b2a55] group-hover/item:text-white transition-colors duration-200" />
                         </div>
                         <div><p className="font-semibold">Contact</p><p className="text-xs text-gray-500">Nous écrire</p></div>
                       </a>
-                      <a href="/devenir-membre" onClick={(e) => goToPage(e, '/devenir-membre')} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-[#0b2a55]/10 hover:text-[#0b2a55] transition-all duration-200 group/item">
+                      <a href="/devenir-membre" onClick={(e) => goToPage(e, '/devenir-membre')} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-[#0b2a55]/10 hover:text-[#0b2a55] transition-all duration-200 group/item" data-testid="devenir-membre-link">
                         <div className="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center group-hover/item:bg-green-500 transition-colors duration-200">
                           <UserPlus className="w-5 h-5 text-green-600 group-hover/item:text-white transition-colors duration-200" />
                         </div>
@@ -193,7 +221,6 @@ function Navigation() {
                   </div>
                 </div>
               </div>
-
             </div>
             <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200" aria-label="Toggle menu" data-testid="mobile-menu-toggle">
               {isMobileMenuOpen ? <X className="w-6 h-6 text-[#0b2a55]" /> : <Menu className="w-6 h-6 text-[#0b2a55]" />}
