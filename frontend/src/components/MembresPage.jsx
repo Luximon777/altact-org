@@ -18,7 +18,7 @@ import {
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
-
+import Navigation from "./Navigation";
 const COMITES = [
   {
     id: "bureau",
@@ -411,7 +411,7 @@ function MembresPage() {
   return (
     <div className="min-h-screen bg-gray-50" data-testid="membres-page">
       <div 
-        className="relative text-white py-16 px-4"
+        className="relative text-white pt-28 pb-16"
         style={{
           backgroundImage: `linear-gradient(to right, rgba(11, 42, 85, 0.9), rgba(26, 66, 128, 0.85)), url('https://images.unsplash.com/photo-1624555130296-e551faf8969b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1NzZ8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjB0ZWFtJTIwYnVzaW5lc3MlMjBtZWV0aW5nJTIwZGl2ZXJzaXR5fGVufDB8fHx8MTc3MDk4OTcwOHww&ixlib=rb-4.1.0&q=85')`,
           backgroundSize: 'cover',
@@ -437,7 +437,7 @@ function MembresPage() {
           </p>
         </div>
       </div>
-
+<Navigation />
       <div className="max-w-6xl mx-auto px-4 py-12">
         <div className="flex flex-wrap gap-3 mb-12 justify-center">
           <Button
