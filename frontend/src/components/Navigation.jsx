@@ -44,13 +44,20 @@ function Navigation() {
     navigate(path); 
   };
 
+  var goToHome = function(e) {
+    e.preventDefault();
+    setIsMobileMenuOpen(false);
+    navigate('/');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <React.Fragment>
       <nav className={isScrolled ? 'fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-lg shadow-lg' : 'fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent'}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             
-            <a href="/" onClick={function(e) { goToPage(e, '/'); }} className="flex items-center">
+            <a href="/" onClick={goToHome} className="flex items-center">
               <img src={process.env.PUBLIC_URL + '/logo.png'} alt="Alt and Act" className="h-8 w-auto" />
             </a>
 
@@ -139,7 +146,7 @@ function Navigation() {
                 </div>
               </div>
 
-              {/* RUBRIQUE 4: Vos accès (SÉPARÉE) */}
+              {/* RUBRIQUE 4: Vos accès */}
               <div className="relative group">
                 <button className="text-orange-600 hover:text-orange-700 font-semibold text-base flex items-center gap-1 py-4">
                   Vos accès
@@ -168,7 +175,7 @@ function Navigation() {
                 </div>
               </div>
 
-              {/* RUBRIQUE 5: Contact (SÉPARÉE) */}
+              {/* RUBRIQUE 5: Contact */}
               <div className="relative group">
                 <button className="text-orange-600 hover:text-orange-700 font-semibold text-base flex items-center gap-1 py-4">
                   Contact
