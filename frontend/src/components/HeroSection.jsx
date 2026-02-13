@@ -104,11 +104,11 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Logo - Image uniquement */}
+        {/* Logo - Image avec URL absolue */}
         <div className="mb-6 animate-fade-in-up">
           <div className="flex flex-col items-center justify-center">
             <img 
-              src="/logo.png" 
+              src="https://luximon777.github.io/altact-org/logo.png" 
               alt="Alt&Act" 
               className="h-20 md:h-28 lg:h-32 w-auto mx-auto"
             />
