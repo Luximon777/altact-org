@@ -17,31 +17,11 @@ function Navigation() {
     };
   }, []);
 
-  var scrollToSection = function(e, href) {
-    e.preventDefault();
-    setIsMobileMenuOpen(false);
-    var scrollToElement = function() {
-      var element = document.querySelector(href);
-      if (element) {
-        var offset = 80;
-        var elementPosition = element.getBoundingClientRect().top;
-        var offsetPosition = elementPosition + window.pageYOffset - offset;
-        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-      }
-    };
-    var isHomePage = window.location.hash === '' || window.location.hash === '#/' || window.location.hash === '#';
-    if (isHomePage) {
-      scrollToElement();
-    } else {
-      navigate('/');
-      setTimeout(scrollToElement, 100);
-    }
-  };
-
   var goToPage = function(e, path) { 
     e.preventDefault(); 
     setIsMobileMenuOpen(false); 
-    navigate(path); 
+    navigate(path);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   var goToHome = function(e) {
@@ -63,7 +43,7 @@ function Navigation() {
 
             <div className="hidden md:flex items-center space-x-6">
               
-              {/* RUBRIQUE 1: Présentation */}
+              {/* Présentation */}
               <div className="relative group">
                 <button className="text-orange-600 hover:text-orange-700 font-semibold text-base flex items-center gap-1 py-4">
                   Présentation
@@ -92,7 +72,7 @@ function Navigation() {
                 </div>
               </div>
 
-              {/* RUBRIQUE 2: Mission */}
+              {/* Mission */}
               <div className="relative group">
                 <button className="text-orange-600 hover:text-orange-700 font-semibold text-base flex items-center gap-1 py-4">
                   Mission
@@ -121,7 +101,7 @@ function Navigation() {
                 </div>
               </div>
 
-              {/* RUBRIQUE 3: Charte éthique */}
+              {/* Charte éthique */}
               <div className="relative group">
                 <button className="text-orange-600 hover:text-orange-700 font-semibold text-base flex items-center gap-1 py-4">
                   Charte éthique
@@ -146,7 +126,7 @@ function Navigation() {
                 </div>
               </div>
 
-              {/* RUBRIQUE 4: Vos accès */}
+              {/* Vos accès */}
               <div className="relative group">
                 <button className="text-orange-600 hover:text-orange-700 font-semibold text-base flex items-center gap-1 py-4">
                   Vos accès
@@ -175,7 +155,7 @@ function Navigation() {
                 </div>
               </div>
 
-              {/* RUBRIQUE 5: Contact */}
+              {/* Contact */}
               <div className="relative group">
                 <button className="text-orange-600 hover:text-orange-700 font-semibold text-base flex items-center gap-1 py-4">
                   Contact
@@ -187,11 +167,11 @@ function Navigation() {
                       <p className="text-white text-sm font-medium">Nous rejoindre</p>
                     </div>
                     <div className="p-2">
-                      <a href="#contact" onClick={function(e) { scrollToSection(e, '#contact'); }} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-blue-50 transition-all">
+                      <a href="/contact" onClick={function(e) { goToPage(e, '/contact'); }} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-blue-50 transition-all">
                         <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center"><Mail className="w-5 h-5 text-blue-600" /></div>
                         <div><p className="font-semibold">Contact</p><p className="text-xs text-gray-500">Nous écrire</p></div>
                       </a>
-                      <a href="#membre" onClick={function(e) { scrollToSection(e, '#membre'); }} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-green-50 transition-all">
+                      <a href="/devenir-membre" onClick={function(e) { goToPage(e, '/devenir-membre'); }} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-green-50 transition-all">
                         <div className="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center"><UserPlus className="w-5 h-5 text-green-600" /></div>
                         <div><p className="font-semibold">Devenir membre</p><p className="text-xs text-gray-500">Rejoindre ALT&ACT</p></div>
                       </a>
@@ -233,8 +213,8 @@ function Navigation() {
               <a href="/espace-ubuntoo" onClick={function(e) { goToPage(e, '/espace-ubuntoo'); }} className="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-gray-100"><Users className="w-5 h-5 text-cyan-600" /><span>Espace Ubuntoo</span></a>
               
               <p className="text-xs text-gray-400 uppercase tracking-wider mt-4 mb-2">Contact</p>
-              <a href="#contact" onClick={function(e) { scrollToSection(e, '#contact'); }} className="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-gray-100"><Mail className="w-5 h-5 text-blue-600" /><span>Contact</span></a>
-              <a href="#membre" onClick={function(e) { scrollToSection(e, '#membre'); }} className="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-gray-100"><UserPlus className="w-5 h-5 text-green-600" /><span>Devenir membre</span></a>
+              <a href="/contact" onClick={function(e) { goToPage(e, '/contact'); }} className="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-gray-100"><Mail className="w-5 h-5 text-blue-600" /><span>Contact</span></a>
+              <a href="/devenir-membre" onClick={function(e) { goToPage(e, '/devenir-membre'); }} className="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-gray-100"><UserPlus className="w-5 h-5 text-green-600" /><span>Devenir membre</span></a>
             </div>
           </div>
         </div>
