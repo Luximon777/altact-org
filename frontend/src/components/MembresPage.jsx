@@ -167,12 +167,12 @@ const COMITES = [
         expertise: ["Cybersécurité", "RGPD", "Protection des données", "Architecture technique", "Gestion des risques IT", "Conformité réglementaire"]
       },
       {
-        nom: "Dr. Stephano Vacher",
+        nom: "Stephano Vacher",
         fonction: "Stratégie, RSE, innovation responsable",
         role: "Consultatif",
-        soustitre: "Expert en stratégie, RSE & innovation responsable",
+        soustitre: "Directeur de master et enseignant à l'École de Management de Strasbourg | Expert en stratégie, RSE & innovation responsable",
         photo: null,
-        bio: "Dr. Stephano Vacher est un expert reconnu dans les domaines de la stratégie, de la responsabilité sociétale des organisations (RSE) et de l'innovation responsable. Il allie une expertise académique solide à une expérience pratique dans l'accompagnement des transformations organisationnelles et des projets complexes. Au sein du Comité de pilotage consultatif d'ALT&ACT, il apporte une lecture stratégique des enjeux à l'interface entre innovation sociétale, gouvernance responsable et impacts durables, ce qui constitue un atout majeur pour structurer une démarche porteuse de sens et de résultats à l'échelle européenne.",
+        bio: "Stephano Vacher est un expert reconnu dans les domaines de la stratégie, de la responsabilité sociétale des organisations (RSE) et de l'innovation responsable. Directeur de master et enseignant à l'École de Management de Strasbourg, il allie une expertise académique solide à une expérience pratique dans l'accompagnement des transformations organisationnelles et des projets complexes. Au sein du Comité de pilotage consultatif d'ALT&ACT, il apporte une lecture stratégique des enjeux à l'interface entre innovation sociétale, gouvernance responsable et impacts durables, ce qui constitue un atout majeur pour structurer une démarche porteuse de sens et de résultats à l'échelle européenne.",
         realisations: "Stephano a construit une trajectoire riche qui croise réflexion stratégique, accompagnement des transformations et leadership éclairé sur les sujets d'innovation et de durabilité. En stratégie et pilotage, il assure la conception et l'accompagnement de démarches stratégiques pour des organisations publiques, privées ou associatives, l'intégration des dimensions RSE et ESG dans les modèles de développement, et la structuration de feuilles de route pour des projets à impact.",
         vision: "Sa présence au sein du Comité de pilotage renforce la capacité de l'association à s'inscrire dans les cadres européens en matière de durabilité et de responsabilité sociétale, intégrer des exigences croissantes de transparence, de gouvernance éthique et de mesure d'impact, et construire une stratégie cohérente avec les attentes des institutions et des partenaires. Il constitue une ressource stratégique pour articuler les ambitions de l'association avec les politiques publiques européennes en matière de transition écologique, d'emploi et de compétences.",
         signature: "Stephano incarne une approche exigeante et éclairée de la stratégie, où l'innovation ne se conçoit qu'à travers le prisme de la responsabilité, de l'éthique et de l'impact réel. Il apporte une capacité à conceptualiser des trajectoires complexes, à en mesurer les effets, et à les ajuster dans une logique d'amélioration continue.",
@@ -205,9 +205,9 @@ const COMITES = [
         nom: "Alexandra Horst",
         fonction: "Psychologue clinicienne",
         role: "Consultatif indépendant",
-        soustitre: "Psychologue clinicienne & praticienne en ressources humaines",
+        soustitre: "Psychologue clinicienne & praticienne en ressources humaines | Double compétence clinique et RH",
         photo: null,
-        bio: "Alexandra Horst est une psychologue clinicienne libérale installée à Strasbourg, dotée d'une double formation en psychologie clinique et en gestion des ressources humaines, ce qui lui confère une expertise tant dans l'accompagnement psychologique que dans la compréhension des dynamiques humaines au sein des organisations. Sa présence au sein du Comité de mission éthique d'ALT&ACT apporte une dimension réflexive, centrée sur l'humain, enrichissant les approches institutionnelles par une lecture des facteurs psychologiques, comportementaux et relationnels qui influencent les trajectoires individuelles et collectives.",
+        bio: "Alexandra Horst est une psychologue clinicienne libérale installée à Strasbourg, dotée d'une double formation en psychologie clinique et en gestion des ressources humaines (Master 2), ce qui lui confère une expertise unique tant dans l'accompagnement psychologique que dans la compréhension des dynamiques humaines au sein des organisations. Sa présence au sein du Comité de mission éthique d'ALT&ACT apporte une dimension réflexive, centrée sur l'humain, enrichissant les approches institutionnelles par une lecture des facteurs psychologiques, comportementaux et relationnels qui influencent les trajectoires individuelles et collectives.",
         realisations: "Alexandra exerce en tant que psychologue clinicienne à Strasbourg, où elle accompagne des adultes et des adolescents dans leurs questionnements personnels, familiaux ou professionnels, à travers des consultations individuelles et des approches psychothérapeutiques adaptées. Sa pratique repose sur un référentiel clinique intégratif, combinant des éléments analytiques, cognitifs, comportementaux et systémiques pour offrir un accompagnement souple et adapté.",
         vision: "Au sein du Comité de mission éthique, Alexandra apporte une expertise précieuse sur les dimensions humaines invisibles mais déterminantes des parcours d'accompagnement professionnel et social. Son intervention renforce notamment l'intégration systémique des facteurs psychologiques dans les dispositifs de soutien, l'élaboration de cadres d'accompagnement centrés sur la personne, la capacité à anticiper les blocages comportementaux ou émotionnels dans les trajectoires, et la qualité de l'écoute institutionnelle pour outiller les publics dans leurs transitions.",
         signature: "Alexandra combine rigueur clinique, bienveillance structurée et lecture stratégique des processus humains. Elle travaille à la fois sur la compréhension des dynamiques internes des individus, l'ajustement des comportements à des contextes de changement, et la transformation des relations interpersonnelles vers des conditions de réussite.",
@@ -397,7 +397,14 @@ function MembresPage() {
 
   return (
     <div className="min-h-screen bg-gray-50" data-testid="membres-page">
-      <div className="bg-gradient-to-r from-[#0b2a55] to-[#1a4280] text-white py-16 px-4">
+      <div 
+        className="relative text-white py-16 px-4"
+        style={{
+          backgroundImage: `linear-gradient(to right, rgba(11, 42, 85, 0.9), rgba(26, 66, 128, 0.85)), url('https://images.unsplash.com/photo-1624555130296-e551faf8969b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1NzZ8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjB0ZWFtJTIwYnVzaW5lc3MlMjBtZWV0aW5nJTIwZGl2ZXJzaXR5fGVufDB8fHx8MTc3MDk4OTcwOHww&ixlib=rb-4.1.0&q=85')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      >
         <div className="max-w-6xl mx-auto">
           <Button 
             variant="ghost" 
