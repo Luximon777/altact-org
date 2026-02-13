@@ -19,6 +19,7 @@ import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
 import Navigation from "./Navigation";
+import Navigation from "./Navigation";
 const COMITES = [
   {
     id: "bureau",
