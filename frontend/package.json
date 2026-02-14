@@ -2,7 +2,7 @@
   "name": "altact-frontend",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://alt-act.eu",
+  "homepage": "https://luximon777.github.io/altact-org",
   "dependencies": {
     "@craco/craco": "^7.1.0",
     "lucide-react": "^0.368.0",
