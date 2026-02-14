@@ -1,9 +1,12 @@
 {
-  "name": "altact-frontend",
-  "version": "1.0.0",
+  "name": "altact-org",
+  "version": "0.1.0",
   "private": true,
   "homepage": "https://luximon777.github.io/altact-org",
   "dependencies": {
+    ...
+  }
+}
     "@craco/craco": "^7.1.0",
     "lucide-react": "^0.368.0",
     "react": "^18.2.0",
