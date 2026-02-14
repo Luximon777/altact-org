@@ -1,4 +1,4 @@
-name: Deploy Alt&Act Site
+name: Deploy Alt&Act Site (GitHub Pages)
 
 on:
   push:
@@ -25,7 +25,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "18"
           cache: yarn
           cache-dependency-path: frontend/yarn.lock
 
@@ -46,12 +46,12 @@ jobs:
           path: frontend/build
 
   deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
-    runs-on: ubuntu-latest
-    needs: build
 
     steps:
       - name: Deploy to GitHub Pages
