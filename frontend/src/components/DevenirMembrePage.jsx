@@ -37,30 +37,20 @@ const DevenirMembrePage = () => {
     <div className="min-h-screen bg-gray-50" data-testid="devenir-membre-page">
       <Navigation />
       
-      {/* Hero Section with Image */}
       <section className="relative pt-20 h-[45vh] min-h-[350px] overflow-hidden">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1763982811982-e4901b18bbe3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwxfHxwZW9wbGUlMjBqb2luaW5nJTIwaGFuZHMlMjB0ZWFtd29yayUyMGNvbW11bml0eXxlbnwwfHx8fDE3NzEwMTI2ODF8MA&ixlib=rb-4.1.0&q=85')`
-          }}
-        />
-        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1763982811982-e4901b18bbe3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwxfHxwZW9wbGUlMjBqb2luaW5nJTIwaGFuZHMlMjB0ZWFtd29yayUyMGNvbW11bml0eXxlbnwwfHx8fDE3NzEwMTI2ODF8MA&ixlib=rb-4.1.0&q=85')` }} />
         <div className="absolute inset-0 bg-gradient-to-r from-green-900/90 via-teal-800/80 to-[#0b2a55]/80" />
         
-        {/* Content */}
         <div className="relative h-full flex items-center justify-center">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-6">
               <UserPlus className="w-4 h-4 text-green-300" />
               <span className="text-green-200 text-sm font-semibold">REJOIGNEZ-NOUS</span>
             </div>
-            
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               Devenez membre d'ALT&ACT
             </h1>
-            
             <p className="text-xl text-green-100 max-w-2xl mx-auto">
               Ensemble, révélons les capacités humaines et construisons une société plus solidaire.
             </p>
@@ -68,13 +58,10 @@ const DevenirMembrePage = () => {
         </div>
       </section>
 
-      {/* Benefits Section */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Pourquoi devenir membre ?
-            </h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Pourquoi devenir membre ?</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               En rejoignant ALT&ACT, vous participez à une aventure humaine unique centrée sur le développement des potentiels.
             </p>
@@ -84,10 +71,7 @@ const DevenirMembrePage = () => {
             {benefits.map((benefit, index) => {
               const Icon = benefit.icon;
               return (
-                <div 
-                  key={index}
-                  className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-2xl border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-                >
+                <div key={index} className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-2xl border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                   <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-500 rounded-xl flex items-center justify-center mb-4">
                     <Icon className="w-6 h-6 text-white" />
                   </div>
@@ -98,7 +82,6 @@ const DevenirMembrePage = () => {
             })}
           </div>
 
-          {/* Membership Form */}
           <div className="max-w-3xl mx-auto">
             <div className="bg-gradient-to-br from-[#0b2a55] to-[#1a4280] rounded-3xl p-8 md:p-12 shadow-2xl">
               <div className="text-center mb-8">
@@ -106,12 +89,8 @@ const DevenirMembrePage = () => {
                   <Sparkles className="w-4 h-4 text-amber-400" />
                   <span className="text-amber-300 text-sm font-semibold">FORMULAIRE D'ADHÉSION</span>
                 </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                  Rejoignez notre communauté
-                </h2>
-                <p className="text-blue-200">
-                  Remplissez le formulaire ci-dessous et nous vous recontacterons.
-                </p>
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Rejoignez notre communauté</h2>
+                <p className="text-blue-200">Remplissez le formulaire ci-dessous et nous vous recontacterons.</p>
               </div>
 
               {isSubmitted ? (
@@ -120,105 +99,50 @@ const DevenirMembrePage = () => {
                     <CheckCircle className="w-10 h-10 text-green-400" />
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-3">Demande envoyée !</h3>
-                  <p className="text-blue-200 max-w-md">
-                    Merci pour votre intérêt ! Notre équipe examinera votre candidature et vous contactera prochainement.
-                  </p>
+                  <p className="text-blue-200 max-w-md">Merci pour votre intérêt ! Notre équipe vous contactera prochainement.</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5" data-testid="membership-form">
+                <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid md:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-sm font-medium text-blue-200 mb-2">
-                        Prénom *
-                      </label>
-                      <input
-                        type="text"
-                        name="firstName"
-                        value={formData.firstName}
-                        onChange={handleChange}
-                        required
+                      <label className="block text-sm font-medium text-blue-200 mb-2">Prénom *</label>
+                      <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} required
                         className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-blue-300 focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all"
-                        placeholder="Votre prénom"
-                        data-testid="member-firstname-input"
-                      />
+                        placeholder="Votre prénom" />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-blue-200 mb-2">
-                        Nom *
-                      </label>
-                      <input
-                        type="text"
-                        name="lastName"
-                        value={formData.lastName}
-                        onChange={handleChange}
-                        required
+                      <label className="block text-sm font-medium text-blue-200 mb-2">Nom *</label>
+                      <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} required
                         className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-blue-300 focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all"
-                        placeholder="Votre nom"
-                        data-testid="member-lastname-input"
-                      />
+                        placeholder="Votre nom" />
                     </div>
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-sm font-medium text-blue-200 mb-2">
-                        Email *
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
+                      <label className="block text-sm font-medium text-blue-200 mb-2">Email *</label>
+                      <input type="email" name="email" value={formData.email} onChange={handleChange} required
                         className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-blue-300 focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all"
-                        placeholder="votre@email.com"
-                        data-testid="member-email-input"
-                      />
+                        placeholder="votre@email.com" />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-blue-200 mb-2">
-                        Téléphone
-                      </label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
+                      <label className="block text-sm font-medium text-blue-200 mb-2">Téléphone</label>
+                      <input type="tel" name="phone" value={formData.phone} onChange={handleChange}
                         className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-blue-300 focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all"
-                        placeholder="+33 6 XX XX XX XX"
-                        data-testid="member-phone-input"
-                      />
+                        placeholder="+33 6 XX XX XX XX" />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-blue-200 mb-2">
-                      Type d'adhésion
-                    </label>
+                    <label className="block text-sm font-medium text-blue-200 mb-2">Type d'adhésion</label>
                     <div className="grid grid-cols-2 gap-3">
-                      <button
-                        type="button"
-                        onClick={() => setFormData(prev => ({ ...prev, memberType: 'actif' }))}
-                        className={`p-4 rounded-xl border-2 transition-all ${
-                          formData.memberType === 'actif'
-                            ? 'border-amber-500 bg-amber-500/20 text-white'
-                            : 'border-white/20 bg-white/5 text-blue-200 hover:border-white/40'
-                        }`}
-                        data-testid="member-type-actif"
-                      >
+                      <button type="button" onClick={() => setFormData(prev => ({ ...prev, memberType: 'actif' }))}
+                        className={`p-4 rounded-xl border-2 transition-all ${formData.memberType === 'actif' ? 'border-amber-500 bg-amber-500/20 text-white' : 'border-white/20 bg-white/5 text-blue-200 hover:border-white/40'}`}>
                         <div className="font-semibold">Membre actif</div>
                         <div className="text-xs opacity-75 mt-1">Participation régulière</div>
                       </button>
-                      <button
-                        type="button"
-                        onClick={() => setFormData(prev => ({ ...prev, memberType: 'sympathisant' }))}
-                        className={`p-4 rounded-xl border-2 transition-all ${
-                          formData.memberType === 'sympathisant'
-                            ? 'border-amber-500 bg-amber-500/20 text-white'
-                            : 'border-white/20 bg-white/5 text-blue-200 hover:border-white/40'
-                        }`}
-                        data-testid="member-type-sympathisant"
-                      >
+                      <button type="button" onClick={() => setFormData(prev => ({ ...prev, memberType: 'sympathisant' }))}
+                        className={`p-4 rounded-xl border-2 transition-all ${formData.memberType === 'sympathisant' ? 'border-amber-500 bg-amber-500/20 text-white' : 'border-white/20 bg-white/5 text-blue-200 hover:border-white/40'}`}>
                         <div className="font-semibold">Sympathisant</div>
                         <div className="text-xs opacity-75 mt-1">Soutien à distance</div>
                       </button>
@@ -226,26 +150,14 @@ const DevenirMembrePage = () => {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-blue-200 mb-2">
-                      Motivation *
-                    </label>
-                    <textarea
-                      name="motivation"
-                      value={formData.motivation}
-                      onChange={handleChange}
-                      required
-                      rows={4}
+                    <label className="block text-sm font-medium text-blue-200 mb-2">Motivation *</label>
+                    <textarea name="motivation" value={formData.motivation} onChange={handleChange} required rows={4}
                       className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-blue-300 focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all resize-none"
-                      placeholder="Décrivez votre motivation à rejoindre ALT&ACT..."
-                      data-testid="member-motivation-input"
-                    />
+                      placeholder="Décrivez votre motivation à rejoindre ALT&ACT..." />
                   </div>
 
-                  <Button
-                    type="submit"
-                    className="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white py-4 rounded-xl font-semibold text-lg flex items-center justify-center gap-2"
-                    data-testid="member-submit-btn"
-                  >
+                  <Button type="submit"
+                    className="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white py-4 rounded-xl font-semibold text-lg flex items-center justify-center gap-2">
                     Envoyer ma candidature
                     <ArrowRight className="w-5 h-5" />
                   </Button>
