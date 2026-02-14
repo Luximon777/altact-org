@@ -2,8 +2,11 @@
   "name": "altact-org",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://luximon777.github.io/altact-org",
+  "homepage": "https://www.alt-act.eu",
   "dependencies": {
+    ...
+  }
+}
     "@fontsource/fraunces": "^5.2.9",
     "@fontsource/manrope": "^5.2.8",
     "@hookform/resolvers": "^5.0.1",
