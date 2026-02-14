@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Clock, MessageCircle, CheckCircle } from 'lucide-react';
+import { Mail, Phone, Smartphone, MapPin, Send, Clock, MessageCircle, CheckCircle } from 'lucide-react';
 import { Button } from './ui/button';
 import Navigation from './Navigation';
 import Footer from './Footer';
@@ -71,7 +71,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                    <p className="text-gray-600">contact@altact.org</p>
+                    <p className="text-gray-600">contact@alt-act.eu</p>
                     <p className="text-sm text-gray-500 mt-1">Réponse sous 24-48h</p>
                   </div>
                 </div>
@@ -81,8 +81,19 @@ const ContactPage = () => {
                     <Phone className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Téléphone</h3>
-                    <p className="text-gray-600">+33 (0)1 XX XX XX XX</p>
+                    <h3 className="font-semibold text-gray-900 mb-1">Téléphone fixe</h3>
+                    <p className="text-gray-600">09 60 51 08 82</p>
+                    <p className="text-sm text-gray-500 mt-1">Du lundi au vendredi, 9h-18h</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 p-5 bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl border border-purple-100">
+                  <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Smartphone className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">Mobile</h3>
+                    <p className="text-gray-600">06 58 16 58 83</p>
                     <p className="text-sm text-gray-500 mt-1">Du lundi au vendredi, 9h-18h</p>
                   </div>
                 </div>
@@ -93,7 +104,8 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Adresse</h3>
-                    <p className="text-gray-600">Paris, France</p>
+                    <p className="text-gray-600">23 rue de la Croix</p>
+                    <p className="text-gray-600">67200 ECKBOLSHEIM</p>
                     <p className="text-sm text-gray-500 mt-1">Sur rendez-vous uniquement</p>
                   </div>
                 </div>
