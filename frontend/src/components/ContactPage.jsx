@@ -20,7 +20,6 @@ const ContactPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Simulation d'envoi
     setIsSubmitted(true);
     setTimeout(() => setIsSubmitted(false), 3000);
   };
@@ -29,30 +28,24 @@ const ContactPage = () => {
     <div className="min-h-screen bg-gray-50" data-testid="contact-page">
       <Navigation />
       
-      {/* Hero Section with Image */}
       <section className="relative pt-20 h-[45vh] min-h-[350px] overflow-hidden">
-        {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: `url('https://images.unsplash.com/photo-1683117927786-f146451082fb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MjJ8MHwxfHNlYXJjaHwxfHxlbWFpbCUyMG1lc3NhZ2UlMjBjb21tdW5pY2F0aW9uJTIwc3VwcG9ydHxlbnwwfHx8fDE3NzEwMTI2ODJ8MA&ixlib=rb-4.1.0&q=85')`
           }}
         />
-        {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#0b2a55]/90 via-[#1a4280]/80 to-[#0b2a55]/70" />
         
-        {/* Content */}
         <div className="relative h-full flex items-center justify-center">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-6">
               <Mail className="w-4 h-4 text-amber-300" />
               <span className="text-amber-200 text-sm font-semibold">NOUS CONTACTER</span>
             </div>
-            
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               Restons en contact
             </h1>
-            
             <p className="text-xl text-blue-100 max-w-2xl mx-auto">
               Une question, une idée, un projet ? Notre équipe est à votre écoute pour vous accompagner.
             </p>
@@ -60,23 +53,17 @@ const ContactPage = () => {
         </div>
       </section>
 
-      {/* Contact Content */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
-            
-            {/* Contact Info */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                  Comment nous joindre
-                </h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">Comment nous joindre</h2>
                 <p className="text-gray-600 leading-relaxed">
-                  Vous pouvez nous contacter par email, téléphone ou en remplissant le formulaire ci-contre. Nous nous engageons à vous répondre dans les meilleurs délais.
+                  Vous pouvez nous contacter par email, téléphone ou en remplissant le formulaire ci-contre.
                 </p>
               </div>
 
-              {/* Contact Cards */}
               <div className="space-y-4">
                 <div className="flex items-start gap-4 p-5 bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl border border-amber-100">
                   <div className="w-12 h-12 bg-amber-500 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -112,7 +99,6 @@ const ContactPage = () => {
                 </div>
               </div>
 
-              {/* Horaires */}
               <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
                 <div className="flex items-center gap-3 mb-4">
                   <Clock className="w-5 h-5 text-amber-600" />
@@ -131,7 +117,6 @@ const ContactPage = () => {
               </div>
             </div>
 
-            {/* Contact Form */}
             <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8">
               <div className="flex items-center gap-3 mb-6">
                 <MessageCircle className="w-6 h-6 text-[#0b2a55]" />
@@ -147,75 +132,33 @@ const ContactPage = () => {
                   <p className="text-gray-600">Nous vous répondrons dans les plus brefs délais.</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5" data-testid="contact-form">
+                <form onSubmit={handleSubmit} className="space-y-5">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Nom complet *
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Nom complet *</label>
+                    <input type="text" name="name" value={formData.name} onChange={handleChange} required
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all"
-                      placeholder="Votre nom"
-                      data-testid="contact-name-input"
-                    />
+                      placeholder="Votre nom" />
                   </div>
-
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Email *
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                    <input type="email" name="email" value={formData.email} onChange={handleChange} required
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all"
-                      placeholder="votre@email.com"
-                      data-testid="contact-email-input"
-                    />
+                      placeholder="votre@email.com" />
                   </div>
-
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Sujet
-                    </label>
-                    <input
-                      type="text"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Sujet</label>
+                    <input type="text" name="subject" value={formData.subject} onChange={handleChange}
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all"
-                      placeholder="L'objet de votre message"
-                      data-testid="contact-subject-input"
-                    />
+                      placeholder="L'objet de votre message" />
                   </div>
-
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Message *
-                    </label>
-                    <textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={5}
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Message *</label>
+                    <textarea name="message" value={formData.message} onChange={handleChange} required rows={5}
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all resize-none"
-                      placeholder="Décrivez votre demande..."
-                      data-testid="contact-message-input"
-                    />
+                      placeholder="Décrivez votre demande..." />
                   </div>
-
-                  <Button
-                    type="submit"
-                    className="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white py-4 rounded-xl font-semibold text-lg flex items-center justify-center gap-2"
-                    data-testid="contact-submit-btn"
-                  >
+                  <Button type="submit"
+                    className="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white py-4 rounded-xl font-semibold text-lg flex items-center justify-center gap-2">
                     <Send className="w-5 h-5" />
                     Envoyer le message
                   </Button>
