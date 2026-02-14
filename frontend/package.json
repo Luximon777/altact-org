@@ -1,11 +1,3 @@
-  "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
-    "eject": "react-scripts eject"
-  },
-Et ajoutez @craco/craco dans les dépendances. Voici le package.json complet :
-
 {
   "name": "altact-org",
   "version": "0.1.0",
